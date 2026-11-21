@@ -1,0 +1,307 @@
+- id: gdal
+  title: GDAL
+  icon: lucide/library
+  summary: The translator library for raster and vector geospatial formats, with the gdal and ogr2ogr command line tools and bindings for Python, Java, C# and others.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux]
+  language: [C++, C, Python]
+  interface: [Library, Command line]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://gdal.org/en/stable/download.html
+  docs: https://gdal.org/en/stable/
+  repo: https://github.com/OSGeo/gdal
+  tags: [MIT, Raster, Vector, Cloud-native, OSGeo]
+  snippets:
+    - label: Command line
+      lang: bash
+      code: |
+        gdalinfo dem.tif
+        ogr2ogr -f GPKG out.gpkg in.shp
+        gdalwarp -t_srs EPSG:4326 in.tif out.tif
+    - label: Python
+      lang: python
+      code: |
+        from osgeo import gdal
+        ds = gdal.Open("dem.tif")
+        print(ds.RasterXSize, ds.RasterYSize, ds.GetProjection()[:40])
+  related: [proj, geos, rasterio, pyogrio, terra]
+- id: proj
+  title: PROJ
+  icon: lucide/library
+  summary: Coordinate transformation and projection library with the cs2cs and projinfo tools, and the EPSG database of coordinate reference systems.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux]
+  language: [C++, C]
+  interface: [Library, Command line]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://proj.org/en/stable/install.html
+  docs: https://proj.org/en/stable/
+  repo: https://github.com/OSGeo/PROJ
+  tags: [MIT, Projections, Geodesy, Datums, OSGeo]
+  related: [gdal, pyproj, geographiclib]
+- id: geos
+  title: GEOS
+  icon: lucide/library
+  summary: C++ port of the Java Topology Suite that implements the OGC Simple Features geometry predicates and operations used by PostGIS, Shapely and sf.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux]
+  language: [C++, C]
+  interface: [Library]
+  license: LGPL-2.1
+  cost: Open source
+  status: Active
+  access: https://libgeos.org/usage/download/
+  docs: https://libgeos.org/
+  repo: https://github.com/libgeos/geos
+  tags: [LGPL, Vector, Overlay, Spatial indexing, OSGeo]
+  related: [jts, shapely, postgis, sf]
+- id: jts
+  title: JTS Topology Suite
+  icon: lucide/library
+  summary: Java library of 2D geometry types and spatial predicates, overlay and buffer operations, which GEOS ports to C++.
+  provider: LocationTech
+  platform: [Windows, macOS, Linux]
+  language: [Java]
+  interface: [Library]
+  license: EPL-2.0 or EDL-1.0 (BSD-3-Clause)
+  cost: Open source
+  status: Active
+  access: https://locationtech.github.io/jts/
+  docs: https://locationtech.github.io/jts/javadoc/
+  repo: https://github.com/locationtech/jts
+  tags: [EPL, BSD, Vector, Overlay, Eclipse]
+  related: [geos, geotools]
+- id: geotools
+  title: GeoTools
+  icon: lucide/library
+  summary: Java library for reading and writing spatial formats, rendering maps and querying data, and the engine behind GeoServer.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux]
+  language: [Java]
+  interface: [Library]
+  license: LGPL-2.1
+  cost: Open source
+  status: Active
+  access: https://geotools.org/
+  docs: https://docs.geotools.org/
+  repo: https://github.com/geotools/geotools
+  tags: [LGPL, Vector, Raster, OGC standards, OSGeo]
+  related: [geoserver, jts]
+- id: libgeotiff
+  title: libgeotiff
+  icon: lucide/library
+  summary: Library for reading and writing GeoTIFF georeferencing tags in TIFF files.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux]
+  language: [C]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Maintenance mode
+  access: https://github.com/OSGeo/libgeotiff
+  docs: https://github.com/OSGeo/libgeotiff#readme
+  repo: https://github.com/OSGeo/libgeotiff
+  tags: [MIT, Raster, OSGeo]
+  related: [gdal, proj]
+- id: libspatialindex
+  title: libspatialindex
+  icon: lucide/library
+  summary: C++ library implementing R-tree, MVR-tree and TPR-tree spatial indexes. It underlies the Python Rtree package.
+  provider: Marios Hadjieleftheriou and contributors
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://libspatialindex.org/
+  docs: https://libspatialindex.org/en/latest/
+  repo: https://github.com/libspatialindex/libspatialindex
+  tags: [MIT, Spatial indexing]
+  related: [rtree]
+- id: s2-geometry
+  title: S2 Geometry
+  icon: lucide/library
+  summary: Library for spherical geometry that divides the globe into hierarchical cells, with a 64-bit cell ID scheme for indexing.
+  provider: Google
+  platform: [Windows, macOS, Linux]
+  language: [C++, Go, Java, Python]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://s2geometry.io/
+  docs: https://s2geometry.io/about/overview
+  repo: https://github.com/google/s2geometry
+  tags: [Apache-2.0, Spatial indexing, Google]
+  related: [h3, s2-r]
+- id: h3
+  title: H3
+  icon: lucide/library
+  summary: Hierarchical hexagonal grid system for indexing locations, with bindings for Python, JavaScript, Java, Go and other languages.
+  provider: Uber
+  platform: [Windows, macOS, Linux]
+  language: [C, Python, JavaScript]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://h3geo.org/
+  docs: https://h3geo.org/docs
+  logo: github:uber
+  repo: https://github.com/uber/h3
+  tags: [Apache-2.0, Spatial indexing, Big data]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        import h3
+        cell = h3.latlng_to_cell(37.77, -122.42, 9)
+        print(cell, h3.cell_to_latlng(cell))
+  related: [s2-geometry]
+- id: geographiclib
+  title: GeographicLib
+  icon: lucide/library
+  summary: Library for geodesic calculations on the ellipsoid, map projections and grid references such as UTM, MGRS and geoid heights.
+  provider: Charles Karney
+  platform: [Windows, macOS, Linux]
+  language: [C++, Python, JavaScript, Java]
+  interface: [Library, Command line]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://geographiclib.sourceforge.io/
+  docs: https://geographiclib.sourceforge.io/C++/doc/
+  repo: https://github.com/geographiclib/geographiclib
+  tags: [MIT, Geodesy, Projections]
+  related: [proj]
+- id: pdal
+  title: PDAL
+  icon: lucide/library
+  summary: Library and command line tool for translating and processing point cloud data, described as GDAL for point clouds.
+  provider: PDAL contributors
+  platform: [Windows, macOS, Linux]
+  language: [C++, Python]
+  interface: [Library, Command line]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://pdal.io/en/stable/download.html
+  docs: https://pdal.io/en/stable/
+  repo: https://github.com/PDAL/PDAL
+  tags: [BSD, Point cloud, LiDAR, OSGeo]
+  related: [laspy, lastools, entwine]
+- id: sfcgal
+  title: SFCGAL
+  icon: lucide/library
+  summary: C++ wrapper around CGAL that adds 3D geometry operations such as extrusion, Minkowski sums and 3D intersection to PostGIS.
+  provider: SFCGAL contributors
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [Library]
+  license: LGPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://sfcgal.gitlab.io/SFCGAL/
+  docs: https://sfcgal.gitlab.io/SFCGAL/
+  repo: https://gitlab.com/sfcgal/SFCGAL
+  tags: [LGPL, 3D, Vector, OSGeo]
+  related: [postgis, geos]
+- id: mdal
+  title: MDAL
+  icon: lucide/library
+  summary: C++ library for reading and writing mesh and unstructured grid formats such as NetCDF, GRIB and HEC-RAS outputs. QGIS uses it for mesh layers.
+  provider: Lutra Consulting
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://www.mdal.xyz/
+  docs: https://www.mdal.xyz/
+  repo: https://github.com/lutraconsulting/MDAL
+  tags: [MIT, Climate, OSGeo]
+  related: [qgis, gdal]
+- id: spatialite
+  title: SpatiaLite
+  icon: lucide/library
+  summary: Spatial extension for SQLite that adds geometry types, spatial functions and spatial indexes to a single-file database.
+  provider: Alessandro Furieri
+  platform: [Windows, macOS, Linux]
+  language: [C, SQL]
+  interface: [Library, Command line]
+  license: MPL-1.1, GPL-2.0-or-later or LGPL-2.1-or-later
+  cost: Open source
+  status: Active
+  access: https://www.gaia-gis.it/fossil/libspatialite/index
+  docs: https://www.gaia-gis.it/gaia-sins/
+  tags: [MPL, GPL, LGPL, Spatial database, Vector]
+  related: [postgis, duckdb-spatial]
+- id: flatgeobuf
+  title: FlatGeobuf
+  icon: lucide/library
+  summary: Binary vector format and libraries with a packed R-tree index, built for streaming and range-request reads from cloud storage.
+  provider: Björn Harrtell
+  platform: [Windows, macOS, Linux, Web browser]
+  language: [C++, TypeScript, Rust, Java, Go]
+  interface: [Library]
+  license: BSD-2-Clause
+  cost: Open source
+  status: Active
+  access: https://flatgeobuf.org/
+  docs: https://flatgeobuf.org/
+  repo: https://github.com/flatgeobuf/flatgeobuf
+  tags: [BSD, Vector, Cloud-native]
+  related: [gdal, geoarrow]
+- id: geoarrow
+  title: GeoArrow
+  icon: lucide/library
+  summary: Specification and libraries for storing geometries in Apache Arrow arrays, enabling zero-copy exchange between tools. GeoParquet builds on the same encodings.
+  provider: GeoArrow community
+  platform: [Windows, macOS, Linux]
+  language: [C, Python, R, Rust]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://geoarrow.org/
+  docs: https://geoarrow.org/
+  repo: https://github.com/geoarrow/geoarrow
+  tags: [BSD, Vector, Cloud-native, Big data, Apache]
+  related: [flatgeobuf, geopandas, gdal]
+- id: shapelib
+  title: Shapelib
+  icon: lucide/library
+  summary: C library for reading and writing ESRI Shapefiles and DBF files.
+  provider: Frank Warmerdam
+  platform: [Windows, macOS, Linux]
+  language: [C]
+  interface: [Library]
+  license: LGPL-2.0 or MIT
+  cost: Open source
+  status: Maintenance mode
+  access: http://shapelib.maptools.org/
+  docs: http://shapelib.maptools.org/
+  tags: [LGPL, MIT, Vector]
+  related: [gdal]
+- id: osgearth
+  title: osgEarth
+  icon: lucide/library
+  summary: C++ SDK for building 3D map and globe applications on OpenSceneGraph, with terrain, imagery and feature rendering.
+  provider: Pelican Mapping
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [SDK, Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://docs.osgearth.org/en/latest/
+  docs: https://docs.osgearth.org/en/latest/
+  repo: https://github.com/gwaldron/osgearth
+  tags: [MIT, 3D, Globe, Visualization]
+  related: [cesiumjs]

@@ -1,0 +1,249 @@
+- id: postgis
+  title: PostGIS
+  icon: lucide/database
+  summary: Spatial extension for PostgreSQL that adds geometry, geography and raster types, spatial indexes and hundreds of SQL functions.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux, Server]
+  language: [C, SQL]
+  interface: [Library, Command line]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://postgis.net/documentation/getting_started/
+  docs: https://postgis.net/documentation/
+  repo: https://github.com/postgis/postgis
+  tags: [GPL, Spatial database, Vector, Raster, OSGeo]
+  snippets:
+    - label: SQL
+      lang: sql
+      code: |
+        CREATE EXTENSION postgis;
+        SELECT name FROM cities c
+        JOIN parks p ON ST_DWithin(c.geom::geography, p.geom::geography, 1000);
+  related: [spatialite, duckdb-spatial, pgrouting, geos]
+- id: pgrouting
+  title: pgRouting
+  icon: lucide/database
+  summary: PostgreSQL and PostGIS extension with shortest path, driving distance and travelling salesperson algorithms.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux, Server]
+  language: [C, SQL]
+  interface: [Library]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://pgrouting.org/
+  docs: https://docs.pgrouting.org/latest/en/index.html
+  repo: https://github.com/pgRouting/pgrouting
+  tags: [GPL, Routing, Network analysis, Spatial database, OSGeo]
+  related: [postgis, osrm, valhalla]
+- id: duckdb-spatial
+  title: DuckDB spatial extension
+  icon: lucide/database
+  summary: DuckDB extension that adds geometry types, spatial functions and GDAL-based file reading to an in-process analytical database.
+  provider: DuckDB
+  platform: [Windows, macOS, Linux]
+  language: [C++, SQL]
+  interface: [Library, Command line, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://duckdb.org/docs/stable/core_extensions/spatial/overview.html
+  docs: https://duckdb.org/docs/stable/core_extensions/spatial/functions.html
+  repo: https://github.com/duckdb/duckdb-spatial
+  tags: [MIT, Spatial database, Cloud-native, Big data]
+  snippets:
+    - label: SQL
+      lang: sql
+      code: |
+        INSTALL spatial; LOAD spatial;
+        SELECT count(*) FROM ST_Read('counties.gpkg') WHERE ST_Area(geom) > 1;
+  related: [postgis, spatialite, geoarrow]
+- id: apache-sedona
+  title: Apache Sedona
+  icon: lucide/database
+  summary: Distributed spatial engine that adds geometry types, spatial SQL and raster operations to Apache Spark, Flink and Snowflake.
+  provider: Apache Software Foundation
+  platform: [Linux, macOS, Windows, Server]
+  language: [Scala, Java, Python, SQL]
+  interface: [Library, Notebook]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://sedona.apache.org/latest/setup/overview/
+  docs: https://sedona.apache.org/latest/
+  repo: https://github.com/apache/sedona
+  tags: [Apache-2.0, Spatial database, Big data, Apache]
+  related: [geomesa, wherobots, geotrellis]
+- id: geomesa
+  title: GeoMesa
+  icon: lucide/database
+  summary: Suite of tools for spatio-temporal indexing and querying on distributed stores such as Accumulo, HBase, Cassandra and Kafka.
+  provider: LocationTech
+  platform: [Linux, macOS, Windows, Server]
+  language: [Scala, Java]
+  interface: [Library, Command line]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://www.geomesa.org/
+  docs: https://www.geomesa.org/documentation/stable/
+  logo: github:locationtech
+  repo: https://github.com/locationtech/geomesa
+  tags: [Apache-2.0, Spatial database, Big data, Eclipse]
+  related: [apache-sedona, geotrellis]
+- id: mobilitydb
+  title: MobilityDB
+  icon: lucide/database
+  summary: PostgreSQL and PostGIS extension for temporal and spatiotemporal types such as moving points and trajectories.
+  provider: OSGeo
+  platform: [Linux, macOS, Windows, Server]
+  language: [C, SQL]
+  interface: [Library]
+  license: PostgreSQL License (see repository)
+  cost: Open source
+  status: Active
+  access: https://mobilitydb.com/
+  docs: https://mobilitydb.com/
+  repo: https://github.com/MobilityDB/MobilityDB
+  tags: [Other open source, Mobility, Time series, Spatial database, OSGeo]
+  related: [postgis, movingpandas]
+- id: tile38
+  title: Tile38
+  icon: lucide/database
+  summary: In-memory geospatial database and geofencing server with real-time notifications over webhooks and pub/sub.
+  provider: Josh Baker
+  platform: [Windows, macOS, Linux, Server]
+  language: [Go]
+  interface: [Service, API]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://tile38.com/
+  docs: https://tile38.com/commands/
+  repo: https://github.com/tidwall/tile38
+  tags: [MIT, Spatial database, Mobility]
+  related: [postgis]
+- id: h2gis
+  title: H2GIS
+  icon: lucide/database
+  summary: Spatial extension of the H2 Java database that implements OGC Simple Features SQL.
+  provider: CNRS Lab-STICC
+  platform: [Windows, macOS, Linux]
+  language: [Java, SQL]
+  interface: [Library]
+  license: LGPL-3.0
+  cost: Open source
+  status: Active
+  access: http://www.h2gis.org/
+  docs: http://www.h2gis.org/
+  repo: https://github.com/orbisgis/h2gis
+  tags: [LGPL, Spatial database]
+  related: [postgis, spatialite]
+- id: oracle-spatial
+  title: Oracle Spatial
+  icon: lucide/database
+  summary: Spatial and graph features of Oracle Database for geometry storage, indexing, geocoding, routing and raster management.
+  provider: Oracle
+  platform: [Windows, Linux, Server]
+  language: [SQL]
+  interface: [Library]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.oracle.com/database/spatial/
+  docs: https://docs.oracle.com/en/database/oracle/oracle-database/23/spatl/
+  tags: [Proprietary, Spatial database]
+  related: [postgis, sql-server-spatial]
+- id: sql-server-spatial
+  title: SQL Server spatial types
+  icon: lucide/database
+  summary: Built-in geometry and geography data types and spatial indexes in Microsoft SQL Server and Azure SQL Database.
+  provider: Microsoft
+  platform: [Windows, Linux, Cloud service, Server]
+  language: [SQL]
+  interface: [Library]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://learn.microsoft.com/en-us/sql/relational-databases/spatial/spatial-data-sql-server
+  docs: https://learn.microsoft.com/en-us/sql/relational-databases/spatial/spatial-data-sql-server
+  tags: [Proprietary, Spatial database, Microsoft]
+  related: [postgis, oracle-spatial]
+- id: bigquery-gis
+  title: BigQuery GIS
+  icon: lucide/database
+  summary: Geography type and spatial functions in Google BigQuery for large-scale analysis with SQL.
+  provider: Google
+  platform: [Cloud service]
+  language: [SQL]
+  interface: [Service, API]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://cloud.google.com/bigquery/docs/geospatial-intro
+  docs: https://cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions
+  tags: [Proprietary, Spatial database, Big data, Google]
+  related: [snowflake-geospatial, apache-sedona]
+- id: snowflake-geospatial
+  title: Snowflake geospatial
+  icon: lucide/database
+  summary: GEOGRAPHY and GEOMETRY data types and spatial functions in the Snowflake data cloud.
+  provider: Snowflake
+  platform: [Cloud service]
+  language: [SQL]
+  interface: [Service]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://docs.snowflake.com/en/sql-reference/data-types-geospatial
+  docs: https://docs.snowflake.com/en/sql-reference/functions-geospatial
+  tags: [Proprietary, Spatial database, Big data]
+  related: [bigquery-gis]
+- id: wherobots
+  title: WherobotsDB
+  icon: lucide/database
+  summary: Managed cloud platform from the creators of Apache Sedona for spatial analytics on vector and raster data.
+  provider: Wherobots
+  platform: [Cloud service]
+  language: [Python, SQL]
+  interface: [Service, Notebook]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://wherobots.com/
+  docs: https://docs.wherobots.com/
+  tags: [Proprietary, Spatial database, Big data, Cloud-native]
+  related: [apache-sedona]
+- id: rasdaman
+  title: rasdaman
+  icon: lucide/database
+  summary: Array database for multi-dimensional rasters and datacubes with a query language and OGC WCS and WCPS support.
+  provider: rasdaman
+  platform: [Linux, Server]
+  language: [C++, SQL]
+  interface: [Service]
+  license: GPL and LGPL (community edition)
+  cost: Open source
+  status: Active
+  access: https://rasdaman.org/
+  docs: https://doc.rasdaman.org/
+  repo: https://github.com/rasdaman/rasdaman
+  tags: [GPL, LGPL, Data cubes, Spatial database, OGC standards, OSGeo]
+  related: [open-data-cube, tiledb]
+- id: tiledb
+  title: TileDB
+  icon: lucide/database
+  summary: Array storage engine for dense and sparse multi-dimensional data such as rasters, point clouds and time series, with an open source core.
+  provider: TileDB
+  platform: [Windows, macOS, Linux]
+  language: [C++, Python, R]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://tiledb.com/
+  docs: https://docs.tiledb.com/
+  repo: https://github.com/TileDB-Inc/TileDB
+  tags: [MIT, Data cubes, Cloud-native, Raster]
+  related: [rasdaman, pdal]

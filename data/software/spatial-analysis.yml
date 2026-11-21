@@ -1,0 +1,236 @@
+- id: geoda
+  title: GeoDa
+  icon: lucide/chart-scatter
+  summary: Free desktop software for exploratory spatial data analysis, with spatial autocorrelation, cluster maps and spatial regression.
+  provider: GeoDa Center, University of Chicago
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [GUI]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://geodacenter.github.io/
+  docs: https://geodacenter.github.io/
+  repo: https://github.com/GeoDaCenter/geoda
+  tags: [GPL, Spatial statistics, Hotspot analysis, Education]
+  related: [pysal, spdep]
+- id: mgwr
+  title: MGWR
+  icon: lucide/chart-scatter
+  summary: Multiscale geographically weighted regression in Python, with a desktop GUI and PySAL integration.
+  provider: Spatial Analysis Research Center, Arizona State University
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, GUI]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://mgwr.readthedocs.io/en/latest/
+  docs: https://mgwr.readthedocs.io/en/latest/
+  repo: https://github.com/pysal/mgwr
+  tags: [BSD, Spatial statistics, PySAL]
+  related: [pysal, gwmodel]
+- id: gwmodel
+  title: GWmodel
+  icon: lucide/chart-scatter
+  summary: R package for geographically weighted models, including regression, summary statistics, principal components and discriminant analysis.
+  provider: GWmodel contributors
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=GWmodel
+  docs: https://cran.r-project.org/package=GWmodel
+  repo: https://github.com/lbb220/GWmodel
+  tags: [GPL, Spatial statistics]
+  related: [mgwr, spdep]
+- id: pykrige
+  title: PyKrige
+  icon: lucide/chart-scatter
+  summary: Kriging toolkit for Python with ordinary, universal and regression kriging and variogram models.
+  provider: GeoStat Framework
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://geostat-framework.readthedocs.io/projects/pykrige/en/stable/
+  docs: https://geostat-framework.readthedocs.io/projects/pykrige/en/stable/
+  repo: https://github.com/GeoStat-Framework/PyKrige
+  tags: [BSD, Kriging, Interpolation, Spatial statistics]
+  related: [gstools, gstat]
+- id: gstools
+  title: GSTools
+  icon: lucide/chart-scatter
+  summary: Python toolbox for geostatistics with covariance models, random field generation, variogram estimation and kriging.
+  provider: GeoStat Framework
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: LGPL-3.0
+  cost: Open source
+  status: Active
+  access: https://geostat-framework.readthedocs.io/projects/gstools/en/stable/
+  docs: https://geostat-framework.readthedocs.io/projects/gstools/en/stable/
+  repo: https://github.com/GeoStat-Framework/GSTools
+  tags: [LGPL, Kriging, Spatial statistics]
+  related: [pykrige]
+- id: satscan
+  title: SaTScan
+  icon: lucide/chart-scatter
+  summary: Free software for spatial, temporal and space-time scan statistics used to detect disease clusters and other hotspots.
+  provider: Martin Kulldorff and Information Management Services
+  platform: [Windows, macOS, Linux]
+  language: [Java, C++]
+  interface: [GUI, Command line]
+  license: Free to use (see site)
+  cost: Free to use
+  status: Active
+  access: https://www.satscan.org/
+  docs: https://www.satscan.org/techdoc.html
+  logo: none
+  tags: [Proprietary, Hotspot analysis, Spatial statistics, Public health]
+  related: [spdep, pysal]
+- id: maxent
+  title: Maxent
+  icon: lucide/chart-scatter
+  summary: Java program that models species geographic distributions from presence-only records and environmental layers using maximum entropy.
+  provider: Steven Phillips, Miroslav Dudik and Robert Schapire
+  platform: [Windows, macOS, Linux]
+  language: [Java]
+  interface: [GUI, Command line]
+  license: Free to use (see site)
+  cost: Free to use
+  status: Maintenance mode
+  access: https://biodiversityinformatics.amnh.org/open_source/maxent/
+  docs: https://biodiversityinformatics.amnh.org/open_source/maxent/
+  tags: [Proprietary, Species distribution, Ecology]
+  related: [dismo, terra]
+- id: dismo
+  title: dismo
+  icon: lucide/chart-scatter
+  summary: R package for species distribution modeling, including a Maxent interface, bioclimatic models and species data access.
+  provider: Robert Hijmans
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-3.0-or-later
+  cost: Open source
+  status: Maintenance mode
+  access: https://cran.r-project.org/package=dismo
+  docs: https://rspatial.org/sdm/
+  repo: https://github.com/rspatial/dismo
+  tags: [GPL, Species distribution, Ecology]
+  related: [maxent, terra]
+- id: invest
+  title: InVEST
+  icon: lucide/chart-scatter
+  summary: Natural Capital Project suite of models for mapping and valuing ecosystem services such as carbon storage, water yield and habitat quality.
+  provider: Natural Capital Project, Stanford University
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [GUI, Library, Command line]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://naturalcapitalproject.stanford.edu/software/invest
+  docs: https://invest.readthedocs.io/en/latest/
+  repo: https://github.com/natcap/invest
+  tags: [Apache-2.0, Ecology, Conservation, Raster]
+  related: [qgis, marxan]
+- id: fragstats
+  title: FRAGSTATS
+  icon: lucide/chart-scatter
+  summary: Spatial pattern analysis program that computes landscape metrics for categorical maps.
+  provider: Kevin McGarigal, University of Massachusetts Amherst
+  platform: [Windows]
+  language: [Vendor-specific]
+  interface: [GUI, Command line]
+  license: Free to use (see site)
+  cost: Free to use
+  status: Active
+  access: https://fragstats.org/
+  docs: https://fragstats.org/index.php/documentation
+  tags: [Proprietary, Landscape metrics, Ecology, Raster]
+  related: [landscapemetrics]
+- id: circuitscape
+  title: Circuitscape
+  icon: lucide/chart-scatter
+  summary: Models ecological connectivity using circuit theory, with a Julia implementation, to map gene flow and movement corridors.
+  provider: Circuitscape developers
+  platform: [Windows, macOS, Linux]
+  language: [Julia]
+  interface: [Library, GUI]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://circuitscape.org/
+  docs: https://docs.circuitscape.org/Circuitscape.jl/latest/
+  repo: https://github.com/Circuitscape/Circuitscape.jl
+  tags: [MIT, Ecology, Conservation, Raster]
+  related: [fragstats]
+- id: marxan
+  title: Marxan
+  icon: lucide/chart-scatter
+  summary: Decision support software for systematic conservation planning that selects efficient sets of areas to meet biodiversity targets.
+  provider: Marxan Solutions and University of Queensland
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [Command line, GUI]
+  license: Proprietary (free for non-commercial use)
+  cost: Free to use
+  status: Active
+  access: https://marxansolutions.org/
+  docs: https://marxansolutions.org/software/
+  tags: [Proprietary, Conservation, Ecology]
+  related: [prioritizr, invest]
+- id: prioritizr
+  title: prioritizr
+  icon: lucide/chart-scatter
+  summary: R package for systematic conservation prioritization using integer linear programming and flexible problem formulation.
+  provider: Jeffrey Hanson
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=prioritizr
+  docs: https://prioritizr.net/
+  repo: https://github.com/prioritizr/prioritizr
+  tags: [GPL, Conservation, Ecology]
+  related: [marxan]
+- id: zonation
+  title: Zonation
+  icon: lucide/chart-scatter
+  summary: Spatial conservation prioritization software that ranks landscape cells by their value for biodiversity features.
+  provider: University of Helsinki
+  platform: [Windows, Linux]
+  language: [C++]
+  interface: [Command line]
+  license: GPL-3.0
+  cost: Open source
+  status: Maintenance mode
+  access: https://github.com/zonationteam/Zonation5
+  docs: https://zonationteam.github.io/Zonation5/
+  repo: https://github.com/zonationteam/Zonation5
+  tags: [GPL, Conservation, Ecology]
+  related: [marxan, prioritizr]
+- id: dinamica-ego
+  title: Dinamica EGO
+  icon: lucide/chart-scatter
+  summary: Environmental modeling platform for land use and land cover change, with a graphical model builder and cellular automata.
+  provider: Federal University of Minas Gerais
+  platform: [Windows, macOS, Linux]
+  language: [C++, Lua]
+  interface: [GUI]
+  license: Free to use (see site)
+  cost: Free to use
+  status: Active
+  access: https://csr.ufmg.br/dinamica/
+  docs: https://dinamicaego.com/
+  tags: [Proprietary, Land change, Geoprocessing models]
+  related: [terrset]

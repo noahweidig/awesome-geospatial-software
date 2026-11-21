@@ -1,0 +1,423 @@
+- id: leaflet
+  title: Leaflet
+  icon: lucide/globe
+  summary: Small, mobile-friendly JavaScript library for interactive maps, with a large plugin ecosystem.
+  provider: Leaflet contributors
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Library]
+  license: BSD-2-Clause
+  cost: Open source
+  status: Active
+  access: https://leafletjs.com/download.html
+  docs: https://leafletjs.com/reference.html
+  repo: https://github.com/Leaflet/Leaflet
+  tags: [BSD, Web mapping, Raster tiles]
+  snippets:
+    - label: JavaScript
+      lang: javascript
+      code: |
+        const map = L.map("map").setView([51.505, -0.09], 13);
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: "&copy; OpenStreetMap contributors"
+        }).addTo(map);
+  related: [openlayers, maplibre-gl-js, folium]
+- id: openlayers
+  title: OpenLayers
+  icon: lucide/globe
+  summary: Feature-rich JavaScript mapping library that supports vector tiles, many projections, OGC services and WebGL rendering.
+  provider: OpenLayers contributors
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Library]
+  license: BSD-2-Clause
+  cost: Open source
+  status: Active
+  access: https://openlayers.org/download/
+  docs: https://openlayers.org/en/latest/apidoc/
+  repo: https://github.com/openlayers/openlayers
+  tags: [BSD, Web mapping, OGC standards, Vector tiles, OSGeo]
+  related: [leaflet, maplibre-gl-js]
+- id: maplibre-gl-js
+  title: MapLibre GL JS
+  icon: lucide/globe
+  summary: Open source WebGL library for vector tile maps, forked from Mapbox GL JS v1 before its license changed.
+  provider: MapLibre
+  platform: [Web browser]
+  language: [TypeScript, JavaScript]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://maplibre.org/maplibre-gl-js/docs/
+  docs: https://maplibre.org/maplibre-gl-js/docs/
+  repo: https://github.com/maplibre/maplibre-gl-js
+  tags: [BSD, Web mapping, Vector tiles, 3D, MapLibre]
+  snippets:
+    - label: JavaScript
+      lang: javascript
+      code: |
+        const map = new maplibregl.Map({
+          container: "map",
+          style: "https://demotiles.maplibre.org/style.json",
+          center: [0, 0], zoom: 2
+        });
+  related: [mapbox-gl-js, maplibre-native, leaflet]
+- id: maplibre-native
+  title: MapLibre Native
+  icon: lucide/smartphone
+  summary: Open source vector map rendering engine for Android, iOS and desktop, forked from Mapbox GL Native.
+  provider: MapLibre
+  platform: [Android, iOS, Linux, macOS, Windows]
+  language: [C++, Kotlin, Swift]
+  interface: [SDK]
+  license: BSD-2-Clause
+  cost: Open source
+  status: Active
+  access: https://maplibre.org/maplibre-native/docs/book/
+  docs: https://maplibre.org/maplibre-native/docs/book/
+  repo: https://github.com/maplibre/maplibre-native
+  tags: [BSD, Mobile, Vector tiles, MapLibre]
+  related: [maplibre-gl-js]
+- id: mapbox-gl-js
+  title: Mapbox GL JS
+  icon: lucide/globe
+  summary: Mapbox's WebGL library for vector maps and 3D globes. Version 2 and later use a proprietary license that requires a Mapbox access token.
+  provider: Mapbox
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Library, SDK]
+  license: Proprietary (Mapbox Terms of Service)
+  cost: Freemium
+  status: Active
+  access: https://docs.mapbox.com/mapbox-gl-js/guides/
+  docs: https://docs.mapbox.com/mapbox-gl-js/api/
+  repo: https://github.com/mapbox/mapbox-gl-js
+  tags: [Source-available, Web mapping, Vector tiles, 3D, Mapbox]
+  caveat: Version 1.x is BSD-3-Clause. Version 2.0 and later require acceptance of the Mapbox Terms of Service and a token.
+  related: [maplibre-gl-js]
+- id: deckgl
+  title: deck.gl
+  icon: lucide/globe
+  summary: WebGL framework for visualizing large datasets as layers on maps, with scatterplot, hexagon, arc, trip and 3D tile layers.
+  provider: OpenJS Foundation and vis.gl
+  platform: [Web browser]
+  language: [TypeScript, JavaScript]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://deck.gl/docs
+  docs: https://deck.gl/docs
+  logo: none
+  repo: https://github.com/visgl/deck.gl
+  tags: [MIT, Visualization, Big data, 3D]
+  related: [pydeck, lonboard, kepler-gl]
+- id: cesiumjs
+  title: CesiumJS
+  icon: lucide/globe
+  summary: JavaScript library for 3D globes and maps, with terrain, imagery, time-dynamic data and 3D Tiles streaming.
+  provider: Cesium
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://cesium.com/platform/cesiumjs/
+  docs: https://cesium.com/learn/cesiumjs/ref-doc/
+  repo: https://github.com/CesiumGS/cesium
+  tags: [Apache-2.0, 3D, Globe, Cesium]
+  related: [cesium-unreal, itowns, deckgl]
+- id: turf-js
+  title: Turf.js
+  icon: lucide/globe
+  summary: Modular JavaScript library for geospatial analysis in the browser or Node.js, with buffers, joins, interpolation and measurement.
+  provider: Turf contributors
+  platform: [Web browser, Linux, macOS, Windows]
+  language: [JavaScript, TypeScript]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://turfjs.org/
+  docs: https://turfjs.org/
+  repo: https://github.com/Turfjs/turf
+  tags: [MIT, Vector, Geoprocessing]
+  snippets:
+    - label: JavaScript
+      lang: javascript
+      code: |
+        import * as turf from "@turf/turf";
+        const buffered = turf.buffer(turf.point([-75.34, 39.98]), 500, { units: "meters" });
+  related: [turf-swift, jsts]
+- id: jsts
+  title: JSTS
+  icon: lucide/globe
+  summary: JavaScript port of the Java Topology Suite for geometry operations in the browser.
+  provider: Björn Harrtell
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Library]
+  license: EPL-2.0 or EDL-1.0 (BSD-3-Clause)
+  cost: Open source
+  status: Active
+  access: https://github.com/bjornharrtell/jsts
+  docs: https://bjornharrtell.github.io/jsts/
+  repo: https://github.com/bjornharrtell/jsts
+  tags: [EPL, BSD, Vector, Overlay]
+  related: [jts, turf-js]
+- id: d3-geo
+  title: D3 (d3-geo)
+  icon: lucide/globe
+  summary: D3's geographic module for projections, path generators and spherical math, used for custom SVG and canvas maps.
+  provider: Observable
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Library]
+  license: ISC
+  cost: Open source
+  status: Active
+  access: https://d3js.org/d3-geo
+  docs: https://d3js.org/d3-geo
+  repo: https://github.com/d3/d3-geo
+  tags: [ISC, Cartography, Projections, Visualization]
+  related: [leaflet]
+- id: proj4js
+  title: proj4js
+  icon: lucide/globe
+  summary: JavaScript library that transforms coordinates between projections in the browser and Node.js.
+  provider: proj4js contributors
+  platform: [Web browser, Linux, macOS, Windows]
+  language: [JavaScript]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://github.com/proj4js/proj4js
+  docs: http://proj4js.org/
+  repo: https://github.com/proj4js/proj4js
+  tags: [MIT, Projections]
+  related: [proj]
+- id: geotiff-js
+  title: geotiff.js
+  icon: lucide/globe
+  summary: JavaScript library for reading GeoTIFF and Cloud Optimized GeoTIFF files in the browser using HTTP range requests.
+  provider: geotiff.js contributors
+  platform: [Web browser, Linux, macOS, Windows]
+  language: [JavaScript]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://geotiffjs.github.io/
+  docs: https://geotiffjs.github.io/geotiff.js/
+  repo: https://github.com/geotiffjs/geotiff.js
+  tags: [MIT, Raster, Cloud-native]
+  related: [rasterio, rio-cogeo]
+- id: kepler-gl
+  title: kepler.gl
+  icon: lucide/globe
+  summary: Browser-based tool for exploring large geospatial datasets, with map layers, filters, time playback and shareable maps.
+  provider: vis.gl
+  platform: [Web browser]
+  language: [TypeScript, JavaScript]
+  interface: [Web app, Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://kepler.gl/
+  docs: https://docs.kepler.gl/
+  repo: https://github.com/keplergl/kepler.gl
+  tags: [MIT, Visualization, Big data, Dashboards]
+  related: [deckgl, foursquare-studio]
+- id: itowns
+  title: iTowns
+  icon: lucide/globe
+  summary: Three.js-based framework for 3D geospatial visualization of terrain, 3D Tiles, point clouds and photogrammetry in the browser.
+  provider: iTowns community
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Library]
+  license: CeCILL-B and MIT
+  cost: Open source
+  status: Active
+  access: https://www.itowns-project.org/
+  docs: https://www.itowns-project.org/itowns/docs/
+  repo: https://github.com/iTowns/itowns
+  tags: [MIT, Other open source, 3D, Globe]
+  related: [cesiumjs]
+- id: maptalks
+  title: maptalks.js
+  icon: lucide/globe
+  summary: Lightweight JavaScript map library with 2D and 3D views, vector tiles and a plugin system.
+  provider: maptalks
+  platform: [Web browser]
+  language: [JavaScript, TypeScript]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://maptalks.org/
+  docs: https://maptalks.org/
+  repo: https://github.com/maptalks/maptalks.js
+  tags: [BSD, Web mapping, 3D]
+  related: [leaflet, openlayers]
+- id: arcgis-maps-sdk-js
+  title: ArcGIS Maps SDK for JavaScript
+  icon: lucide/globe
+  summary: Esri's JavaScript SDK for 2D maps and 3D scenes, with web components and access to ArcGIS content and analysis services.
+  provider: Esri
+  platform: [Web browser]
+  language: [JavaScript, TypeScript]
+  interface: [SDK]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://developers.arcgis.com/javascript/latest/
+  docs: https://developers.arcgis.com/javascript/latest/api-reference/
+  tags: [Proprietary, Web mapping, 3D, Esri]
+  caveat: Free to start with an ArcGIS Location Platform account. Usage beyond the free tier is metered.
+  related: [arcgis-online]
+- id: google-maps-platform
+  title: Google Maps Platform
+  icon: lucide/globe
+  summary: Google's JavaScript, Android and iOS map SDKs and web service APIs for places, geocoding, directions and elevation.
+  provider: Google
+  platform: [Web browser, Android, iOS, Cloud service]
+  language: [JavaScript, Kotlin, Swift]
+  interface: [SDK, API]
+  license: Proprietary (Google Maps Platform Terms of Service)
+  cost: Freemium
+  status: Active
+  access: https://mapsplatform.google.com/
+  docs: https://developers.google.com/maps/documentation
+  tags: [Proprietary, Web mapping, Geocoding, Routing, Google]
+  related: [mapbox-gl-js, here-platform]
+- id: here-platform
+  title: HERE Platform and SDKs
+  icon: lucide/globe
+  summary: HERE's map rendering SDKs and location APIs for geocoding, routing, traffic and fleet use cases.
+  provider: HERE Technologies
+  platform: [Web browser, Android, iOS, Cloud service]
+  language: [JavaScript, Kotlin, Swift]
+  interface: [SDK, API]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://www.here.com/platform
+  docs: https://www.here.com/docs
+  tags: [Proprietary, Web mapping, Routing, Geocoding, HERE]
+  related: [google-maps-platform, tomtom-maps-sdk]
+- id: tomtom-maps-sdk
+  title: TomTom Maps SDK and APIs
+  icon: lucide/globe
+  summary: TomTom's maps, search, routing and traffic APIs with web and mobile SDKs.
+  provider: TomTom
+  platform: [Web browser, Android, iOS, Cloud service]
+  language: [JavaScript, Kotlin, Swift]
+  interface: [SDK, API]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://developer.tomtom.com/
+  docs: https://developer.tomtom.com/documentation
+  tags: [Proprietary, Web mapping, Routing, Geocoding, TomTom]
+  related: [here-platform]
+- id: maptiler-sdk
+  title: MapTiler SDK JS
+  icon: lucide/globe
+  summary: MapLibre-based JavaScript SDK from MapTiler that adds geocoding, elevation and hosted map styles.
+  provider: MapTiler
+  platform: [Web browser]
+  language: [TypeScript, JavaScript]
+  interface: [SDK]
+  license: BSD-3-Clause
+  cost: Freemium
+  status: Active
+  access: https://docs.maptiler.com/sdk-js/
+  docs: https://docs.maptiler.com/sdk-js/
+  repo: https://github.com/maptiler/maptiler-sdk-js
+  tags: [BSD, Web mapping, Vector tiles, MapLibre]
+  caveat: The SDK is open source. Hosted tiles and APIs need a MapTiler Cloud key and are metered.
+  related: [maplibre-gl-js]
+- id: terra-draw
+  title: Terra Draw
+  icon: lucide/globe
+  summary: Library for drawing and editing geometries on web maps that works across Leaflet, OpenLayers, MapLibre, Mapbox and Google Maps.
+  provider: James Milner
+  platform: [Web browser]
+  language: [TypeScript]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://terradraw.io/
+  docs: https://terradraw.io/
+  repo: https://github.com/JamesLMilner/terra-draw
+  tags: [MIT, Web mapping, Vector]
+  related: [leaflet, openlayers, maplibre-gl-js]
+- id: globe-gl
+  title: globe.gl
+  icon: lucide/globe
+  summary: Three.js-based web component for data visualization on a 3D globe, with points, arcs, polygons and heatmaps.
+  provider: Vasco Asturiano
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://globe.gl/
+  docs: https://globe.gl/
+  repo: https://github.com/vasturiano/globe.gl
+  tags: [MIT, Globe, 3D, Visualization]
+  related: [cesiumjs, deckgl]
+- id: mapbender
+  title: Mapbender
+  icon: lucide/globe
+  summary: Web mapping framework for building geoportals with configurable applications, OGC service support and a management backend.
+  provider: OSGeo
+  platform: [Server, Web browser]
+  language: [PHP, JavaScript]
+  interface: [Web app]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://mapbender.org/
+  docs: https://doc.mapbender.org/
+  repo: https://github.com/mapbender/mapbender
+  tags: [MIT, Web mapping, OGC standards, OSGeo]
+  related: [geonode, geomoose]
+- id: geomoose
+  title: GeoMoose
+  icon: lucide/globe
+  summary: Web GIS framework for building mapping applications on OpenLayers and OGC services.
+  provider: OSGeo
+  platform: [Server, Web browser]
+  language: [JavaScript]
+  interface: [Web app]
+  license: MIT
+  cost: Open source
+  status: Maintenance mode
+  access: https://www.geomoose.org/
+  docs: https://docs.geomoose.org/
+  repo: https://github.com/geomoose/geomoose
+  tags: [MIT, Web mapping, OGC standards, OSGeo]
+  related: [mapbender, openlayers]
+- id: mapstore
+  title: MapStore
+  icon: lucide/globe
+  summary: Web mapping framework for creating, saving and sharing maps, dashboards and 3D stories, built on OpenLayers and Cesium.
+  provider: GeoSolutions
+  platform: [Server, Web browser]
+  language: [JavaScript, Java]
+  interface: [Web app]
+  license: BSD-2-Clause
+  cost: Open source
+  status: Active
+  access: https://mapstore.geosolutionsgroup.com/
+  docs: https://mapstore.readthedocs.io/en/latest/
+  repo: https://github.com/geosolutions-it/MapStore2
+  tags: [BSD, Web mapping, Dashboards, OGC standards]
+  related: [geoserver, geonode]

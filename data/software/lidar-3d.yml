@@ -1,0 +1,271 @@
+- id: lastools
+  title: LAStools
+  icon: lucide/box
+  summary: Fast command line tools for LiDAR processing, including LAZ compression, ground classification, gridding and tiling.
+  provider: rapidlasso
+  platform: [Windows, Linux, macOS]
+  language: [C++]
+  interface: [Command line, GUI]
+  license: Mixed open source and proprietary (per tool)
+  cost: Freemium
+  status: Active
+  access: https://rapidlasso.de/
+  docs: https://rapidlasso.de/product-overview/
+  repo: https://github.com/LAStools/LAStools
+  tags: [Source-available, LiDAR, Point cloud]
+  caveat: Some tools are open source. Others are free for small files and need a license for commercial or large-scale use.
+  related: [pdal, cloudcompare]
+- id: cloudcompare
+  title: CloudCompare
+  icon: lucide/box
+  summary: Open source 3D point cloud and mesh viewer and editor with registration, comparison, segmentation and plugin support.
+  provider: Daniel Girardeau-Montaut
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [GUI, Command line, Plugin]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://www.cloudcompare.org/
+  docs: https://www.cloudcompare.org/doc/wiki/index.php/Main_Page
+  repo: https://github.com/CloudCompare/CloudCompare
+  tags: [GPL, Point cloud, LiDAR, 3D]
+  related: [pdal, potree, lastools]
+- id: potree
+  title: Potree
+  icon: lucide/box
+  summary: WebGL viewer for very large point clouds in the browser, with octree conversion tools.
+  provider: Markus Schütz
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Library, Web app]
+  license: BSD-2-Clause
+  cost: Open source
+  status: Active
+  access: https://potree.github.io/
+  docs: https://github.com/potree/potree#readme
+  repo: https://github.com/potree/potree
+  tags: [BSD, Point cloud, 3D, Visualization]
+  related: [entwine, cloudcompare]
+- id: entwine
+  title: Entwine
+  icon: lucide/box
+  summary: Data organization library for massive point cloud collections that builds streamable indexes, including Entwine Point Tiles.
+  provider: Hobu
+  platform: [Linux, macOS, Windows]
+  language: [C++]
+  interface: [Command line, Library]
+  license: LGPL-2.1
+  cost: Open source
+  status: Maintenance mode
+  access: https://entwine.io/
+  docs: https://entwine.io/en/latest/
+  repo: https://github.com/connormanning/entwine
+  tags: [LGPL, Point cloud, LiDAR, Cloud-native]
+  related: [pdal, potree]
+- id: opendronemap
+  title: OpenDroneMap
+  icon: lucide/box
+  summary: Open source toolkit that turns drone and aerial photos into orthophotos, point clouds, DEMs and 3D models.
+  provider: OpenDroneMap
+  platform: [Windows, macOS, Linux]
+  language: [Python, C++]
+  interface: [Command line, Service]
+  license: AGPL-3.0
+  cost: Open source
+  status: Active
+  access: https://www.opendronemap.org/odm/
+  docs: https://docs.opendronemap.org/
+  repo: https://github.com/OpenDroneMap/ODM
+  tags: [AGPL, Photogrammetry, Drones, 3D]
+  related: [webodm, metashape, pix4d]
+- id: webodm
+  title: WebODM
+  icon: lucide/box
+  summary: Web interface for OpenDroneMap that manages drone mapping projects, processing tasks and results.
+  provider: OpenDroneMap
+  platform: [Windows, macOS, Linux, Web browser]
+  language: [Python, JavaScript]
+  interface: [Web app, API]
+  license: AGPL-3.0
+  cost: Freemium
+  status: Active
+  access: https://www.opendronemap.org/webodm/
+  docs: https://docs.webodm.net/
+  repo: https://github.com/OpenDroneMap/WebODM
+  tags: [AGPL, Photogrammetry, Drones, 3D]
+  caveat: The software is open source. Native installers are sold for a one-time fee, and a hosted service is available.
+  related: [opendronemap]
+- id: metashape
+  title: Agisoft Metashape
+  icon: lucide/box
+  summary: Commercial photogrammetry software for orthomosaics, DEMs, point clouds and textured 3D models from photos.
+  provider: Agisoft
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [GUI, Library]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.agisoft.com/
+  docs: https://www.agisoft.com/downloads/user-manuals/
+  tags: [Proprietary, Photogrammetry, Drones, 3D]
+  related: [opendronemap, pix4d]
+- id: pix4d
+  title: PIX4Dmapper
+  icon: lucide/box
+  summary: Commercial photogrammetry software for drone mapping, producing orthomosaics, point clouds and elevation models.
+  provider: Pix4D
+  platform: [Windows, macOS]
+  language: [Vendor-specific]
+  interface: [GUI]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.pix4d.com/product/pix4dmapper-photogrammetry-software/
+  docs: https://support.pix4d.com/
+  logo: none
+  tags: [Proprietary, Photogrammetry, Drones, 3D]
+  related: [metashape, opendronemap]
+- id: micmac
+  title: MicMac
+  icon: lucide/box
+  summary: Open source photogrammetry suite from IGN for image orientation, dense matching and orthophoto production.
+  provider: IGN
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [Command line]
+  license: CeCILL-B
+  cost: Open source
+  status: Maintenance mode
+  access: https://micmac.ensg.eu/
+  docs: https://micmac.ensg.eu/index.php/Accueil
+  repo: https://github.com/micmacIGN/micmac
+  tags: [Other open source, Photogrammetry, 3D]
+  related: [opendronemap]
+- id: blendergis
+  title: BlenderGIS
+  icon: lucide/box
+  summary: Blender add-on that imports shapefiles, OpenStreetMap data, DEMs and web map tiles for 3D terrain and city models.
+  provider: Domlysz
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Plugin, GUI]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://github.com/domlysz/BlenderGIS
+  docs: https://github.com/domlysz/BlenderGIS/wiki
+  repo: https://github.com/domlysz/BlenderGIS
+  tags: [GPL, 3D, Terrain, Visualization]
+  related: [qgis]
+- id: arcgis-cityengine
+  title: ArcGIS CityEngine
+  icon: lucide/box
+  summary: Esri's rule-based 3D modeling application for generating cities and scenes from GIS data.
+  provider: Esri
+  platform: [Windows, Linux]
+  language: [Python, Vendor-specific]
+  interface: [GUI]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.esri.com/en-us/arcgis/products/arcgis-cityengine/overview
+  docs: https://doc.arcgis.com/en/cityengine/
+  tags: [Proprietary, 3D, Urban, Urban planning, Esri]
+  related: [arcgis-pro, cesium-unreal]
+- id: cesium-unreal
+  title: Cesium for Unreal
+  icon: lucide/box
+  summary: Plugin that streams 3D Tiles terrain, imagery and photogrammetry into Unreal Engine on a WGS84 globe.
+  provider: Cesium
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [Plugin, SDK]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://cesium.com/platform/cesium-for-unreal/
+  docs: https://cesium.com/learn/unreal/
+  repo: https://github.com/CesiumGS/cesium-unreal
+  tags: [Apache-2.0, 3D, Globe, Visualization, Cesium]
+  related: [cesiumjs, osgearth]
+- id: web-worldwind
+  title: NASA Web WorldWind
+  icon: lucide/box
+  summary: NASA's open source JavaScript virtual globe SDK for 3D maps in the browser.
+  provider: NASA and ESA
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Library]
+  license: NASA Open Source Agreement and Apache-2.0
+  cost: Open source
+  status: Maintenance mode
+  access: https://worldwind.arc.nasa.gov/web/
+  docs: https://worldwind.arc.nasa.gov/web/
+  repo: https://github.com/NASAWorldWind/WebWorldWind
+  tags: [Apache-2.0, Globe, 3D, NASA]
+  related: [cesiumjs]
+- id: citydb-3d
+  title: 3DCityDB
+  icon: lucide/box
+  summary: Open source database schema and tools to store, manage and export semantic 3D city models in CityGML and CityJSON on PostgreSQL.
+  provider: Technical University of Munich
+  platform: [Windows, macOS, Linux, Server]
+  language: [Java, SQL]
+  interface: [Command line, Service]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://www.3dcitydb.org/
+  docs: https://3dcitydb-docs.readthedocs.io/
+  repo: https://github.com/3dcitydb/3dcitydb
+  tags: [Apache-2.0, 3D, Urban, Spatial database, OGC standards]
+  related: [cjio, postgis]
+- id: cjio
+  title: cjio
+  icon: lucide/box
+  summary: Python command line tool and library for manipulating, validating and converting CityJSON 3D city models.
+  provider: 3D geoinformation group, TU Delft
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Command line, Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://github.com/cityjson/cjio
+  docs: https://cjio.readthedocs.io/
+  repo: https://github.com/cityjson/cjio
+  tags: [MIT, 3D, Urban]
+  related: [citydb-3d]
+- id: cgal
+  title: CGAL
+  icon: lucide/box
+  summary: C++ library of computational geometry algorithms including triangulations, meshes, Voronoi diagrams and polygon operations.
+  provider: CGAL Project
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [Library]
+  license: GPL-3.0 or commercial
+  cost: Open source
+  status: Active
+  access: https://www.cgal.org/
+  docs: https://doc.cgal.org/latest/Manual/packages.html
+  repo: https://github.com/CGAL/cgal
+  tags: [GPL, 3D, Vector]
+  related: [sfcgal]
+- id: fusion-ldv
+  title: FUSION/LDV
+  icon: lucide/box
+  summary: USDA Forest Service software for viewing and analyzing LiDAR point clouds, with tools for canopy metrics and terrain models.
+  provider: USDA Forest Service
+  platform: [Windows]
+  language: [Vendor-specific]
+  interface: [GUI, Command line]
+  license: Public domain
+  cost: Free to use
+  status: Maintenance mode
+  access: https://www.fs.usda.gov/research/pnw/products/dataandtools/fusionldv
+  docs: https://www.fs.usda.gov/research/pnw/products/dataandtools/fusionldv
+  tags: [Public domain, LiDAR, Forestry, Point cloud]
+  related: [lidr, lastools]

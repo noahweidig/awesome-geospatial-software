@@ -1,0 +1,397 @@
+- id: snap
+  title: SNAP (Sentinel Application Platform)
+  icon: lucide/satellite
+  summary: ESA's open source toolbox for Sentinel and other Earth observation data, including the Sentinel-1, Sentinel-2 and Sentinel-3 toolboxes.
+  provider: ESA
+  platform: [Windows, macOS, Linux]
+  language: [Java, Python]
+  interface: [GUI, Command line, Library]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://step.esa.int/main/download/snap-download/
+  docs: https://step.esa.int/main/doc/
+  repo: https://github.com/senbox-org/snap-engine
+  tags: [GPL, Remote sensing, SAR, Satellite imagery, ESA]
+  related: [orfeo-toolbox, isce3, qgis]
+- id: orfeo-toolbox
+  title: Orfeo ToolBox
+  icon: lucide/satellite
+  summary: Open source library and applications for processing high-resolution optical, SAR and hyperspectral images, with Monteverdi and QGIS integration.
+  provider: CNES and OSGeo
+  platform: [Windows, macOS, Linux]
+  language: [C++, Python]
+  interface: [Library, Command line, GUI]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://www.orfeo-toolbox.org/download/
+  docs: https://www.orfeo-toolbox.org/CookBook/
+  repo: https://gitlab.orfeo-toolbox.org/orfeotoolbox/otb
+  tags: [Apache-2.0, Remote sensing, Image classification, SAR, OSGeo]
+  related: [snap, qgis, grass-gis]
+- id: envi
+  title: ENVI
+  icon: lucide/satellite
+  summary: Commercial image analysis software for multispectral, hyperspectral, SAR and LiDAR data, with IDL scripting and a deep learning module.
+  provider: NV5 Geospatial Software
+  platform: [Windows, Linux, macOS]
+  language: [IDL, Python]
+  interface: [GUI, Library]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.nv5geospatialsoftware.com/Products/ENVI
+  docs: https://www.nv5geospatialsoftware.com/docs/
+  tags: [Proprietary, Remote sensing, Image classification, Satellite imagery]
+  related: [erdas-imagine, snap]
+- id: erdas-imagine
+  title: ERDAS IMAGINE
+  icon: lucide/satellite
+  summary: Hexagon's commercial remote sensing and photogrammetry suite for image processing, classification and mapping.
+  provider: Hexagon
+  platform: [Windows]
+  language: [Vendor-specific]
+  interface: [GUI]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://hexagon.com/products/erdas-imagine
+  docs: https://hexagon.com/products/erdas-imagine
+  tags: [Proprietary, Remote sensing, Image classification, Hexagon]
+  related: [envi, snap]
+- id: pci-geomatica
+  title: PCI Geomatica
+  icon: lucide/satellite
+  summary: Commercial software for satellite and aerial image processing, orthorectification, SAR analysis and automated production workflows.
+  provider: PCI Geomatics
+  platform: [Windows, Linux]
+  language: [Python]
+  interface: [GUI, Library]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://catalyst.earth/
+  docs: https://catalyst.earth/support/
+  tags: [Proprietary, Remote sensing, SAR, Photogrammetry]
+  caveat: PCI Geomatics now markets the product line as CATALYST.
+  related: [envi, erdas-imagine]
+- id: ecognition
+  title: eCognition
+  icon: lucide/satellite
+  summary: Commercial object-based image analysis software that segments and classifies imagery using rule sets and machine learning.
+  provider: Trimble
+  platform: [Windows]
+  language: [Vendor-specific]
+  interface: [GUI]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://geospatial.trimble.com/en/products/software/trimble-ecognition
+  docs: https://docs.ecognition.com/
+  tags: [Proprietary, Remote sensing, Image classification, Trimble]
+  related: [orfeo-toolbox, envi]
+- id: google-earth-engine
+  title: Google Earth Engine
+  icon: lucide/satellite
+  summary: Cloud platform for planetary-scale analysis with a catalog of satellite imagery and geophysical datasets, a JavaScript Code Editor and Python and R clients.
+  provider: Google
+  platform: [Cloud service, Web browser]
+  language: [JavaScript, Python]
+  interface: [Web app, API, Notebook]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://earthengine.google.com/
+  docs: https://developers.google.com/earth-engine
+  tags: [Proprietary, Earth observation, Cloud-native, Satellite imagery, Google]
+  caveat: Free for noncommercial research, education and nonprofit use. Commercial use requires a paid plan.
+  related: [earthengine-api, geemap, microsoft-planetary-computer, openeo]
+- id: open-data-cube
+  title: Open Data Cube
+  icon: lucide/satellite
+  summary: Python framework for indexing, managing and analyzing large Earth observation archives as multi-dimensional data cubes.
+  provider: Open Data Cube
+  platform: [Linux, macOS, Windows, Server]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://www.opendatacube.org/
+  docs: https://opendatacube.readthedocs.io/en/latest/
+  repo: https://github.com/opendatacube/datacube-core
+  tags: [Apache-2.0, Data cubes, Analysis-ready data, Open Data Cube, OSGeo]
+  related: [odc-stac, rasdaman, digital-earth-africa]
+- id: openeo
+  title: openEO
+  icon: lucide/satellite
+  summary: Open API and client libraries in Python, R and JavaScript for processing Earth observation data across different cloud back ends.
+  provider: openEO community
+  platform: [Cloud service, Windows, macOS, Linux]
+  language: [Python, R, JavaScript]
+  interface: [API, Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://openeo.org/
+  docs: https://openeo.org/documentation/1.0/
+  logo: none
+  repo: https://github.com/Open-EO/openeo-python-client
+  tags: [Apache-2.0, Earth observation, Cloud-native, Data cubes]
+  related: [google-earth-engine, copernicus-data-space]
+- id: sentinel-hub
+  title: Sentinel Hub
+  icon: lucide/satellite
+  summary: Cloud API and EO Browser for streaming, processing and visualizing Sentinel, Landsat and commercial imagery with custom scripts.
+  provider: Planet Labs (Sinergise)
+  platform: [Cloud service, Web browser]
+  language: [JavaScript, Python]
+  interface: [API, Web app]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://www.sentinel-hub.com/
+  docs: https://docs.sentinel-hub.com/api/latest/
+  tags: [Proprietary, Satellite imagery, Earth observation, Cloud-native]
+  related: [copernicus-data-space, google-earth-engine]
+- id: copernicus-data-space
+  title: Copernicus Data Space Ecosystem
+  icon: lucide/satellite
+  summary: ESA-backed platform for searching, downloading and processing Copernicus Sentinel data through a browser, STAC, OData and openEO APIs.
+  provider: ESA
+  platform: [Cloud service, Web browser]
+  language: [Python]
+  interface: [Web app, API]
+  license: Copernicus open data terms
+  cost: Free to use
+  status: Active
+  access: https://dataspace.copernicus.eu/
+  docs: https://documentation.dataspace.copernicus.eu/
+  tags: [Proprietary, Earth observation, Satellite imagery, STAC, ESA]
+  caveat: The platform is free with registration. Processing quotas apply.
+  related: [openeo, sentinel-hub]
+- id: microsoft-planetary-computer
+  title: Microsoft Planetary Computer
+  icon: lucide/satellite
+  summary: Catalog of open Earth observation datasets in Azure with a STAC API, a data Explorer and a Hub for Python analysis.
+  provider: Microsoft
+  platform: [Cloud service, Web browser]
+  language: [Python]
+  interface: [API, Web app, Notebook]
+  license: Dataset-specific
+  cost: Free to use
+  status: Active
+  access: https://planetarycomputer.microsoft.com/
+  docs: https://planetarycomputer.microsoft.com/docs/overview/about
+  tags: [Proprietary, STAC, Earth observation, Cloud-native, Microsoft]
+  caveat: The STAC API and data catalog are free.
+  related: [planetary-computer, pystac-client]
+- id: digital-earth-africa
+  title: Digital Earth Africa
+  icon: lucide/satellite
+  summary: Open platform and Python tools for analyzing Earth observation data over Africa, built on Open Data Cube with a sandbox, maps and training.
+  provider: Digital Earth Africa
+  platform: [Cloud service, Web browser]
+  language: [Python]
+  interface: [Notebook, Web app]
+  license: Open data and Apache-2.0 code
+  cost: Free to use
+  status: Active
+  access: https://www.digitalearthafrica.org/
+  docs: https://docs.digitalearthafrica.org/
+  tags: [Apache-2.0, Earth observation, Data cubes, Open Data Cube]
+  related: [open-data-cube]
+- id: isce3
+  title: ISCE3
+  icon: lucide/satellite
+  summary: JPL's InSAR scientific computing environment for processing synthetic aperture radar data into interferograms and displacement maps.
+  provider: NASA JPL
+  platform: [Linux, macOS]
+  language: [C++, Python]
+  interface: [Library, Command line]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://github.com/isce-framework/isce3
+  docs: https://isce-framework.github.io/isce3/
+  repo: https://github.com/isce-framework/isce3
+  tags: [Apache-2.0, SAR, Remote sensing, NASA]
+  related: [mintpy, snap]
+- id: mintpy
+  title: MintPy
+  icon: lucide/satellite
+  summary: Python package for InSAR time series analysis that turns interferograms into surface displacement time series and velocity maps.
+  provider: MintPy contributors
+  platform: [Linux, macOS]
+  language: [Python]
+  interface: [Library, Command line]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://mintpy.readthedocs.io/
+  docs: https://mintpy.readthedocs.io/
+  repo: https://github.com/insarlab/MintPy
+  tags: [GPL, SAR, Time series, Remote sensing]
+  related: [isce3, snap]
+- id: sen2cor
+  title: Sen2Cor
+  icon: lucide/satellite
+  summary: ESA processor that performs atmospheric, terrain and cirrus correction of Sentinel-2 Level-1C data to produce Level-2A surface reflectance.
+  provider: ESA
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Command line]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://step.esa.int/main/snap-supported-plugins/sen2cor/
+  docs: https://step.esa.int/main/snap-supported-plugins/sen2cor/
+  tags: [GPL, Remote sensing, Analysis-ready data, ESA]
+  related: [snap, force]
+- id: force
+  title: FORCE
+  icon: lucide/satellite
+  summary: Framework for large-area processing of Landsat and Sentinel-2 archives into analysis-ready data, time series and higher-level products.
+  provider: David Frantz
+  platform: [Linux]
+  language: [C, Python]
+  interface: [Command line]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://force-eo.readthedocs.io/en/latest/
+  docs: https://force-eo.readthedocs.io/en/latest/
+  repo: https://github.com/davidfrantz/force
+  tags: [GPL, Analysis-ready data, Remote sensing, Time series]
+  related: [sen2cor, open-data-cube]
+- id: satpy
+  title: Satpy
+  icon: lucide/satellite
+  summary: Python library for reading, resampling, compositing and writing data from weather and Earth observation satellites such as GOES, MSG and VIIRS.
+  provider: PyTroll
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://satpy.readthedocs.io/en/stable/
+  docs: https://satpy.readthedocs.io/
+  repo: https://github.com/pytroll/satpy
+  tags: [Apache-2.0, Satellite imagery, Weather, Remote sensing]
+  related: [xarray, pyresample]
+- id: pyresample
+  title: pyresample
+  icon: lucide/satellite
+  summary: Python package for resampling geospatial image data between swath and area definitions, used by Satpy.
+  provider: PyTroll
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: LGPL-3.0
+  cost: Open source
+  status: Active
+  access: https://pyresample.readthedocs.io/en/stable/
+  docs: https://pyresample.readthedocs.io/
+  repo: https://github.com/pytroll/pyresample
+  tags: [LGPL, Remote sensing, Raster]
+  related: [satpy]
+- id: eo-learn
+  title: eo-learn
+  icon: lucide/satellite
+  summary: Python library of workflow tasks for building Earth observation pipelines from data download to machine learning.
+  provider: Sinergise
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Maintenance mode
+  access: https://eo-learn.readthedocs.io/en/latest/
+  docs: https://eo-learn.readthedocs.io/en/latest/
+  logo: none
+  repo: https://github.com/sentinel-hub/eo-learn
+  tags: [MIT, Earth observation, Machine learning, Workflow]
+  related: [sentinel-hub]
+- id: geowombat
+  title: GeoWombat
+  icon: lucide/satellite
+  summary: Python library for processing satellite imagery and time series with Rasterio and Xarray, including band math, mosaicking and sampling.
+  provider: Jordan Graesser
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Maintenance mode
+  access: https://geowombat.readthedocs.io/en/latest/
+  docs: https://geowombat.readthedocs.io/
+  repo: https://github.com/jgrss/geowombat
+  tags: [MIT, Remote sensing, Raster, Time series]
+  related: [rasterio, xarray]
+- id: spectral-python
+  title: Spectral Python (SPy)
+  icon: lucide/satellite
+  summary: Python module for processing hyperspectral image data, including classification, dimensionality reduction and ENVI file support.
+  provider: Thomas Boggs
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Maintenance mode
+  access: https://www.spectralpython.net/
+  docs: https://www.spectralpython.net/
+  repo: https://github.com/spectralpython/spectral
+  tags: [MIT, Remote sensing, Image classification]
+  related: [envi]
+- id: semi-automatic-classification-plugin
+  title: Semi-Automatic Classification Plugin
+  icon: lucide/satellite
+  summary: QGIS plugin for downloading, preprocessing and classifying satellite images and assessing accuracy.
+  provider: Luca Congedo
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Plugin, GUI]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://fromgistors.blogspot.com/p/semi-automatic-classification-plugin.html
+  docs: https://semiautomaticclassificationmanual.readthedocs.io/
+  repo: https://github.com/semiautomaticgit/SemiAutomaticClassificationPlugin
+  tags: [GPL, Remote sensing, Image classification]
+  related: [qgis]
+- id: appeears
+  title: AppEEARS
+  icon: lucide/satellite
+  summary: NASA web tool and API for extracting and subsetting Earth observation samples by point or area, from the LP DAAC.
+  provider: NASA LP DAAC
+  platform: [Web browser, Cloud service]
+  language: [Python]
+  interface: [Web app, API]
+  license: NASA open data
+  cost: Free to use
+  status: Active
+  access: https://appeears.earthdatacloud.nasa.gov/
+  docs: https://appeears.earthdatacloud.nasa.gov/help
+  tags: [Public domain, Earth observation, Satellite imagery, NASA]
+  caveat: Requires a free NASA Earthdata Login.
+  related: [earthaccess]
+- id: sentinelhub-py
+  title: sentinelhub-py
+  icon: lucide/satellite
+  summary: Python package for the Sentinel Hub API that requests imagery, statistics and batch processing jobs.
+  provider: Sinergise
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, API]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://sentinelhub-py.readthedocs.io/en/latest/
+  docs: https://sentinelhub-py.readthedocs.io/
+  repo: https://github.com/sentinel-hub/sentinelhub-py
+  tags: [MIT, Satellite imagery, Earth observation]
+  caveat: The package is open source. The Sentinel Hub service behind it is metered.
+  related: [sentinel-hub]

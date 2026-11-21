@@ -1,0 +1,177 @@
+- id: panoply
+  title: Panoply
+  icon: lucide/cloud-sun
+  summary: NASA GISS viewer for plotting geo-gridded arrays from NetCDF, HDF and GRIB files as maps, plots and animations.
+  provider: NASA GISS
+  platform: [Windows, macOS, Linux]
+  language: [Java]
+  interface: [GUI]
+  license: Free to use (see site)
+  cost: Free to use
+  status: Active
+  access: https://www.giss.nasa.gov/tools/panoply/
+  docs: https://www.giss.nasa.gov/tools/panoply/help/
+  tags: [Proprietary, Climate, Visualization, NASA]
+  related: [ncview, xarray]
+- id: ncview
+  title: ncview
+  icon: lucide/cloud-sun
+  summary: Quick-look viewer for NetCDF files with maps, animations and slicing through variables.
+  provider: David Pierce
+  platform: [Linux, macOS]
+  language: [C]
+  interface: [GUI]
+  license: GPL-3.0
+  cost: Open source
+  status: Maintenance mode
+  access: https://cirrus.ucsd.edu/~pierce/software/ncview/
+  docs: https://cirrus.ucsd.edu/~pierce/software/ncview/
+  logo: none
+  tags: [GPL, Climate, Visualization]
+  related: [panoply]
+- id: cdo
+  title: CDO (Climate Data Operators)
+  icon: lucide/cloud-sun
+  summary: Command line operators for manipulating and analyzing climate and NWP model data in NetCDF, GRIB and other formats.
+  provider: Max Planck Institute for Meteorology
+  platform: [Linux, macOS, Windows]
+  language: [C++]
+  interface: [Command line]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://code.mpimet.mpg.de/projects/cdo
+  docs: https://code.mpimet.mpg.de/projects/cdo/wiki/Cdo
+  tags: [BSD, Climate, Weather]
+  related: [nco, xarray]
+- id: nco
+  title: NCO (netCDF Operators)
+  icon: lucide/cloud-sun
+  summary: Command line operators that average, subset, concatenate and edit attributes of NetCDF files.
+  provider: Charlie Zender
+  platform: [Linux, macOS, Windows]
+  language: [C++]
+  interface: [Command line]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://nco.sourceforge.net/
+  docs: https://nco.sourceforge.net/nco.html
+  repo: https://github.com/nco/nco
+  tags: [BSD, Climate]
+  related: [cdo]
+- id: metpy
+  title: MetPy
+  icon: lucide/cloud-sun
+  summary: Python toolkit for reading, visualizing and calculating with meteorological data, including skew-T plots and units support.
+  provider: Unidata
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://unidata.github.io/MetPy/latest/userguide/installguide.html
+  docs: https://unidata.github.io/MetPy/latest/
+  repo: https://github.com/Unidata/MetPy
+  tags: [BSD, Weather, Atmosphere, Visualization]
+  related: [xarray, cartopy]
+- id: wrf-python
+  title: wrf-python
+  icon: lucide/cloud-sun
+  summary: Python library of diagnostics and plotting routines for WRF-ARW model output.
+  provider: NCAR
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Maintenance mode
+  access: https://wrf-python.readthedocs.io/en/latest/
+  docs: https://wrf-python.readthedocs.io/en/latest/
+  logo: none
+  repo: https://github.com/NCAR/wrf-python
+  tags: [Apache-2.0, Weather, Atmosphere]
+  related: [xarray, metpy]
+- id: herbie
+  title: Herbie
+  icon: lucide/cloud-sun
+  summary: Python package that downloads numerical weather prediction model output such as HRRR, GFS and ECMWF open data from cloud archives.
+  provider: Brian Blaylock
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://herbie.readthedocs.io/en/stable/
+  docs: https://herbie.readthedocs.io/
+  repo: https://github.com/blaylockbk/Herbie
+  tags: [MIT, Weather, Atmosphere, Cloud-native]
+  related: [xarray, cfgrib]
+- id: cfgrib
+  title: cfgrib
+  icon: lucide/cloud-sun
+  summary: Python interface that maps GRIB files to the NetCDF data model and opens them with xarray using ecCodes.
+  provider: ECMWF
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://github.com/ecmwf/cfgrib
+  docs: https://github.com/ecmwf/cfgrib#readme
+  repo: https://github.com/ecmwf/cfgrib
+  tags: [Apache-2.0, Weather, Climate]
+  related: [xarray, herbie]
+- id: ferret
+  title: PyFerret
+  icon: lucide/cloud-sun
+  summary: NOAA PMEL analysis and visualization environment for gridded and unstructured oceanographic and atmospheric data, with a Python interface.
+  provider: NOAA PMEL
+  platform: [Linux, macOS]
+  language: [Fortran, Python]
+  interface: [Command line, Library]
+  license: Public domain
+  cost: Free to use
+  status: Maintenance mode
+  access: https://ferret.pmel.noaa.gov/Ferret/
+  docs: https://ferret.pmel.noaa.gov/Ferret/
+  logo: none
+  repo: https://github.com/NOAA-PMEL/PyFerret
+  tags: [Public domain, Ocean, Climate, Visualization]
+  related: [panoply, gmt]
+- id: ncl
+  title: NCL (NCAR Command Language)
+  icon: lucide/cloud-sun
+  summary: Interpreted language for analysis and visualization of geoscience data, now in maintenance mode with NCAR recommending Python.
+  provider: NCAR
+  platform: [Linux, macOS]
+  language: [Vendor-specific]
+  interface: [Command line]
+  license: Apache-2.0
+  cost: Open source
+  status: Legacy
+  access: https://www.ncl.ucar.edu/
+  docs: https://www.ncl.ucar.edu/Document/
+  repo: https://github.com/NCAR/ncl
+  tags: [Apache-2.0, Climate, Weather, Visualization]
+  caveat: NCAR announced NCL is in maintenance mode and points users to GeoCAT and other Python tools.
+  related: [xarray, metpy]
+- id: copernicus-marine-toolbox
+  title: Copernicus Marine Toolbox
+  icon: lucide/cloud-sun
+  summary: Python library and CLI for subsetting and downloading data from the Copernicus Marine Service.
+  provider: Mercator Ocean International
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Command line]
+  license: EUPL-1.2
+  cost: Open source
+  status: Active
+  access: https://help.marine.copernicus.eu/en/collections/9080063-copernicus-marine-toolbox
+  docs: https://toolbox-docs.marine.copernicus.eu/
+  repo: https://github.com/mercator-ocean/copernicus-marine-toolbox
+  tags: [Other open source, Ocean, Climate, ESA]
+  related: [xarray]

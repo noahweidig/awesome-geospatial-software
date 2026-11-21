@@ -1,0 +1,207 @@
+- id: qfield
+  title: QField
+  icon: lucide/smartphone
+  summary: Mobile field GIS for Android, iOS and Windows that opens QGIS projects offline, for data collection, editing and navigation.
+  provider: OPENGIS.ch
+  platform: [Android, iOS, Windows, macOS, Linux]
+  language: [C++, QML]
+  interface: [Mobile app]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://qfield.org/
+  docs: https://docs.qfield.org/
+  repo: https://github.com/opengisch/QField
+  tags: [GPL, Field collection, Offline maps, Mobile, OSGeo]
+  related: [qgis, mergin-maps]
+- id: mergin-maps
+  title: Mergin Maps
+  icon: lucide/smartphone
+  summary: Field data collection app and sync service built on QGIS, with a mobile app, QGIS plugin and cloud sync.
+  provider: Lutra Consulting
+  platform: [Android, iOS, Cloud service]
+  language: [C++, QML, Python]
+  interface: [Mobile app, Plugin, Service]
+  license: GPL-2.0-or-later (apps), AGPL-3.0 (server)
+  cost: Freemium
+  status: Active
+  access: https://merginmaps.com/
+  docs: https://merginmaps.com/docs/
+  logo: github:MerginMaps
+  repo: https://github.com/MerginMaps
+  tags: [GPL, AGPL, Field collection, Mobile, Offline maps]
+  caveat: The apps and server are open source. The hosted service has free and paid tiers.
+  related: [qfield, qgis]
+- id: arcgis-field-maps
+  title: ArcGIS Field Maps
+  icon: lucide/smartphone
+  summary: Esri's mobile app for field mapping, data collection, navigation and location tracking connected to ArcGIS.
+  provider: Esri
+  platform: [Android, iOS]
+  language: [Vendor-specific]
+  interface: [Mobile app]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.esri.com/en-us/arcgis/products/arcgis-field-maps/overview
+  docs: https://doc.arcgis.com/en/field-maps/latest/
+  tags: [Proprietary, Field collection, Mobile, Offline maps, Esri]
+  related: [arcgis-survey123, qfield]
+- id: arcgis-survey123
+  title: ArcGIS Survey123
+  icon: lucide/smartphone
+  summary: Form-centric survey tool from Esri based on XLSForm, for collecting and analyzing location-aware surveys on web and mobile.
+  provider: Esri
+  platform: [Android, iOS, Windows, Web browser]
+  language: [Vendor-specific]
+  interface: [Mobile app, Web app]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.esri.com/en-us/arcgis/products/arcgis-survey123/overview
+  docs: https://doc.arcgis.com/en/survey123/
+  tags: [Proprietary, Field collection, Mobile, Esri]
+  related: [odk, kobotoolbox, arcgis-field-maps]
+- id: odk
+  title: ODK (Open Data Kit)
+  icon: lucide/smartphone
+  summary: Open source tools for building forms, collecting data on Android devices and managing submissions, with GPS and map questions.
+  provider: Open Data Kit
+  platform: [Android, Web browser, Server]
+  language: [Java, Kotlin]
+  interface: [Mobile app, Web app]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://getodk.org/
+  docs: https://docs.getodk.org/
+  repo: https://github.com/getodk
+  tags: [Apache-2.0, Field collection, Mobile]
+  related: [kobotoolbox, epicollect5]
+- id: kobotoolbox
+  title: KoboToolbox
+  icon: lucide/smartphone
+  summary: Free platform for field data collection built on ODK-compatible forms, widely used by humanitarian organizations.
+  provider: KoboToolbox
+  platform: [Web browser, Android, Server]
+  language: [Python, JavaScript]
+  interface: [Web app, Mobile app]
+  license: AGPL-3.0
+  cost: Open source
+  status: Active
+  access: https://www.kobotoolbox.org/
+  docs: https://support.kobotoolbox.org/
+  repo: https://github.com/kobotoolbox/kpi
+  tags: [AGPL, Field collection, Mobile, Public health]
+  related: [odk, epicollect5]
+- id: epicollect5
+  title: Epicollect5
+  icon: lucide/smartphone
+  summary: Free mobile and web data collection platform from Imperial College London for building forms with GPS fields and viewing maps.
+  provider: Imperial College London
+  platform: [Android, iOS, Web browser]
+  language: [PHP, JavaScript]
+  interface: [Mobile app, Web app]
+  license: Apache-2.0
+  cost: Free to use
+  status: Active
+  access: https://five.epicollect.net/
+  docs: https://docs.epicollect.net/
+  repo: https://github.com/ImperialCollegeLondon/epicollect5-server
+  tags: [Apache-2.0, Field collection, Mobile, Public health]
+  related: [odk, kobotoolbox]
+- id: sw-maps
+  title: SW Maps
+  icon: lucide/smartphone
+  summary: Free Android and iOS app for GIS data collection and navigation with external GNSS receivers over Bluetooth.
+  provider: Softwel
+  platform: [Android, iOS]
+  language: [Vendor-specific]
+  interface: [Mobile app]
+  license: Proprietary
+  cost: Free to use
+  status: Active
+  access: https://www.softwel.com.np/swmaps/
+  docs: https://www.softwel.com.np/swmaps/
+  tags: [Proprietary, Field collection, GNSS, Mobile]
+  related: [qfield]
+- id: avenza-maps
+  title: Avenza Maps
+  icon: lucide/smartphone
+  summary: Offline map viewer for Android and iOS that opens georeferenced PDFs and GeoTIFFs and records GPS tracks.
+  provider: Avenza Systems
+  platform: [Android, iOS]
+  language: [Vendor-specific]
+  interface: [Mobile app]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://www.avenza.com/avenza-maps/
+  docs: https://help.avenza.com/
+  logo: none
+  tags: [Proprietary, Offline maps, Mobile, Print maps]
+  related: [qfield]
+- id: osmand
+  title: OsmAnd
+  icon: lucide/smartphone
+  summary: Offline OpenStreetMap navigation and map app for Android and iOS with vector maps, routing and GPX recording.
+  provider: OsmAnd
+  platform: [Android, iOS]
+  language: [Kotlin, C++]
+  interface: [Mobile app]
+  license: GPL-3.0
+  cost: Freemium
+  status: Active
+  access: https://osmand.net/
+  docs: https://osmand.net/docs/
+  repo: https://github.com/osmandapp/OsmAnd
+  tags: [GPL, Offline maps, OpenStreetMap, Mobile, Routing]
+  related: [organic-maps]
+- id: organic-maps
+  title: Organic Maps
+  icon: lucide/smartphone
+  summary: Offline OpenStreetMap maps and navigation app for Android and iOS with no ads or tracking.
+  provider: Organic Maps
+  platform: [Android, iOS]
+  language: [C++, Kotlin, Swift]
+  interface: [Mobile app]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://organicmaps.app/
+  docs: https://organicmaps.app/
+  repo: https://github.com/organicmaps/organicmaps
+  tags: [Apache-2.0, Offline maps, OpenStreetMap, Mobile, Routing]
+  related: [osmand]
+- id: mapeo
+  title: CoMapeo
+  icon: lucide/smartphone
+  summary: Offline, peer-to-peer mapping app for community mapping and monitoring, from Digital Democracy.
+  provider: Digital Democracy
+  platform: [Android]
+  language: [JavaScript, Kotlin]
+  interface: [Mobile app]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://www.comapeo.app/
+  docs: https://docs.comapeo.app/
+  repo: https://github.com/digidem/comapeo-mobile
+  tags: [GPL, Field collection, Offline maps, Mobile, Crowdsourcing]
+  related: [odk]
+- id: geopaparazzi
+  title: Geopaparazzi
+  icon: lucide/smartphone
+  summary: Android app for digital field mapping with notes, photos, GPS logs and offline basemaps, with a desktop companion in gvSIG and QGIS.
+  provider: HydroloGIS
+  platform: [Android]
+  language: [Java]
+  interface: [Mobile app]
+  license: GPL-3.0
+  cost: Open source
+  status: Maintenance mode
+  access: https://www.geopaparazzi.org/
+  docs: https://www.geopaparazzi.org/
+  repo: https://github.com/geopaparazzi/geopaparazzi
+  tags: [GPL, Field collection, Mobile, Offline maps]
+  related: [qfield]

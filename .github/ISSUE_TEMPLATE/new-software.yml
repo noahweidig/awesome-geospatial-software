@@ -1,0 +1,33 @@
+name: Suggest software
+description: Propose geospatial software for the catalog
+labels: [software]
+body:
+  - type: input
+    id: title
+    attributes: {label: Software name}
+    validations: {required: true}
+  - type: input
+    id: access
+    attributes: {label: Download or product link}
+    validations: {required: true}
+  - type: input
+    id: docs
+    attributes: {label: Documentation link}
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Category
+      options: ["Desktop GIS & map viewers", "Core libraries & engines", Python libraries, R packages, Other languages, "Web mapping libraries & SDKs", Map servers, "Spatial databases & big data", "Remote sensing & image analysis", LiDAR, "Cloud platforms & location APIs", Geocoding, Terrain, "Spatial statistics & ecology", "GeoAI & machine learning", "Field collection & mobile", OpenStreetMap tools, "Cartography & visualization", Data conversion, Climate]
+    validations: {required: true}
+  - type: input
+    id: provider
+    attributes: {label: Developer}
+  - type: input
+    id: platforms
+    attributes: {label: Platforms and languages, placeholder: "Windows, macOS, Linux. Python"}
+  - type: input
+    id: license
+    attributes: {label: License and cost}
+  - type: textarea
+    id: notes
+    attributes: {label: Notes}

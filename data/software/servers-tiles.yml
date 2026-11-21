@@ -1,0 +1,359 @@
+- id: geoserver
+  title: GeoServer
+  icon: lucide/server
+  summary: Java server that publishes spatial data through OGC services such as WMS, WFS, WCS and WMTS, with a web admin interface and styling with SLD and CSS.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux, Server]
+  language: [Java]
+  interface: [Service, Web app, API]
+  license: GPL-2.0
+  cost: Open source
+  status: Active
+  access: https://geoserver.org/download/
+  docs: https://docs.geoserver.org/
+  repo: https://github.com/geoserver/geoserver
+  tags: [GPL, OGC standards, Raster tiles, Vector tiles, OSGeo]
+  related: [mapserver, geowebcache, geotools, qgis-server]
+- id: mapserver
+  title: MapServer
+  icon: lucide/server
+  summary: C-based server and CGI engine for publishing maps and data through OGC services, configured with Mapfiles.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux, Server]
+  language: [C]
+  interface: [Service, Command line]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://mapserver.org/download.html
+  docs: https://mapserver.org/documentation.html
+  repo: https://github.com/MapServer/MapServer
+  tags: [MIT, OGC standards, Raster tiles, OSGeo]
+  related: [geoserver, qgis-server, mapproxy]
+- id: qgis-server
+  title: QGIS Server
+  icon: lucide/server
+  summary: OGC web services backend that publishes QGIS projects as WMS, WFS, WCS and OGC API services using the same styling as the desktop.
+  provider: QGIS.org
+  platform: [Linux, Windows, Server]
+  language: [C++, Python]
+  interface: [Service]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://docs.qgis.org/latest/en/docs/server_manual/index.html
+  docs: https://docs.qgis.org/latest/en/docs/server_manual/index.html
+  repo: https://github.com/qgis/QGIS
+  tags: [GPL, OGC standards, Cartography, OSGeo]
+  related: [qgis, geoserver, mapserver]
+- id: arcgis-enterprise
+  title: ArcGIS Enterprise
+  icon: lucide/server
+  summary: Esri's self-hosted GIS platform with ArcGIS Server, portal, data store and web apps for sharing maps and services inside an organization.
+  provider: Esri
+  platform: [Windows, Linux, Server]
+  language: [Python, JavaScript]
+  interface: [Service, Web app, API]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.esri.com/en-us/arcgis/products/arcgis-enterprise/overview
+  docs: https://enterprise.arcgis.com/en/
+  tags: [Proprietary, Geoprocessing server, OGC standards, Esri]
+  related: [arcgis-online, geoserver]
+- id: geowebcache
+  title: GeoWebCache
+  icon: lucide/server
+  summary: Java tile cache that stores and serves WMS-backed map tiles through WMTS, TMS and other protocols. It is built into GeoServer.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux, Server]
+  language: [Java]
+  interface: [Service]
+  license: LGPL-3.0
+  cost: Open source
+  status: Active
+  access: https://www.geowebcache.org/
+  docs: https://geowebcache.org/docs/current/
+  repo: https://github.com/GeoWebCache/geowebcache
+  tags: [LGPL, Tiles, Raster tiles, OSGeo]
+  related: [geoserver, mapproxy]
+- id: mapproxy
+  title: MapProxy
+  icon: lucide/server
+  summary: Python proxy and tile cache that accelerates WMS and tile services, reprojects sources and merges layers.
+  provider: Omniscale
+  platform: [Windows, macOS, Linux, Server]
+  language: [Python]
+  interface: [Service]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://mapproxy.org/
+  docs: https://mapproxy.org/
+  repo: https://github.com/mapproxy/mapproxy
+  tags: [Apache-2.0, Tiles, Raster tiles, OGC standards]
+  related: [geowebcache, mapserver]
+- id: mapnik
+  title: Mapnik
+  icon: lucide/server
+  summary: C++ toolkit for rendering vector and raster data into map tiles and images, used by OpenStreetMap's standard tile layer.
+  provider: Mapnik contributors
+  platform: [Windows, macOS, Linux]
+  language: [C++, Python]
+  interface: [Library]
+  license: LGPL-2.1
+  cost: Open source
+  status: Active
+  access: https://mapnik.org/
+  docs: https://mapnik.org/docs/
+  repo: https://github.com/mapnik/mapnik
+  tags: [LGPL, Cartography, Raster tiles, OpenStreetMap]
+  related: [openstreetmap-carto, tileserver-gl]
+- id: tileserver-gl
+  title: TileServer GL
+  icon: lucide/server
+  summary: Node.js server for vector tiles and raster rendering from MBTiles and PMTiles using MapLibre GL styles.
+  provider: MapTiler
+  platform: [Windows, macOS, Linux, Server]
+  language: [JavaScript]
+  interface: [Service]
+  license: BSD-2-Clause
+  cost: Open source
+  status: Active
+  access: https://tileserver.readthedocs.io/en/latest/
+  docs: https://tileserver.readthedocs.io/en/latest/
+  logo: github:maptiler
+  repo: https://github.com/maptiler/tileserver-gl
+  tags: [BSD, Vector tiles, Raster tiles, Tiles, MapLibre]
+  related: [martin, pmtiles]
+- id: martin
+  title: Martin
+  icon: lucide/server
+  summary: Rust tile server that serves vector tiles from PostGIS, MBTiles and PMTiles, with sprite and font endpoints.
+  provider: MapLibre
+  platform: [Windows, macOS, Linux, Server]
+  language: [Rust]
+  interface: [Service, Command line]
+  license: Apache-2.0 or MIT
+  cost: Open source
+  status: Active
+  access: https://maplibre.org/martin/
+  docs: https://maplibre.org/martin/
+  repo: https://github.com/maplibre/martin
+  tags: [Apache-2.0, MIT, Vector tiles, Tiles, MapLibre]
+  related: [pg-tileserv, tileserver-gl, postgis]
+- id: pg-tileserv
+  title: pg_tileserv
+  icon: lucide/server
+  summary: Go server that publishes vector tiles from PostGIS tables, views and functions.
+  provider: Crunchy Data
+  platform: [Windows, macOS, Linux, Server]
+  language: [Go]
+  interface: [Service]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://github.com/CrunchyData/pg_tileserv
+  docs: https://access.crunchydata.com/documentation/pg_tileserv/latest/
+  repo: https://github.com/CrunchyData/pg_tileserv
+  tags: [Apache-2.0, Vector tiles, Tiles, Spatial database]
+  related: [pg-featureserv, martin, postgis]
+- id: pg-featureserv
+  title: pg_featureserv
+  icon: lucide/server
+  summary: Go server that publishes PostGIS data as an OGC API Features service with JSON and GeoJSON output.
+  provider: Crunchy Data
+  platform: [Windows, macOS, Linux, Server]
+  language: [Go]
+  interface: [Service, API]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://github.com/CrunchyData/pg_featureserv
+  docs: https://access.crunchydata.com/documentation/pg_featureserv/latest/
+  repo: https://github.com/CrunchyData/pg_featureserv
+  tags: [Apache-2.0, OGC standards, Spatial database]
+  related: [pg-tileserv, postgis, pygeoapi]
+- id: tegola
+  title: Tegola
+  icon: lucide/server
+  summary: Go vector tile server that reads PostGIS and GeoPackage and caches tiles to disk or cloud storage.
+  provider: Tegola contributors
+  platform: [Windows, macOS, Linux, Server]
+  language: [Go]
+  interface: [Service, Command line]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://tegola.io/
+  docs: https://tegola.io/documentation/
+  logo: github:go-spatial
+  repo: https://github.com/go-spatial/tegola
+  tags: [MIT, Vector tiles, Tiles]
+  related: [martin, pg-tileserv]
+- id: tippecanoe
+  title: tippecanoe
+  icon: lucide/server
+  summary: Builds vector tilesets from large GeoJSON, FlatGeobuf and CSV collections, choosing which features to drop or simplify at each zoom level.
+  provider: Felt
+  platform: [macOS, Linux]
+  language: [C++]
+  interface: [Command line]
+  license: BSD-2-Clause
+  cost: Open source
+  status: Active
+  access: https://github.com/felt/tippecanoe
+  docs: https://github.com/felt/tippecanoe#readme
+  logo: github:felt
+  repo: https://github.com/felt/tippecanoe
+  tags: [BSD, Vector tiles, Tiles]
+  snippets:
+    - label: Command line
+      lang: bash
+      code: tippecanoe -zg -o out.pmtiles --drop-densest-as-needed in.geojson
+  related: [pmtiles, planetiler]
+- id: planetiler
+  title: Planetiler
+  icon: lucide/server
+  summary: Java tool that generates vector tiles for the whole planet from OpenStreetMap and other sources in hours on a single machine.
+  provider: Michael Barry
+  platform: [Windows, macOS, Linux]
+  language: [Java]
+  interface: [Command line]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://github.com/onthegomap/planetiler
+  docs: https://github.com/onthegomap/planetiler/blob/main/PLANETILER.md
+  logo: github:onthegomap
+  repo: https://github.com/onthegomap/planetiler
+  tags: [Apache-2.0, Vector tiles, OpenStreetMap, Tiles]
+  related: [openmaptiles, tippecanoe, pmtiles]
+- id: openmaptiles
+  title: OpenMapTiles
+  icon: lucide/server
+  summary: Vector tile schema and toolchain that turns OpenStreetMap data into a documented set of layers for basemaps.
+  provider: MapTiler
+  platform: [Linux, macOS, Windows]
+  language: [SQL, Python]
+  interface: [Command line]
+  license: BSD-3-Clause (code), CC-BY 4.0 (design)
+  cost: Open source
+  status: Active
+  access: https://openmaptiles.org/
+  docs: https://openmaptiles.org/docs/
+  repo: https://github.com/openmaptiles/openmaptiles
+  tags: [BSD, Creative Commons, Vector tiles, OpenStreetMap, Basemaps]
+  related: [planetiler, tileserver-gl]
+- id: pmtiles
+  title: PMTiles
+  icon: lucide/server
+  summary: Single-file archive format and tooling for tiles served with HTTP range requests from static storage, from Protomaps.
+  provider: Protomaps
+  platform: [Windows, macOS, Linux, Web browser]
+  language: [Go, TypeScript]
+  interface: [Command line, Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://docs.protomaps.com/pmtiles/
+  docs: https://docs.protomaps.com/pmtiles/
+  repo: https://github.com/protomaps/PMTiles
+  tags: [BSD, Tiles, Vector tiles, Cloud-native]
+  related: [tippecanoe, planetiler, tileserver-gl]
+- id: terracotta
+  title: Terracotta
+  icon: lucide/server
+  summary: Python tile server for serving raster files as XYZ tiles from a metadata database, designed to run serverless.
+  provider: DHI GRAS
+  platform: [Windows, macOS, Linux, Server]
+  language: [Python]
+  interface: [Service]
+  license: MIT
+  cost: Open source
+  status: Maintenance mode
+  access: https://terracotta-python.readthedocs.io/en/latest/
+  docs: https://terracotta-python.readthedocs.io/en/latest/
+  repo: https://github.com/DHI-GRAS/terracotta
+  tags: [MIT, Raster tiles, Tiles]
+  related: [titiler]
+- id: stac-fastapi
+  title: stac-fastapi
+  icon: lucide/server
+  summary: Python implementation of the STAC API specification on FastAPI, with PostgreSQL and other backends.
+  provider: STAC community
+  platform: [Linux, macOS, Windows, Server]
+  language: [Python]
+  interface: [Service, API]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://github.com/stac-utils/stac-fastapi
+  docs: https://stac-utils.github.io/stac-fastapi/
+  repo: https://github.com/stac-utils/stac-fastapi
+  tags: [MIT, STAC, Data catalog]
+  related: [pystac, stac-browser]
+- id: stac-browser
+  title: STAC Browser
+  icon: lucide/server
+  summary: Web interface for browsing and searching STAC catalogs and collections.
+  provider: Radiant Earth
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Web app]
+  license: ISC
+  cost: Open source
+  status: Active
+  access: https://github.com/radiantearth/stac-browser
+  docs: https://github.com/radiantearth/stac-browser#readme
+  repo: https://github.com/radiantearth/stac-browser
+  tags: [ISC, STAC, Data catalog]
+  related: [stac-fastapi]
+- id: zoo-project
+  title: ZOO-Project
+  icon: lucide/server
+  summary: Open source implementation of OGC Web Processing Service and OGC API Processes for publishing geoprocessing as web services.
+  provider: OSGeo
+  platform: [Linux, Server]
+  language: [C, Python]
+  interface: [Service, API]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://zoo-project.github.io/docs/
+  docs: https://zoo-project.github.io/docs/
+  repo: https://github.com/ZOO-Project/ZOO-Project
+  tags: [MIT, OGC standards, Geoprocessing server, OSGeo]
+  related: [pywps, pygeoapi]
+- id: pywps
+  title: PyWPS
+  icon: lucide/server
+  summary: Python implementation of the OGC Web Processing Service standard.
+  provider: OSGeo
+  platform: [Linux, Windows, macOS, Server]
+  language: [Python]
+  interface: [Service]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://pywps.org/
+  docs: https://pywps.readthedocs.io/
+  repo: https://github.com/geopython/pywps
+  tags: [MIT, OGC standards, Geoprocessing server, OSGeo]
+  related: [zoo-project]
+- id: actinia
+  title: actinia
+  icon: lucide/server
+  summary: REST API that runs GRASS GIS and other geoprocessing in the cloud for large raster, vector and time-series jobs.
+  provider: mundialis
+  platform: [Linux, Server]
+  language: [Python]
+  interface: [Service, API]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://actinia-org.github.io/
+  docs: https://actinia-org.github.io/
+  repo: https://github.com/actinia-org/actinia-core
+  tags: [GPL, Geoprocessing server, Cloud-native, OSGeo]
+  related: [grass-gis]

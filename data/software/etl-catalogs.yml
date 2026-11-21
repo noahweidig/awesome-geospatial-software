@@ -1,0 +1,166 @@
+- id: fme
+  title: FME
+  icon: lucide/arrow-left-right
+  summary: Commercial spatial ETL platform with a visual workflow builder that converts and transforms hundreds of formats and automates data pipelines.
+  provider: Safe Software
+  platform: [Windows, Linux, Cloud service]
+  language: [Python]
+  interface: [GUI, Command line, Service]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://fme.safe.com/
+  docs: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/
+  tags: [Proprietary, ETL, Workflow, Safe Software]
+  related: [gdal, qgis, esri-data-interoperability]
+- id: esri-data-interoperability
+  title: ArcGIS Data Interoperability
+  icon: lucide/arrow-left-right
+  summary: Esri extension, powered by FME technology, for reading, transforming and writing spatial data in many formats within ArcGIS Pro.
+  provider: Esri
+  platform: [Windows]
+  language: [Python]
+  interface: [GUI]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.esri.com/en-us/arcgis/products/arcgis-data-interoperability/overview
+  docs: https://pro.arcgis.com/en/pro-app/latest/help/data/data-interoperability/
+  tags: [Proprietary, ETL, Esri]
+  related: [fme, arcgis-pro]
+- id: ogr2ogr
+  title: ogr2ogr
+  icon: lucide/arrow-left-right
+  summary: GDAL command line program that converts vector data between formats, reprojects, filters with SQL and loads data into databases.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [Command line]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://gdal.org/en/stable/programs/ogr2ogr.html
+  docs: https://gdal.org/en/stable/programs/ogr2ogr.html
+  repo: https://github.com/OSGeo/gdal
+  tags: [MIT, ETL, Vector, GDAL-based, OSGeo]
+  snippets:
+    - label: Command line
+      lang: bash
+      code: |
+        ogr2ogr -f GPKG parcels.gpkg parcels.shp -t_srs EPSG:4326
+        ogr2ogr -f PostgreSQL PG:"dbname=gis" parcels.gpkg -nln parcels
+        ogr2ogr -f Parquet parcels.parquet parcels.gpkg
+  related: [gdal]
+- id: hale-studio
+  title: HALE Studio
+  icon: lucide/arrow-left-right
+  summary: Open source tool for defining schema mappings and transforming geospatial data to INSPIRE and other target models.
+  provider: wetransform
+  platform: [Windows, macOS, Linux]
+  language: [Java]
+  interface: [GUI]
+  license: LGPL-3.0
+  cost: Open source
+  status: Active
+  access: https://www.wetransform.to/products/halestudio/
+  docs: https://help.halestudio.org/
+  repo: https://github.com/halestudio/hale
+  tags: [LGPL, ETL, Metadata, OGC standards]
+  related: [fme]
+- id: gpq
+  title: gpq
+  icon: lucide/arrow-left-right
+  summary: Command line utility that converts between GeoParquet and GeoJSON and validates GeoParquet files.
+  provider: Tim Schaub
+  platform: [Windows, macOS, Linux]
+  language: [Go]
+  interface: [Command line]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://github.com/planetlabs/gpq
+  docs: https://github.com/planetlabs/gpq#readme
+  repo: https://github.com/planetlabs/gpq
+  tags: [Apache-2.0, ETL, Vector, Cloud-native]
+  related: [geoarrow, ogr2ogr]
+- id: geonetwork
+  title: GeoNetwork opensource
+  icon: lucide/arrow-left-right
+  summary: Catalog application for managing spatial metadata, with ISO 19115 editing, harvesting, CSW and OGC API Records interfaces.
+  provider: OSGeo
+  platform: [Linux, Windows, Server]
+  language: [Java]
+  interface: [Web app, Service]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://geonetwork-opensource.org/
+  docs: https://docs.geonetwork-opensource.org/
+  repo: https://github.com/geonetwork/core-geonetwork
+  tags: [GPL, Metadata, Data catalog, OGC standards, OSGeo]
+  related: [pycsw, geonode]
+- id: pycsw
+  title: pycsw
+  icon: lucide/arrow-left-right
+  summary: Python server for publishing metadata and catalogs through OGC CSW, OGC API Records, OpenSearch and STAC.
+  provider: OSGeo
+  platform: [Linux, Windows, macOS, Server]
+  language: [Python]
+  interface: [Service, API]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://pycsw.org/
+  docs: https://docs.pycsw.org/en/latest/
+  repo: https://github.com/geopython/pycsw
+  tags: [MIT, Metadata, Data catalog, OGC standards, STAC, OSGeo]
+  related: [geonetwork, pygeoapi]
+- id: geonode
+  title: GeoNode
+  icon: lucide/arrow-left-right
+  summary: Geospatial content management system and spatial data infrastructure platform for publishing, sharing and styling data and maps.
+  provider: OSGeo
+  platform: [Linux, Server]
+  language: [Python]
+  interface: [Web app, Service]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://geonode.org/
+  docs: https://docs.geonode.org/
+  repo: https://github.com/GeoNode/geonode
+  tags: [GPL, Metadata, Data catalog, Web mapping, OSGeo]
+  related: [geoserver, geonetwork]
+- id: pygeometa
+  title: pygeometa
+  icon: lucide/arrow-left-right
+  summary: Python library for generating geospatial metadata in ISO 19139, OGC API Records and STAC from a simple configuration file.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Command line]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://geopython.github.io/pygeometa/
+  docs: https://geopython.github.io/pygeometa/
+  logo: none
+  repo: https://github.com/geopython/pygeometa
+  tags: [MIT, Metadata, OGC standards, OSGeo]
+  related: [pycsw, geonetwork]
+- id: ckan
+  title: CKAN
+  icon: lucide/arrow-left-right
+  summary: Open source data portal platform with spatial extensions for searching and previewing geospatial datasets.
+  provider: CKAN Association
+  platform: [Linux, Server]
+  language: [Python]
+  interface: [Web app, API]
+  license: AGPL-3.0
+  cost: Open source
+  status: Active
+  access: https://ckan.org/
+  docs: https://docs.ckan.org/
+  repo: https://github.com/ckan/ckan
+  tags: [AGPL, Data catalog, Metadata]
+  related: [geonetwork, geonode]

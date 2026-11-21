@@ -1,0 +1,161 @@
+- id: torchgeo
+  title: TorchGeo
+  icon: lucide/brain-circuit
+  summary: PyTorch domain library with datasets, samplers, transforms and pretrained models for geospatial imagery.
+  provider: Microsoft and TorchGeo contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://torchgeo.readthedocs.io/en/stable/user/installation.html
+  docs: https://torchgeo.readthedocs.io/
+  repo: https://github.com/microsoft/torchgeo
+  tags: [MIT, Machine learning, Satellite imagery, Microsoft, OSGeo]
+  related: [raster-vision, segment-geospatial, terratorch]
+- id: raster-vision
+  title: Raster Vision
+  icon: lucide/brain-circuit
+  summary: Open source framework for deep learning on satellite and aerial imagery, covering chip classification, object detection and semantic segmentation.
+  provider: Azavea and Element 84
+  platform: [Linux, macOS, Windows]
+  language: [Python]
+  interface: [Library, Command line]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://docs.rastervision.io/
+  docs: https://docs.rastervision.io/
+  repo: https://github.com/azavea/raster-vision
+  tags: [Apache-2.0, Machine learning, Satellite imagery, Image classification]
+  related: [torchgeo]
+- id: segment-geospatial
+  title: segment-geospatial (samgeo)
+  icon: lucide/brain-circuit
+  summary: Python package that applies the Segment Anything Model to georeferenced imagery and exports masks as GeoTIFF or vector data.
+  provider: Qiusheng Wu
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://samgeo.gishub.org/
+  docs: https://samgeo.gishub.org/
+  repo: https://github.com/opengeos/segment-geospatial
+  tags: [MIT, Machine learning, Image classification, Satellite imagery]
+  related: [torchgeo, leafmap]
+- id: terratorch
+  title: TerraTorch
+  icon: lucide/brain-circuit
+  summary: Fine-tuning and benchmarking toolkit for geospatial foundation models such as Prithvi, built on PyTorch Lightning and TorchGeo.
+  provider: IBM Research and TorchGeo contributors
+  platform: [Linux, macOS, Windows]
+  language: [Python]
+  interface: [Library, Command line]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://torchgeo.github.io/terratorch/
+  docs: https://torchgeo.github.io/terratorch/
+  repo: https://github.com/torchgeo/terratorch
+  repo: https://github.com/IBM/terratorch
+  tags: [Apache-2.0, Machine learning, Satellite imagery]
+  related: [torchgeo]
+- id: geoai-python
+  title: geoai
+  icon: lucide/brain-circuit
+  summary: Python package for running AI workflows on geospatial data, including segmentation, object detection and model training.
+  provider: Qiusheng Wu
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://opengeoai.org/
+  docs: https://opengeoai.org/
+  repo: https://github.com/opengeos/geoai
+  tags: [MIT, Machine learning, Satellite imagery]
+  related: [segment-geospatial, torchgeo]
+- id: arcgis-geoai
+  title: ArcGIS Pro deep learning tools
+  icon: lucide/brain-circuit
+  summary: Esri's tools for training and applying deep learning models to imagery, point clouds and tables inside ArcGIS Pro, with arcgis.learn in Python.
+  provider: Esri
+  platform: [Windows]
+  language: [Python]
+  interface: [GUI, Library]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://pro.arcgis.com/en/pro-app/latest/help/analysis/deep-learning/deep-learning-in-arcgis-pro.htm
+  docs: https://developers.arcgis.com/python/latest/guide/geospatial-deep-learning/
+  tags: [Proprietary, Machine learning, Image classification, Esri]
+  caveat: Needs the Image Analyst or Spatial Analyst extension and a compatible GPU for training.
+  related: [arcgis-pro, arcgis-api-python]
+- id: deepforest
+  title: DeepForest
+  icon: lucide/brain-circuit
+  summary: Python package for detecting individual tree crowns in aerial RGB imagery with pretrained deep learning models.
+  provider: Weecology
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://deepforest.readthedocs.io/en/latest/
+  docs: https://deepforest.readthedocs.io/
+  repo: https://github.com/weecology/DeepForest
+  tags: [MIT, Machine learning, Forestry, Image classification, Ecology]
+  related: [torchgeo, lidr]
+- id: cast-r
+  title: CAST
+  icon: lucide/brain-circuit
+  summary: R package for spatial and spatio-temporal machine learning, with forward feature selection and area of applicability estimation.
+  provider: Hanna Meyer
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=CAST
+  docs: https://hannameyer.github.io/CAST/
+  repo: https://github.com/HannaMeyer/CAST
+  tags: [GPL, Machine learning, Spatial statistics]
+  related: [blockcv, mlr3spatial]
+- id: blockcv
+  title: blockCV
+  icon: lucide/brain-circuit
+  summary: R package for spatial and environmental blocking of training and test data to avoid optimistic accuracy estimates from spatial autocorrelation.
+  provider: Roozbeh Valavi
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-3.0-or-later
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=blockCV
+  docs: https://cran.r-project.org/package=blockCV
+  repo: https://github.com/rspatial/blockCV
+  tags: [GPL, Machine learning, Spatial statistics, Species distribution]
+  related: [cast-r, mlr3spatial]
+- id: mlr3spatial
+  title: mlr3spatial
+  icon: lucide/brain-circuit
+  summary: Extension for mlr3 that predicts machine learning models on raster and vector data in R.
+  provider: mlr-org
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: LGPL-3.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=mlr3spatial
+  docs: https://mlr3spatial.mlr-org.com/
+  repo: https://github.com/mlr-org/mlr3spatial
+  tags: [LGPL, Machine learning, Raster]
+  related: [cast-r, blockcv, terra]

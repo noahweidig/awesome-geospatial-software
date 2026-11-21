@@ -1,0 +1,337 @@
+- id: archgdal-jl
+  title: ArchGDAL.jl
+  icon: lucide/braces
+  summary: High-level Julia interface to GDAL for reading and writing raster and vector data.
+  provider: yeesian and JuliaGeo
+  platform: [Windows, macOS, Linux]
+  language: [Julia]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://github.com/yeesian/ArchGDAL.jl
+  docs: https://yeesian.com/ArchGDAL.jl/stable/
+  repo: https://github.com/yeesian/ArchGDAL.jl
+  tags: [MIT, Raster, Vector, GDAL-based]
+  related: [gdal, rasters-jl]
+- id: rasters-jl
+  title: Rasters.jl
+  icon: lucide/braces
+  summary: Julia package for reading, writing and manipulating raster data and data cubes from many sources.
+  provider: rafaqz
+  platform: [Windows, macOS, Linux]
+  language: [Julia]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://github.com/rafaqz/Rasters.jl
+  docs: https://rafaqz.github.io/Rasters.jl/stable/
+  repo: https://github.com/rafaqz/Rasters.jl
+  tags: [MIT, Raster, Data cubes]
+  related: [archgdal-jl, geomakie-jl]
+- id: geostats-jl
+  title: GeoStats.jl
+  icon: lucide/braces
+  summary: Geostatistical modeling in Julia with kriging, simulation, variograms and geospatial machine learning on top of Meshes.jl.
+  provider: JuliaEarth
+  platform: [Windows, macOS, Linux]
+  language: [Julia]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://juliaearth.github.io/GeoStatsDocs/stable/
+  docs: https://juliaearth.github.io/GeoStatsDocs/stable/
+  repo: https://github.com/JuliaEarth/GeoStats.jl
+  tags: [MIT, Kriging, Interpolation, Spatial statistics]
+  related: [meshes-jl, gstat]
+- id: meshes-jl
+  title: Meshes.jl
+  icon: lucide/braces
+  summary: Computational geometry and mesh types for Julia used across the JuliaEarth ecosystem.
+  provider: JuliaEarth
+  platform: [Windows, macOS, Linux]
+  language: [Julia]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://juliageometry.github.io/MeshesDocs/stable/
+  docs: https://juliageometry.github.io/MeshesDocs/stable/
+  repo: https://github.com/JuliaGeometry/Meshes.jl
+  tags: [MIT, Vector, 3D]
+  related: [geostats-jl]
+- id: geomakie-jl
+  title: GeoMakie.jl
+  icon: lucide/braces
+  summary: Geographic plotting for Makie in Julia with projection support, rasters and vector layers.
+  provider: MakieOrg
+  platform: [Windows, macOS, Linux]
+  language: [Julia]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://geo.makie.org/stable/
+  docs: https://geo.makie.org/stable/
+  repo: https://github.com/MakieOrg/GeoMakie.jl
+  tags: [MIT, Cartography, Visualization, Projections]
+  related: [rasters-jl]
+- id: geointerface-jl
+  title: GeoInterface.jl
+  icon: lucide/braces
+  summary: Shared interface that lets Julia geospatial packages exchange geometries without conversion.
+  provider: JuliaGeo
+  platform: [Windows, macOS, Linux]
+  language: [Julia]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://github.com/JuliaGeo/GeoInterface.jl
+  docs: https://juliageo.org/GeoInterface.jl/stable/
+  repo: https://github.com/JuliaGeo/GeoInterface.jl
+  tags: [MIT, Vector]
+  related: [archgdal-jl]
+- id: georust-geo
+  title: geo (Rust)
+  icon: lucide/braces
+  summary: Rust crate for geospatial primitives and algorithms, the core of the GeoRust ecosystem.
+  provider: GeoRust
+  platform: [Windows, macOS, Linux]
+  language: [Rust]
+  interface: [Library]
+  license: MIT or Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://crates.io/crates/geo
+  docs: https://docs.rs/geo
+  repo: https://github.com/georust/geo
+  tags: [MIT, Apache-2.0, Vector, Overlay]
+  related: [georust-proj, georust-gdal, geoarrow]
+- id: georust-gdal
+  title: gdal (Rust)
+  icon: lucide/braces
+  summary: Rust bindings to GDAL for reading and writing raster and vector data.
+  provider: GeoRust
+  platform: [Windows, macOS, Linux]
+  language: [Rust]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://crates.io/crates/gdal
+  docs: https://docs.rs/gdal
+  repo: https://github.com/georust/gdal
+  tags: [MIT, Raster, Vector, GDAL-based]
+  related: [gdal, georust-geo]
+- id: georust-proj
+  title: proj (Rust)
+  icon: lucide/braces
+  summary: Rust bindings to PROJ for coordinate transformation, with the ability to build PROJ from source.
+  provider: GeoRust
+  platform: [Windows, macOS, Linux]
+  language: [Rust]
+  interface: [Library]
+  license: MIT or Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://crates.io/crates/proj
+  docs: https://docs.rs/proj
+  repo: https://github.com/georust/proj
+  tags: [MIT, Apache-2.0, Projections]
+  related: [proj, georust-geo]
+- id: geozero
+  title: GeoZero
+  icon: lucide/braces
+  summary: Zero-copy Rust library for reading and writing geospatial formats such as GeoJSON, WKT, FlatGeobuf and GeoPackage.
+  provider: GeoRust
+  platform: [Windows, macOS, Linux]
+  language: [Rust]
+  interface: [Library]
+  license: MIT or Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://crates.io/crates/geozero
+  docs: https://docs.rs/geozero
+  repo: https://github.com/georust/geozero
+  tags: [MIT, Apache-2.0, Vector]
+  related: [flatgeobuf, georust-geo]
+- id: go-geom
+  title: go-geom
+  icon: lucide/braces
+  summary: Go library of geometry types with encoders and decoders for WKB, WKT, GeoJSON and other formats.
+  provider: twpayne
+  platform: [Windows, macOS, Linux]
+  language: [Go]
+  interface: [Library]
+  license: BSD-2-Clause
+  cost: Open source
+  status: Active
+  access: https://github.com/twpayne/go-geom
+  docs: https://pkg.go.dev/github.com/twpayne/go-geom
+  repo: https://github.com/twpayne/go-geom
+  tags: [BSD, Vector]
+  related: [orb]
+- id: orb
+  title: orb
+  icon: lucide/braces
+  summary: Go library for 2D geometry, with clipping, simplification, quadtrees and Mapbox Vector Tile and GeoJSON support.
+  provider: Paulmach
+  platform: [Windows, macOS, Linux]
+  language: [Go]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://github.com/paulmach/orb
+  docs: https://pkg.go.dev/github.com/paulmach/orb
+  repo: https://github.com/paulmach/orb
+  tags: [MIT, Vector, Vector tiles]
+  related: [go-geom]
+- id: nettopologysuite
+  title: NetTopologySuite
+  icon: lucide/braces
+  summary: .NET port of JTS for geometry operations, with readers and writers for common formats.
+  provider: NetTopologySuite contributors
+  platform: [Windows, macOS, Linux]
+  language: [C#]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://github.com/NetTopologySuite/NetTopologySuite
+  docs: https://nettopologysuite.github.io/NetTopologySuite/
+  repo: https://github.com/NetTopologySuite/NetTopologySuite
+  tags: [BSD, Vector, Overlay]
+  related: [jts, sharpmap]
+- id: sharpmap
+  title: SharpMap
+  icon: lucide/braces
+  summary: .NET mapping engine for rendering GIS data to images in desktop and web applications.
+  provider: SharpMap contributors
+  platform: [Windows, macOS, Linux]
+  language: [C#]
+  interface: [Library]
+  license: LGPL-2.1
+  cost: Open source
+  status: Maintenance mode
+  access: https://github.com/SharpMap/SharpMap
+  docs: https://github.com/SharpMap/SharpMap/wiki
+  repo: https://github.com/SharpMap/SharpMap
+  tags: [LGPL, Cartography, Vector]
+  related: [nettopologysuite]
+- id: dotspatial
+  title: DotSpatial
+  icon: lucide/braces
+  summary: .NET library for spatial data, projections and map controls for Windows Forms applications.
+  provider: DotSpatial contributors
+  platform: [Windows]
+  language: [C#]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Maintenance mode
+  access: https://github.com/DotSpatial/DotSpatial
+  docs: https://github.com/DotSpatial/DotSpatial#readme
+  repo: https://github.com/DotSpatial/DotSpatial
+  tags: [MIT, Vector, Raster]
+  related: [sharpmap]
+- id: apache-sis
+  title: Apache SIS
+  icon: lucide/braces
+  summary: Java library for spatial information systems with ISO 19115 metadata, referencing by coordinates and feature and raster I/O.
+  provider: Apache Software Foundation
+  platform: [Windows, macOS, Linux]
+  language: [Java]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://sis.apache.org/
+  docs: https://sis.apache.org/book/en/developer-guide.html
+  repo: https://github.com/apache/sis
+  tags: [Apache-2.0, Metadata, OGC standards, Projections, Apache]
+  related: [geotools]
+- id: spatial4j
+  title: Spatial4j
+  icon: lucide/braces
+  summary: Java library for spatial shapes and distance calculations used by Lucene, Solr and Elasticsearch.
+  provider: Locationtech
+  platform: [Windows, macOS, Linux]
+  language: [Java]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Maintenance mode
+  access: https://github.com/locationtech/spatial4j
+  docs: https://locationtech.github.io/spatial4j/
+  logo: none
+  repo: https://github.com/locationtech/spatial4j
+  tags: [Apache-2.0, Spatial indexing, Eclipse]
+  related: [jts]
+- id: geotrellis
+  title: GeoTrellis
+  icon: lucide/braces
+  summary: Scala library for fast, distributed processing of raster and vector data on Spark.
+  provider: LocationTech
+  platform: [Linux, macOS, Windows]
+  language: [Scala]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Maintenance mode
+  access: https://geotrellis.io/
+  docs: https://geotrellis.readthedocs.io/en/latest/
+  repo: https://github.com/locationtech/geotrellis
+  tags: [Apache-2.0, Raster, Big data, Eclipse]
+  related: [apache-sedona, geomesa]
+- id: turf-swift
+  title: turf-swift
+  icon: lucide/braces
+  summary: Swift geometry and geoprocessing library, a port of Turf.js for iOS and macOS.
+  provider: Mapbox
+  platform: [iOS, macOS]
+  language: [Swift]
+  interface: [Library, SDK]
+  license: ISC
+  cost: Open source
+  status: Active
+  access: https://github.com/mapbox/turf-swift
+  docs: https://mapbox.github.io/turf-swift/
+  repo: https://github.com/mapbox/turf-swift
+  tags: [ISC, Vector, Mobile, Mapbox]
+  related: [turf-js]
+- id: geophp
+  title: geoPHP
+  icon: lucide/braces
+  summary: PHP library for converting between geometry formats such as WKT, WKB and GeoJSON and running geometry operations.
+  provider: geoPHP contributors
+  platform: [Windows, macOS, Linux]
+  language: [PHP]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Maintenance mode
+  access: https://github.com/phayes/geoPHP
+  docs: https://github.com/phayes/geoPHP
+  repo: https://github.com/phayes/geoPHP
+  tags: [BSD, Vector]
+  related: [geos]
+- id: rgeo
+  title: RGeo
+  icon: lucide/braces
+  summary: Ruby library for geospatial data types, with GEOS and PROJ backends and adapters for ActiveRecord and PostGIS.
+  provider: RGeo contributors
+  platform: [Windows, macOS, Linux]
+  language: [Ruby]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://github.com/rgeo/rgeo
+  docs: https://github.com/rgeo/rgeo
+  repo: https://github.com/rgeo/rgeo
+  tags: [BSD, Vector, Spatial database]
+  related: [postgis, geos]

@@ -1,0 +1,24 @@
+platform:
+  icon: lucide/monitor-smartphone
+  tags: [Windows, macOS, Linux, Web browser, Cloud service, Android, iOS, Server]
+interface:
+  icon: lucide/mouse-pointer-click
+  tags: [GUI, Command line, Library, Web app, API, Notebook, Mobile app, SDK, Plugin, Service]
+language:
+  icon: lucide/code-xml
+  tags: [Python, R, C, C++, Java, JavaScript, TypeScript, Julia, Rust, Go, C#, Kotlin, Swift, SQL, Fortran, Scala, PHP, Ruby, Lua, Haskell, Clojure, Delphi, IDL, Perl, Groovy, Elixir, Crystal, Zig, Dart, Objective-C, QML, Cython, Vendor-specific]
+license:
+  icon: lucide/scale
+  tags: [MIT, BSD, Apache-2.0, GPL, LGPL, AGPL, MPL, EPL, ISC, Public domain, Creative Commons, Proprietary, Source-available, Other open source]
+cost:
+  icon: lucide/circle-dollar-sign
+  tags: [Open source, Free to use, Freemium, Paid]
+status:
+  icon: lucide/activity
+  tags: [Active, Maintenance mode, Legacy, Archived, Retired]
+topic:
+  icon: lucide/layers
+  tags: [Vector, Raster, Remote sensing, Cartography, Web mapping, Spatial statistics, Geocoding, Routing, Hydrology, Terrain, LiDAR, Point cloud, Photogrammetry, Spatial database, Tiles, Machine learning, 3D, Field collection, ETL, Metadata, Time series, Climate, Ocean, Projections, Geodesy, Network analysis, Ecology, Hazards, OpenStreetMap, Cloud-native, Big data, OGC standards, Crowdsourcing, Urban, Indoor, SAR, Mobile, Visualization, Geoprocessing, Spatial indexing, Image classification, Geoprocessing server, Satellite imagery, Land change, Species distribution, Conservation, Fire behavior, Weather, Atmosphere, Earth observation, Basemaps, Globe, Datums, Interpolation, Hotspot analysis, Mobility, Transit, Surveying, GNSS, Drones, Data cubes, STAC, Analysis-ready data, Georeferencing, Print maps, Styling, Offline maps, Sensors, Demography, Public health, Agriculture, Forestry, Urban planning, Utilities, Mining, Marine, Archaeology, Education, Notebooks, Raster tiles, Vector tiles, Dashboards, Data catalog, Linked data, Geoprocessing models, Workflow, Routing engine, Address data, Spatial join, Overlay, Clustering, Kriging, Landscape metrics, Species data, Time-lapse, Animation, Terrain analysis, Flood, Watershed, Coastal, Wind, Crowd data]
+ecosystem:
+  icon: lucide/network
+  tags: [OSGeo, Esri, Google, Microsoft, Apache, r-spatial, Pangeo, PySAL, MapLibre, Mapbox, NASA, ESA, USGS, Hexagon, Trimble, OGC, Eclipse, GDAL-based, Open Data Cube, Cesium, NextGIS, Bentley, Autodesk, Safe Software, Blue Marble, Precisely, TomTom, HERE, Amazon, Meta, Overture]

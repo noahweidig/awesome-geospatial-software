@@ -1,0 +1,209 @@
+- id: nominatim
+  title: Nominatim
+  icon: lucide/route
+  summary: Geocoder for OpenStreetMap data that supports search by name and address and reverse geocoding. It powers the search box on openstreetmap.org.
+  provider: OpenStreetMap community
+  platform: [Linux, Server]
+  language: [Python, PHP]
+  interface: [Service, API]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://nominatim.org/
+  docs: https://nominatim.org/release-docs/latest/
+  logo: none
+  repo: https://github.com/osm-search/Nominatim
+  tags: [GPL, Geocoding, OpenStreetMap, Address data]
+  caveat: The public instance has a strict usage policy. Run your own server for bulk work.
+  related: [photon, pelias, geopy]
+- id: photon
+  title: Photon
+  icon: lucide/route
+  summary: Search-as-you-type geocoder for OpenStreetMap data built on OpenSearch, with typo tolerance and multilingual results.
+  provider: Komoot
+  platform: [Linux, Server]
+  language: [Java]
+  interface: [Service, API]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://photon.komoot.io/
+  docs: https://github.com/komoot/photon#readme
+  repo: https://github.com/komoot/photon
+  tags: [Apache-2.0, Geocoding, OpenStreetMap, Address data]
+  related: [nominatim, pelias]
+- id: pelias
+  title: Pelias
+  icon: lucide/route
+  summary: Modular open source geocoder that imports OpenStreetMap, OpenAddresses, Who's On First and other sources into Elasticsearch.
+  provider: Geocode Earth
+  platform: [Linux, Server]
+  language: [JavaScript]
+  interface: [Service, API]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://pelias.io/
+  docs: https://github.com/pelias/documentation
+  repo: https://github.com/pelias/pelias
+  tags: [MIT, Geocoding, Address data, OpenStreetMap]
+  related: [nominatim, photon]
+- id: libpostal
+  title: libpostal
+  icon: lucide/route
+  summary: C library that parses and normalizes street addresses using statistical models trained on OpenStreetMap and OpenAddresses.
+  provider: Al Barrentine
+  platform: [Linux, macOS, Windows]
+  language: [C]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Maintenance mode
+  access: https://github.com/openvenues/libpostal
+  docs: https://github.com/openvenues/libpostal#readme
+  repo: https://github.com/openvenues/libpostal
+  tags: [MIT, Geocoding, Address data]
+  related: [pelias, nominatim]
+- id: osrm
+  title: OSRM (Open Source Routing Machine)
+  icon: lucide/route
+  summary: Fast C++ routing engine for road networks built on OpenStreetMap, with route, table, match and trip services.
+  provider: Project OSRM
+  platform: [Linux, macOS, Windows, Server]
+  language: [C++]
+  interface: [Service, API, Command line]
+  license: BSD-2-Clause
+  cost: Open source
+  status: Active
+  access: https://project-osrm.org/
+  docs: https://project-osrm.org/docs/v5.24.0/api/
+  repo: https://github.com/Project-OSRM/osrm-backend
+  tags: [BSD, Routing engine, Routing, OpenStreetMap]
+  related: [valhalla, graphhopper, pgrouting]
+- id: valhalla
+  title: Valhalla
+  icon: lucide/route
+  summary: Open source routing engine with tiled data, multimodal routing, isochrones, map matching and time-distance matrices.
+  provider: Valhalla contributors
+  platform: [Linux, macOS, Windows, Server]
+  language: [C++]
+  interface: [Service, API]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://valhalla.github.io/valhalla/
+  docs: https://valhalla.github.io/valhalla/
+  repo: https://github.com/valhalla/valhalla
+  tags: [MIT, Routing engine, Routing, Network analysis, OpenStreetMap]
+  related: [osrm, graphhopper, openrouteservice]
+- id: graphhopper
+  title: GraphHopper
+  icon: lucide/route
+  summary: Java routing engine and route optimization API with open source core, based on OpenStreetMap, with a hosted Directions API.
+  provider: GraphHopper
+  platform: [Linux, macOS, Windows, Server]
+  language: [Java]
+  interface: [Service, API, Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://www.graphhopper.com/open-source/
+  docs: https://docs.graphhopper.com/
+  repo: https://github.com/graphhopper/graphhopper
+  tags: [Apache-2.0, Routing engine, Routing, OpenStreetMap]
+  related: [osrm, valhalla, openrouteservice]
+- id: openrouteservice
+  title: openrouteservice
+  icon: lucide/route
+  summary: Routing, isochrone, matrix and geocoding services from Heidelberg University, available as open source software and a hosted API.
+  provider: HeiGIT
+  platform: [Linux, Server, Cloud service]
+  language: [Java]
+  interface: [Service, API]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://openrouteservice.org/
+  docs: https://giscience.github.io/openrouteservice/
+  repo: https://github.com/GIScience/openrouteservice
+  tags: [GPL, Routing engine, Routing, OpenStreetMap]
+  related: [valhalla, graphhopper]
+- id: opentripplanner
+  title: OpenTripPlanner
+  icon: lucide/route
+  summary: Multimodal trip planner that combines GTFS transit, OpenStreetMap walking and cycling, and GBFS bike share data.
+  provider: OpenTripPlanner community
+  platform: [Linux, macOS, Windows, Server]
+  language: [Java]
+  interface: [Service, API]
+  license: LGPL-3.0
+  cost: Open source
+  status: Active
+  access: https://www.opentripplanner.org/
+  docs: https://docs.opentripplanner.org/en/latest/
+  repo: https://github.com/opentripplanner/OpenTripPlanner
+  tags: [LGPL, Routing engine, Transit, Network analysis]
+  related: [r5, valhalla]
+- id: r5
+  title: R5 (Conveyal)
+  icon: lucide/route
+  summary: Java routing engine for fast multimodal transport accessibility analysis, with r5r and r5py wrappers.
+  provider: Conveyal
+  platform: [Linux, macOS, Windows]
+  language: [Java]
+  interface: [Service, Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://github.com/conveyal/r5
+  docs: https://docs.conveyal.com/
+  repo: https://github.com/conveyal/r5
+  tags: [MIT, Routing engine, Transit, Network analysis]
+  related: [opentripplanner]
+- id: networkx
+  title: NetworkX
+  icon: lucide/route
+  summary: Python package for creating and analyzing graphs, widely used for road and infrastructure network analysis with OSMnx.
+  provider: NetworkX developers
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://networkx.org/documentation/stable/install.html
+  docs: https://networkx.org/documentation/stable/
+  repo: https://github.com/networkx/networkx
+  tags: [BSD, Network analysis]
+  related: [osmnx, pandana]
+- id: sfnetworks
+  title: sfnetworks
+  icon: lucide/route
+  summary: R package that combines sf and tidygraph for spatial network analysis.
+  provider: sfnetworks contributors
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=sfnetworks
+  docs: https://luukvdmeer.github.io/sfnetworks/
+  repo: https://github.com/luukvdmeer/sfnetworks
+  tags: [Apache-2.0, Network analysis, Vector, r-spatial]
+  related: [sf, osmnx]
+- id: esri-network-analyst
+  title: ArcGIS Network Analyst
+  icon: lucide/route
+  summary: Esri extension for ArcGIS Pro that solves routing, service area, closest facility, OD cost matrix and vehicle routing problems.
+  provider: Esri
+  platform: [Windows]
+  language: [Python]
+  interface: [GUI, Library]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.esri.com/en-us/arcgis/products/arcgis-network-analyst/overview
+  docs: https://pro.arcgis.com/en/pro-app/latest/help/analysis/networks/what-is-network-analyst-.htm
+  tags: [Proprietary, Routing, Network analysis, Esri]
+  related: [arcgis-pro, pgrouting]

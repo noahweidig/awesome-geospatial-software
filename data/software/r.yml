@@ -1,0 +1,604 @@
+- id: terra
+  title: terra
+  icon: lucide/sigma
+  summary: R package for raster and vector data, the successor to raster, with fast C++ processing, large file support and a SpatRaster and SpatVector class system.
+  provider: Robert Hijmans
+  platform: [Windows, macOS, Linux]
+  language: [R, C++]
+  interface: [Library]
+  license: GPL-3.0-or-later
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=terra
+  docs: https://rspatial.github.io/terra/
+  repo: https://github.com/rspatial/terra
+  tags: [GPL, Raster, Vector, Geoprocessing]
+  snippets:
+    - label: R
+      lang: r
+      code: |
+        library(terra)
+        r <- rast("dem.tif")
+        slope <- terrain(r, "slope", unit = "degrees")
+        v <- vect("counties.gpkg")
+        extract(r, v, fun = mean)
+  related: [raster, sf, stars, rasterio]
+- id: sf
+  title: sf
+  icon: lucide/sigma
+  summary: Simple Features for R. Stores vector data as data frames with geometry columns and wraps GDAL, GEOS, PROJ and s2 for spatial operations.
+  provider: Edzer Pebesma and r-spatial
+  platform: [Windows, macOS, Linux]
+  language: [R, C++]
+  interface: [Library]
+  license: GPL-2.0 or MIT
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=sf
+  docs: https://r-spatial.github.io/sf/
+  repo: https://github.com/r-spatial/sf
+  tags: [GPL, MIT, Vector, Overlay, r-spatial]
+  snippets:
+    - label: R
+      lang: r
+      code: |
+        library(sf)
+        nc <- st_read(system.file("shape/nc.shp", package = "sf"))
+        nc_utm <- st_transform(nc, 32617)
+        st_area(nc_utm[1, ])
+  related: [stars, terra, geopandas, s2-r, lwgeom]
+- id: stars
+  title: stars
+  icon: lucide/sigma
+  summary: Spatiotemporal arrays for R that handle raster and vector data cubes, with lazy reading of large rasters and integration with sf.
+  provider: Edzer Pebesma and r-spatial
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=stars
+  docs: https://r-spatial.github.io/stars/
+  repo: https://github.com/r-spatial/stars
+  tags: [Apache-2.0, Raster, Data cubes, Time series, r-spatial]
+  related: [sf, terra, xarray]
+- id: raster
+  title: raster
+  icon: lucide/sigma
+  summary: Original R package for raster data, still maintained but superseded by terra for most new work.
+  provider: Robert Hijmans
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-3.0-or-later
+  cost: Open source
+  status: Legacy
+  access: https://cran.r-project.org/package=raster
+  docs: https://rspatial.org/raster/
+  repo: https://github.com/rspatial/raster
+  tags: [GPL, Raster]
+  caveat: The author recommends terra for new projects.
+  related: [terra]
+- id: sp
+  title: sp
+  icon: lucide/sigma
+  summary: Classes and methods for spatial data in R that defined the ecosystem before sf. Kept for backward compatibility.
+  provider: Edzer Pebesma and Roger Bivand
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Legacy
+  access: https://cran.r-project.org/package=sp
+  docs: https://edzer.github.io/sp/
+  repo: https://github.com/edzer/sp
+  tags: [GPL, Vector, r-spatial]
+  caveat: New code should use sf. The rgdal, rgeos and maptools packages that supported sp were retired from CRAN in 2023.
+  related: [sf]
+- id: s2-r
+  title: s2 (R)
+  icon: lucide/sigma
+  summary: R bindings to Google's S2 library, used by sf for spherical geometry on longitude and latitude coordinates.
+  provider: r-spatial
+  platform: [Windows, macOS, Linux]
+  language: [R, C++]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=s2
+  docs: https://r-spatial.github.io/s2/
+  repo: https://github.com/r-spatial/s2
+  tags: [Apache-2.0, Spatial indexing, r-spatial]
+  related: [sf, s2-geometry]
+- id: lwgeom
+  title: lwgeom
+  icon: lucide/sigma
+  summary: R bindings to liblwgeom from PostGIS that add geodesic and other functions to sf.
+  provider: r-spatial
+  platform: [Windows, macOS, Linux]
+  language: [R, C]
+  interface: [Library]
+  license: GPL-2.0
+  cost: Open source
+  status: Maintenance mode
+  access: https://cran.r-project.org/package=lwgeom
+  docs: https://r-spatial.github.io/lwgeom/
+  repo: https://github.com/r-spatial/lwgeom
+  tags: [GPL, Vector, Geodesy, r-spatial]
+  related: [sf, postgis]
+- id: tmap
+  title: tmap
+  icon: lucide/sigma
+  summary: Thematic maps in R with a layered grammar similar to ggplot2, with static and interactive modes.
+  provider: Martijn Tennekes
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=tmap
+  docs: https://r-tmap.github.io/tmap/
+  repo: https://github.com/r-tmap/tmap
+  tags: [GPL, Cartography, Visualization]
+  snippets:
+    - label: R
+      lang: r
+      code: |
+        library(tmap)
+        tm_shape(World) + tm_polygons("HPI")
+  related: [mapview, ggspatial]
+- id: mapview
+  title: mapview
+  icon: lucide/sigma
+  summary: Quick interactive viewing of spatial objects in R using Leaflet, with layer controls and synchronized views.
+  provider: r-spatial
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=mapview
+  docs: https://r-spatial.github.io/mapview/
+  repo: https://github.com/r-spatial/mapview
+  tags: [GPL, Visualization, Web mapping, r-spatial]
+  related: [leaflet-r, tmap]
+- id: leaflet-r
+  title: leaflet (R)
+  icon: lucide/sigma
+  summary: R interface to the Leaflet JavaScript library for interactive web maps in R Markdown and Shiny.
+  provider: Posit
+  platform: [Windows, macOS, Linux]
+  language: [R, JavaScript]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=leaflet
+  docs: https://rstudio.github.io/leaflet/
+  repo: https://github.com/rstudio/leaflet
+  tags: [MIT, Web mapping, Visualization, Dashboards]
+  related: [leaflet, mapview, mapgl]
+- id: mapgl
+  title: mapgl
+  icon: lucide/sigma
+  summary: R interface to Mapbox GL JS and MapLibre GL JS for interactive vector-tile maps in R and Shiny.
+  provider: Kyle Walker
+  platform: [Windows, macOS, Linux]
+  language: [R, JavaScript]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=mapgl
+  docs: https://walker-data.com/mapgl/
+  repo: https://github.com/walkerke/mapgl
+  tags: [MIT, Web mapping, Vector tiles, MapLibre]
+  related: [maplibre-gl-js, leaflet-r]
+- id: ggspatial
+  title: ggspatial
+  icon: lucide/sigma
+  summary: Adds spatial data layers, scale bars, north arrows and basemap tiles to ggplot2 maps.
+  provider: Dewey Dunnington
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=ggspatial
+  docs: https://paleolimbot.github.io/ggspatial/
+  repo: https://github.com/paleolimbot/ggspatial
+  tags: [GPL, Cartography, Visualization]
+  related: [tmap, tidyterra]
+- id: tidyterra
+  title: tidyterra
+  icon: lucide/sigma
+  summary: Tidyverse methods and ggplot2 geoms for terra objects such as SpatRaster and SpatVector.
+  provider: Diego Hernangómez
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=tidyterra
+  docs: https://dieghernan.github.io/tidyterra/
+  repo: https://github.com/dieghernan/tidyterra
+  tags: [MIT, Raster, Visualization]
+  related: [terra, ggspatial]
+- id: rayshader
+  title: rayshader
+  icon: lucide/sigma
+  summary: Creates 2D and 3D hillshaded maps and visualizations from elevation matrices and ggplot2 objects in R.
+  provider: Tyler Morgan-Wall
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=rayshader
+  docs: https://www.rayshader.com/
+  repo: https://github.com/tylermorganwall/rayshader
+  tags: [GPL, 3D, Terrain, Visualization]
+  related: [terra]
+- id: spdep
+  title: spdep
+  icon: lucide/sigma
+  summary: Spatial weights, neighborhood graphs, Moran's I, Geary's C, local indicators and spatial regression diagnostics for R.
+  provider: Roger Bivand
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=spdep
+  docs: https://r-spatial.github.io/spdep/
+  repo: https://github.com/r-spatial/spdep
+  tags: [GPL, Spatial statistics, Hotspot analysis, r-spatial]
+  related: [spatialreg, pysal, geoda]
+- id: spatialreg
+  title: spatialreg
+  icon: lucide/sigma
+  summary: Spatial lag, spatial error and related regression models for areal data in R, split out of spdep.
+  provider: Roger Bivand
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-2.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=spatialreg
+  docs: https://r-spatial.github.io/spatialreg/
+  repo: https://github.com/r-spatial/spatialreg
+  tags: [GPL, Spatial statistics, r-spatial]
+  related: [spdep]
+- id: spatstat
+  title: spatstat
+  icon: lucide/sigma
+  summary: Analysis and modeling of spatial point patterns in R, including intensity, point process models and simulation.
+  provider: Adrian Baddeley, Rolf Turner and Ege Rubak
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=spatstat
+  docs: https://spatstat.org/
+  logo: none
+  repo: https://github.com/spatstat/spatstat
+  tags: [GPL, Spatial statistics, Ecology]
+  related: [spdep, gstat]
+- id: gstat
+  title: gstat
+  icon: lucide/sigma
+  summary: Geostatistical modeling, variogram fitting, kriging and simulation in R.
+  provider: Edzer Pebesma
+  platform: [Windows, macOS, Linux]
+  language: [R, C]
+  interface: [Library]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=gstat
+  docs: https://r-spatial.github.io/gstat/
+  repo: https://github.com/r-spatial/gstat
+  tags: [GPL, Kriging, Interpolation, Spatial statistics, r-spatial]
+  related: [spdep, terra]
+- id: exactextractr
+  title: exactextractr
+  icon: lucide/sigma
+  summary: Fast, accurate zonal statistics in R that weight raster cells by the fraction covered by each polygon.
+  provider: Daniel Baston
+  platform: [Windows, macOS, Linux]
+  language: [R, C++]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=exactextractr
+  docs: https://isciences.gitlab.io/exactextractr/
+  repo: https://github.com/isciences/exactextractr
+  tags: [Apache-2.0, Raster, Overlay]
+  related: [terra, sf, rasterstats]
+- id: gdalcubes
+  title: gdalcubes
+  icon: lucide/sigma
+  summary: Builds on-demand multidimensional data cubes from satellite image collections in R, with a C++ engine and Python bindings.
+  provider: Marius Appel
+  platform: [Windows, macOS, Linux]
+  language: [R, C++, Python]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=gdalcubes
+  docs: https://gdalcubes.github.io/
+  repo: https://github.com/appelmar/gdalcubes
+  tags: [MIT, Data cubes, Satellite imagery, Time series]
+  related: [stars, sits, rstac]
+- id: rstac
+  title: rstac
+  icon: lucide/sigma
+  summary: R client for STAC APIs to search and access Earth observation assets.
+  provider: Brazil Data Cube
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=rstac
+  docs: https://brazil-data-cube.github.io/rstac/
+  repo: https://github.com/brazil-data-cube/rstac
+  tags: [MIT, STAC, Data catalog, Satellite imagery]
+  related: [pystac-client, sits]
+- id: sits
+  title: sits
+  icon: lucide/sigma
+  summary: Satellite image time series analysis in R, from data cubes to machine learning classification and land use maps.
+  provider: Gilberto Camara and INPE
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-2.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=sits
+  docs: https://e-sensing.github.io/sitsbook/
+  repo: https://github.com/e-sensing/sits
+  tags: [GPL, Satellite imagery, Machine learning, Time series, Land change]
+  related: [rstac, gdalcubes]
+- id: rgee
+  title: rgee
+  icon: lucide/sigma
+  summary: R client for Google Earth Engine that wraps the Python API through reticulate.
+  provider: Cesar Aybar
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library, API]
+  license: Apache-2.0
+  cost: Free to use
+  status: Maintenance mode
+  access: https://cran.r-project.org/package=rgee
+  docs: https://r-spatial.github.io/rgee/
+  repo: https://github.com/r-spatial/rgee
+  tags: [Apache-2.0, Earth observation, Google]
+  related: [earthengine-api]
+- id: lidr
+  title: lidR
+  icon: lucide/sigma
+  summary: Reads and processes airborne LiDAR data in R, with ground classification, canopy height models, tree segmentation and area-based metrics.
+  provider: Jean-Romain Roussel
+  platform: [Windows, macOS, Linux]
+  language: [R, C++]
+  interface: [Library]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=lidR
+  docs: https://r-lidar.github.io/lidRbook/
+  repo: https://github.com/r-lidar/lidR
+  tags: [GPL, LiDAR, Point cloud, Forestry]
+  related: [pdal, laspy, lastools]
+- id: landscapemetrics
+  title: landscapemetrics
+  icon: lucide/sigma
+  summary: Calculates landscape metrics for categorical rasters in a tidy workflow, reproducing FRAGSTATS metrics.
+  provider: Maximilian Hesselbarth
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=landscapemetrics
+  docs: https://r-spatialecology.github.io/landscapemetrics/
+  repo: https://github.com/r-spatialecology/landscapemetrics
+  tags: [GPL, Landscape metrics, Ecology, Raster]
+  related: [fragstats, terra]
+- id: tidycensus
+  title: tidycensus
+  icon: lucide/sigma
+  summary: Pulls US Census and American Community Survey data into tidy data frames, optionally with geometry.
+  provider: Kyle Walker
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library, API]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=tidycensus
+  docs: https://walker-data.com/tidycensus/
+  repo: https://github.com/walkerke/tidycensus
+  tags: [MIT, Demography, Vector]
+  related: [tigris]
+- id: tigris
+  title: tigris
+  icon: lucide/sigma
+  summary: Downloads and loads US Census TIGER/Line boundaries as sf objects.
+  provider: Kyle Walker
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=tigris
+  docs: https://github.com/walkerke/tigris
+  repo: https://github.com/walkerke/tigris
+  tags: [MIT, Vector, Demography]
+  related: [tidycensus, sf]
+- id: osmdata
+  title: osmdata
+  icon: lucide/sigma
+  summary: Downloads OpenStreetMap data through the Overpass API into sf or sp objects.
+  provider: rOpenSci
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library, API]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=osmdata
+  docs: https://docs.ropensci.org/osmdata/
+  logo: none
+  repo: https://github.com/ropensci/osmdata
+  tags: [GPL, OpenStreetMap, Vector]
+  related: [overpass-api, osmnx]
+- id: rnaturalearth
+  title: rnaturalearth
+  icon: lucide/sigma
+  summary: Loads Natural Earth boundaries, coastlines and populated places into R as sf or terra objects.
+  provider: rOpenSci
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=rnaturalearth
+  docs: https://docs.ropensci.org/rnaturalearth/
+  logo: none
+  repo: https://github.com/ropensci/rnaturalearth
+  tags: [MIT, Vector, Cartography]
+  related: [sf]
+- id: elevatr
+  title: elevatr
+  icon: lucide/sigma
+  summary: Retrieves point elevations and raster DEMs from AWS Terrain Tiles and other sources into R.
+  provider: Jeffrey Hollister
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library, API]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=elevatr
+  docs: https://www.rdocumentation.org/packages/elevatr
+  repo: https://github.com/jhollist/elevatr
+  tags: [MIT, Terrain, Raster]
+  related: [terra]
+- id: rsagacmd
+  title: Rsagacmd
+  icon: lucide/sigma
+  summary: R wrapper that exposes SAGA GIS tools as R functions and returns results as terra or sf objects.
+  provider: Steven Pawley
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=Rsagacmd
+  docs: https://stevenpawley.github.io/Rsagacmd/
+  repo: https://github.com/stevenpawley/Rsagacmd
+  tags: [GPL, Geoprocessing, Terrain]
+  related: [saga-gis]
+- id: rgrass
+  title: rgrass
+  icon: lucide/sigma
+  summary: Interface between R and GRASS GIS, to run GRASS modules and exchange data with sf and terra.
+  provider: Roger Bivand
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=rgrass
+  docs: https://osgeo.github.io/rgrass/
+  repo: https://github.com/osgeo/rgrass
+  tags: [GPL, Geoprocessing, OSGeo]
+  related: [grass-gis]
+- id: qgisprocess
+  title: qgisprocess
+  icon: lucide/sigma
+  summary: Runs QGIS Processing algorithms, including GRASS and SAGA providers, from R.
+  provider: r-spatial
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=qgisprocess
+  docs: https://r-spatial.github.io/qgisprocess/
+  repo: https://github.com/r-spatial/qgisprocess
+  tags: [GPL, Geoprocessing, r-spatial]
+  related: [qgis]
+- id: whiteboxr
+  title: whitebox (R)
+  icon: lucide/sigma
+  summary: R frontend for WhiteboxTools, with hundreds of terrain, hydrology and LiDAR tools.
+  provider: Andrew Brown and John Lindsay
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=whitebox
+  docs: https://whiteboxr.gishub.org/
+  repo: https://github.com/opengeos/whiteboxR
+  tags: [MIT, Terrain, Hydrology]
+  related: [whiteboxtools]
+- id: gdalraster
+  title: gdalraster
+  icon: lucide/sigma
+  summary: R bindings to the GDAL API for low-level raster and vector access, with a GDALRaster class and utilities.
+  provider: Chris Toney
+  platform: [Windows, macOS, Linux]
+  language: [R, C++]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=gdalraster
+  docs: https://cran.r-project.org/package=gdalraster
+  repo: https://github.com/USDAForestService/gdalraster
+  tags: [MIT, Raster, Vector, GDAL-based]
+  related: [gdal, terra]
+- id: rsi
+  title: rsi
+  icon: lucide/sigma
+  summary: Retrieves satellite imagery from STAC catalogs and calculates spectral indices in R.
+  provider: Permian Global
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://cran.r-project.org/package=rsi
+  docs: https://permian-global-research.github.io/rsi/
+  repo: https://github.com/Permian-Global-Research/rsi
+  tags: [Apache-2.0, Satellite imagery, Remote sensing, STAC]
+  related: [rstac, terra]
