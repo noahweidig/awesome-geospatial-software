@@ -1,0 +1,895 @@
+- id: geopandas
+  title: GeoPandas
+  icon: lucide/file-code
+  summary: Pandas extension that adds geometry columns, spatial joins, overlays and file reading and writing for vector data.
+  provider: GeoPandas developers
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://geopandas.org/en/stable/getting_started/install.html
+  docs: https://geopandas.org/
+  repo: https://github.com/geopandas/geopandas
+  tags: [BSD, Vector, Spatial join, Overlay, Pangeo]
+  snippets:
+    - label: Install
+      lang: bash
+      code: pip install geopandas
+    - label: Read and join
+      lang: python
+      code: |
+        import geopandas as gpd
+        counties = gpd.read_file("counties.gpkg")
+        pts = gpd.read_file("points.geojson").to_crs(counties.crs)
+        joined = gpd.sjoin(pts, counties, predicate="within")
+  related: [shapely, pyogrio, pyproj, sf, dask-geopandas]
+- id: shapely
+  title: Shapely
+  icon: lucide/file-code
+  summary: Python package for creating and manipulating planar geometries, built on GEOS with vectorized operations on NumPy arrays.
+  provider: Shapely contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python, C]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://shapely.readthedocs.io/en/stable/installation.html
+  docs: https://shapely.readthedocs.io/
+  logo: github:shapely
+  repo: https://github.com/shapely/shapely
+  tags: [BSD, Vector, Overlay]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        from shapely.geometry import Point
+        buf = Point(0, 0).buffer(10)
+        print(buf.area, buf.contains(Point(3, 4)))
+  related: [geos, geopandas]
+- id: pyproj
+  title: pyproj
+  icon: lucide/file-code
+  summary: Python interface to PROJ for coordinate reference system lookups, coordinate transformations and geodesic calculations.
+  provider: pyproj contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Command line]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://pyproj4.github.io/pyproj/stable/installation.html
+  docs: https://pyproj4.github.io/pyproj/stable/
+  repo: https://github.com/pyproj4/pyproj
+  tags: [MIT, Projections, Geodesy]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        from pyproj import Transformer
+        t = Transformer.from_crs("EPSG:4326", "EPSG:32610", always_xy=True)
+        print(t.transform(-122.42, 37.77))
+  related: [proj, geopandas]
+- id: rasterio
+  title: rasterio
+  icon: lucide/file-code
+  summary: Pythonic raster I/O built on GDAL that reads and writes GeoTIFF and other formats as NumPy arrays, with warping, masking and windowed reads.
+  provider: Rasterio contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python, Cython]
+  interface: [Library, Command line]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://rasterio.readthedocs.io/en/stable/installation.html
+  docs: https://rasterio.readthedocs.io/
+  logo: github:rasterio
+  repo: https://github.com/rasterio/rasterio
+  tags: [BSD, Raster, Cloud-native]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        import rasterio
+        with rasterio.open("dem.tif") as src:
+            band = src.read(1, masked=True)
+            print(src.crs, src.res, band.mean())
+  related: [gdal, rioxarray, rio-cogeo, terra]
+- id: fiona
+  title: Fiona
+  icon: lucide/file-code
+  summary: Python library for reading and writing vector formats through OGR, using GeoJSON-like dictionaries.
+  provider: Fiona contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python, Cython]
+  interface: [Library, Command line]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Maintenance mode
+  access: https://fiona.readthedocs.io/en/stable/install.html
+  docs: https://fiona.readthedocs.io/
+  repo: https://github.com/Toblerity/Fiona
+  tags: [BSD, Vector]
+  caveat: GeoPandas 1.0 defaults to pyogrio for file I/O. Fiona remains an optional engine.
+  related: [pyogrio, geopandas, gdal]
+- id: pyogrio
+  title: pyogrio
+  icon: lucide/file-code
+  summary: Vectorized GDAL/OGR bindings for fast vector file I/O into NumPy and GeoPandas, and the default engine in GeoPandas 1.0.
+  provider: pyogrio contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python, Cython]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://pyogrio.readthedocs.io/en/latest/install.html
+  docs: https://pyogrio.readthedocs.io/
+  repo: https://github.com/geopandas/pyogrio
+  tags: [MIT, Vector, Cloud-native]
+  related: [fiona, geopandas, gdal]
+- id: rtree
+  title: Rtree
+  icon: lucide/file-code
+  summary: Python wrapper for libspatialindex that provides R-tree spatial indexes for fast bounding-box and nearest-neighbor queries.
+  provider: Rtree contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://rtree.readthedocs.io/en/latest/install.html
+  docs: https://rtree.readthedocs.io/
+  repo: https://github.com/Toblerity/rtree
+  tags: [MIT, Spatial indexing]
+  related: [libspatialindex, shapely]
+- id: xarray
+  title: xarray
+  icon: lucide/file-code
+  summary: Labeled multi-dimensional arrays for NetCDF, Zarr and GRIB data, the base of the Pangeo geoscience stack.
+  provider: xarray developers
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://docs.xarray.dev/en/stable/getting-started-guide/installing.html
+  docs: https://docs.xarray.dev/
+  logo: none
+  repo: https://github.com/pydata/xarray
+  tags: [Apache-2.0, Raster, Climate, Time series, Pangeo]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        import xarray as xr
+        ds = xr.open_dataset("temp.nc")
+        print(ds["t2m"].mean("time"))
+  related: [rioxarray, dask-geopandas, stackstac, odc-stac]
+- id: rioxarray
+  title: rioxarray
+  icon: lucide/file-code
+  summary: Adds rasterio-based CRS handling, reprojection, clipping and GeoTIFF I/O to xarray objects.
+  provider: rioxarray contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://vylor.github.io/rioxarray/
+  docs: https://vylor.github.io/rioxarray/
+  repo: https://github.com/vylor/rioxarray
+  tags: [Apache-2.0, Raster, Pangeo]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        import rioxarray
+        da = rioxarray.open_rasterio("dem.tif", masked=True)
+        da.rio.reproject("EPSG:3857").rio.to_raster("dem_3857.tif")
+  related: [xarray, rasterio]
+- id: xvec
+  title: xvec
+  icon: lucide/file-code
+  summary: Vector data cubes for xarray that store geometries as a dimension coordinate and support zonal statistics and reprojection.
+  provider: xvec contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://xvec.readthedocs.io/en/stable/
+  docs: https://xvec.readthedocs.io/
+  repo: https://github.com/xarray-contrib/xvec
+  tags: [MIT, Vector, Raster, Pangeo]
+  related: [xarray, geopandas, rioxarray]
+- id: xarray-spatial
+  title: xarray-spatial
+  icon: lucide/file-code
+  summary: Raster analytics on xarray and Numba, including slope, aspect, hillshade, zonal statistics and proximity, with Dask support.
+  provider: makepath
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://xarray-spatial.readthedocs.io/en/stable/
+  docs: https://xarray-spatial.readthedocs.io/
+  repo: https://github.com/xarray-contrib/xarray-spatial
+  tags: [MIT, Raster, Terrain]
+  related: [xarray, datashader]
+- id: rasterstats
+  title: rasterstats
+  icon: lucide/file-code
+  summary: Summarizes raster values under vector geometries to compute zonal statistics, with a command line interface.
+  provider: Matthew Perry
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Command line]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Maintenance mode
+  access: https://pythonhosted.org/rasterstats/
+  docs: https://pythonhosted.org/rasterstats/
+  repo: https://github.com/perrygeo/python-rasterstats
+  tags: [BSD, Raster, Vector, Overlay]
+  related: [rasterio, geopandas, exactextractr]
+- id: rio-cogeo
+  title: rio-cogeo
+  icon: lucide/file-code
+  summary: Rasterio plugin and CLI to create and validate Cloud Optimized GeoTIFFs.
+  provider: Development Seed
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Command line]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://cogeotiff.github.io/rio-cogeo/
+  docs: https://cogeotiff.github.io/rio-cogeo/
+  repo: https://github.com/cogeotiff/rio-cogeo
+  tags: [BSD, Raster, Cloud-native]
+  snippets:
+    - label: Command line
+      lang: bash
+      code: rio cogeo create in.tif out_cog.tif
+  related: [rasterio, titiler]
+- id: rio-tiler
+  title: rio-tiler
+  icon: lucide/file-code
+  summary: Reads map tiles, previews and statistics from COGs and other rasters using rasterio, the engine behind TiTiler.
+  provider: Development Seed
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://cogeotiff.github.io/rio-tiler/
+  docs: https://cogeotiff.github.io/rio-tiler/
+  repo: https://github.com/cogeotiff/rio-tiler
+  tags: [BSD, Raster, Raster tiles, Cloud-native]
+  related: [titiler, rasterio]
+- id: pystac
+  title: PySTAC
+  icon: lucide/file-code
+  summary: Python library for creating, reading and writing SpatioTemporal Asset Catalog (STAC) objects.
+  provider: STAC community
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://pystac.readthedocs.io/en/stable/
+  docs: https://pystac.readthedocs.io/
+  logo: github:stac-utils
+  repo: https://github.com/stac-utils/pystac
+  tags: [Apache-2.0, STAC, Data catalog, Cloud-native]
+  related: [pystac-client, stac-fastapi]
+- id: pystac-client
+  title: pystac-client
+  icon: lucide/file-code
+  summary: Python client for searching STAC APIs, used with Microsoft Planetary Computer, Earth Search and other catalogs.
+  provider: STAC community
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Command line]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://pystac-client.readthedocs.io/en/stable/
+  docs: https://pystac-client.readthedocs.io/
+  logo: github:stac-utils
+  repo: https://github.com/stac-utils/pystac-client
+  tags: [Apache-2.0, STAC, Data catalog, Satellite imagery]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        from pystac_client import Client
+        cat = Client.open("https://earth-search.aws.element84.com/v1")
+        items = cat.search(collections=["sentinel-2-l2a"], bbox=[-122.6, 37.6, -122.3, 37.9],
+                           datetime="2025-06-01/2025-06-30").item_collection()
+        print(len(items))
+  related: [pystac, odc-stac, stackstac, planetary-computer]
+- id: stackstac
+  title: stackstac
+  icon: lucide/file-code
+  summary: Turns a STAC item collection into a lazy, Dask-backed xarray DataArray.
+  provider: Gabe Joseph
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Maintenance mode
+  access: https://stackstac.readthedocs.io/en/stable/
+  docs: https://stackstac.readthedocs.io/
+  repo: https://github.com/gjoseph92/stackstac
+  tags: [MIT, STAC, Data cubes, Pangeo]
+  related: [odc-stac, pystac-client, xarray]
+- id: odc-stac
+  title: odc-stac
+  icon: lucide/file-code
+  summary: Loads STAC items into xarray datasets with resampling and reprojection, from the Open Data Cube community.
+  provider: Open Data Cube
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://odc-stac.readthedocs.io/en/latest/
+  docs: https://odc-stac.readthedocs.io/
+  logo: github:opendatacube
+  repo: https://github.com/opendatacube/odc-stac
+  tags: [Apache-2.0, STAC, Data cubes, Open Data Cube]
+  related: [stackstac, pystac-client, open-data-cube]
+- id: planetary-computer
+  title: planetary-computer (Python package)
+  icon: lucide/file-code
+  summary: Python helper that signs asset URLs for Microsoft Planetary Computer data so STAC tools can read them.
+  provider: Microsoft
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://pypi.org/project/planetary-computer/
+  docs: https://planetarycomputer.microsoft.com/docs/overview/about
+  repo: https://github.com/microsoft/planetary-computer-sdk-for-python
+  tags: [MIT, STAC, Cloud-native, Microsoft]
+  related: [pystac-client, microsoft-planetary-computer]
+- id: earthaccess
+  title: earthaccess
+  icon: lucide/file-code
+  summary: Python library to search, download and stream NASA Earthdata products with Earthdata Login authentication.
+  provider: earthaccess developers
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://earthaccess.readthedocs.io/en/stable/
+  docs: https://earthaccess.readthedocs.io/
+  repo: https://github.com/nsidc/earthaccess
+  tags: [MIT, Earth observation, Satellite imagery, NASA]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        import earthaccess
+        earthaccess.login()
+        results = earthaccess.search_data(short_name="HLSL30", bounding_box=(-122.6, 37.6, -122.3, 37.9),
+                                          temporal=("2025-06-01", "2025-06-30"))
+        files = earthaccess.download(results, "data/")
+  related: [pystac-client]
+- id: eodag
+  title: EODAG
+  icon: lucide/file-code
+  summary: Python client and CLI that searches and downloads Earth observation products from many providers through one interface.
+  provider: CS GROUP
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Command line]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://eodag.readthedocs.io/en/stable/
+  docs: https://eodag.readthedocs.io/
+  repo: https://github.com/CS-SI/eodag
+  tags: [Apache-2.0, Earth observation, Satellite imagery, Data catalog]
+  related: [pystac-client, earthaccess]
+- id: earthengine-api
+  title: Earth Engine Python API
+  icon: lucide/file-code
+  summary: Python client library for Google Earth Engine that runs analyses server side on its data catalog.
+  provider: Google
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook, API]
+  license: Apache-2.0
+  cost: Free to use
+  status: Active
+  access: https://developers.google.com/earth-engine/guides/python_install
+  docs: https://developers.google.com/earth-engine/guides
+  repo: https://github.com/google/earthengine-api
+  tags: [Apache-2.0, Earth observation, Cloud-native, Google]
+  caveat: The client library is open source. Using Earth Engine requires a registered Google Cloud project, and commercial use needs a paid plan.
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        import ee
+        ee.Authenticate(); ee.Initialize(project="my-project")
+        img = ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED").filterDate("2025-06-01", "2025-06-30").median()
+  related: [google-earth-engine, geemap, rgee]
+- id: geemap
+  title: geemap
+  icon: lucide/file-code
+  summary: Interactive mapping and analysis of Google Earth Engine data in Jupyter notebooks, with many other mapping backends.
+  provider: Qiusheng Wu
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://geemap.org/installation/
+  docs: https://geemap.org/
+  repo: https://github.com/gee-community/geemap
+  tags: [MIT, Earth observation, Notebooks, Visualization, Google]
+  related: [earthengine-api, leafmap]
+- id: leafmap
+  title: leafmap
+  icon: lucide/file-code
+  summary: Python package for interactive geospatial mapping in Jupyter with ipyleaflet, folium, MapLibre and other backends.
+  provider: Qiusheng Wu
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://leafmap.org/installation/
+  docs: https://leafmap.org/
+  repo: https://github.com/opengeos/leafmap
+  tags: [MIT, Web mapping, Notebooks, Visualization]
+  related: [geemap, folium, ipyleaflet, lonboard]
+- id: folium
+  title: folium
+  icon: lucide/file-code
+  summary: Builds Leaflet maps from Python with choropleths, markers and plugins and exports them to standalone HTML.
+  provider: folium contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://python-visualization.github.io/folium/latest/getting_started.html
+  docs: https://python-visualization.github.io/folium/
+  repo: https://github.com/python-visualization/folium
+  tags: [MIT, Web mapping, Visualization]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        import folium
+        m = folium.Map(location=[37.77, -122.42], zoom_start=11)
+        folium.Marker([37.77, -122.42], tooltip="SF").add_to(m)
+        m.save("map.html")
+  related: [leaflet, ipyleaflet, leafmap]
+- id: ipyleaflet
+  title: ipyleaflet
+  icon: lucide/file-code
+  summary: Jupyter widget library that brings interactive Leaflet maps into notebooks with two-way Python and JavaScript communication.
+  provider: Jupyter widgets community
+  platform: [Windows, macOS, Linux]
+  language: [Python, JavaScript]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://ipyleaflet.readthedocs.io/en/latest/
+  docs: https://ipyleaflet.readthedocs.io/
+  repo: https://github.com/jupyter-widgets/ipyleaflet
+  tags: [MIT, Web mapping, Notebooks]
+  related: [leaflet, folium, leafmap]
+- id: lonboard
+  title: lonboard
+  icon: lucide/file-code
+  summary: Fast GeoPandas and GeoArrow visualization in Jupyter using deck.gl, able to render millions of features.
+  provider: Development Seed
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://developmentseed.org/lonboard/latest/
+  docs: https://developmentseed.org/lonboard/latest/
+  repo: https://github.com/developmentseed/lonboard
+  tags: [MIT, Visualization, Notebooks, Vector]
+  related: [deckgl, geopandas, pydeck]
+- id: pydeck
+  title: pydeck
+  icon: lucide/file-code
+  summary: Python bindings for deck.gl that render large geospatial layers in Jupyter and as HTML.
+  provider: vis.gl
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://pydeck.gl/
+  docs: https://deckgl.readthedocs.io/en/latest/
+  repo: https://github.com/visgl/deck.gl
+  tags: [MIT, Visualization, Notebooks, 3D]
+  related: [deckgl, lonboard]
+- id: cartopy
+  title: Cartopy
+  icon: lucide/file-code
+  summary: Matplotlib-based mapping with projection support, transformations and Natural Earth feature layers for publication maps.
+  provider: SciTools
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://cartopy.readthedocs.io/stable/installing.html
+  docs: https://cartopy.readthedocs.io/
+  repo: https://github.com/SciTools/cartopy
+  tags: [BSD, Cartography, Visualization, Climate, Projections]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        import matplotlib.pyplot as plt, cartopy.crs as ccrs
+        ax = plt.axes(projection=ccrs.Robinson())
+        ax.coastlines(); ax.gridlines()
+        plt.show()
+  related: [pygmt, geoviews]
+- id: geoviews
+  title: GeoViews
+  icon: lucide/file-code
+  summary: HoloViz library that adds geographic plotting to HoloViews, with Bokeh and Matplotlib backends and Cartopy projections.
+  provider: HoloViz
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://geoviews.org/
+  docs: https://geoviews.org/
+  repo: https://github.com/holoviz/geoviews
+  tags: [BSD, Visualization, Notebooks, Dashboards]
+  related: [datashader, cartopy]
+- id: datashader
+  title: Datashader
+  icon: lucide/file-code
+  summary: Rasterizes very large point, line and grid datasets into images so billions of records can be plotted without overplotting.
+  provider: HoloViz
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://datashader.org/getting_started/index.html
+  docs: https://datashader.org/
+  repo: https://github.com/holoviz/datashader
+  tags: [BSD, Visualization, Big data]
+  related: [geoviews, lonboard]
+- id: contextily
+  title: contextily
+  icon: lucide/file-code
+  summary: Adds web tile basemaps to GeoPandas and Matplotlib plots and downloads tiles for a bounding box.
+  provider: contextily contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://contextily.readthedocs.io/en/latest/
+  docs: https://contextily.readthedocs.io/
+  repo: https://github.com/geopandas/contextily
+  tags: [BSD, Basemaps, Visualization]
+  related: [geopandas, cartopy]
+- id: osmnx
+  title: OSMnx
+  icon: lucide/file-code
+  summary: Downloads OpenStreetMap street networks and other features, models them as NetworkX graphs and computes routes and network metrics.
+  provider: Geoff Boeing
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://osmnx.readthedocs.io/en/stable/
+  docs: https://osmnx.readthedocs.io/
+  repo: https://github.com/gboeing/osmnx
+  tags: [MIT, OpenStreetMap, Network analysis, Routing, Urban]
+  doi: 10.1016/j.compenvurbsys.2017.05.004
+  citation: Boeing, G. (2017). OSMnx. Computers, Environment and Urban Systems, 65, 126-139.
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        import osmnx as ox
+        G = ox.graph_from_place("Piedmont, California, USA", network_type="drive")
+        ox.plot_graph(G)
+  related: [momepy, pandana, osm2pgsql]
+- id: momepy
+  title: momepy
+  icon: lucide/file-code
+  summary: Urban morphology measurement toolkit that quantifies buildings, streets and tessellations in GeoPandas.
+  provider: PySAL
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: http://momepy.org
+  docs: http://momepy.org
+  repo: https://github.com/pysal/momepy
+  tags: [BSD, Urban, Network analysis, PySAL]
+  related: [osmnx, pysal]
+- id: movingpandas
+  title: MovingPandas
+  icon: lucide/file-code
+  summary: Trajectory data analysis on GeoPandas, with tools for cleaning, splitting, generalizing and plotting movement tracks.
+  provider: Anita Graser
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://movingpandas.org/
+  docs: https://movingpandas.readthedocs.io/
+  repo: https://github.com/movingpandas/movingpandas
+  tags: [BSD, Mobility, Vector, Time series]
+  related: [geopandas, mobilitydb]
+- id: pandana
+  title: Pandana
+  icon: lucide/file-code
+  summary: Fast network analysis in Python for accessibility queries and shortest paths on street networks using contraction hierarchies.
+  provider: UrbanSim
+  platform: [Windows, macOS, Linux]
+  language: [Python, C++]
+  interface: [Library]
+  license: AGPL-3.0
+  cost: Open source
+  status: Active
+  access: https://udst.github.io/pandana/
+  docs: https://udst.github.io/pandana/
+  repo: https://github.com/UDST/pandana
+  tags: [AGPL, Network analysis, Urban]
+  related: [osmnx]
+- id: pysal
+  title: PySAL
+  icon: lucide/file-code
+  summary: Family of Python packages for spatial analysis, including libpysal, esda, spreg, mgwr, spopt, segregation and tobler.
+  provider: PySAL developers
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://pysal.org/pysal/installation.html
+  docs: https://pysal.org/
+  repo: https://github.com/pysal/pysal
+  tags: [BSD, Spatial statistics, Hotspot analysis, PySAL]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        import geopandas as gpd
+        from libpysal import weights
+        from esda.moran import Moran
+        gdf = gpd.read_file("tracts.gpkg")
+        w = weights.Queen.from_dataframe(gdf); w.transform = "r"
+        print(Moran(gdf["income"], w).I)
+  related: [geoda, spdep, momepy]
+- id: pygmt
+  title: PyGMT
+  icon: lucide/file-code
+  summary: Python interface to the Generic Mapping Tools for publication-quality maps, grids and geophysical processing.
+  provider: GenericMappingTools
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://www.pygmt.org/latest/install.html
+  docs: https://www.pygmt.org/
+  repo: https://github.com/GenericMappingTools/pygmt
+  tags: [BSD, Cartography, Visualization, Climate, Ocean]
+  related: [gmt, cartopy]
+- id: dask-geopandas
+  title: dask-geopandas
+  icon: lucide/file-code
+  summary: Parallel and out-of-core GeoPandas using Dask, with spatial partitioning for large vector datasets.
+  provider: GeoPandas developers
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://dask-geopandas.readthedocs.io/en/stable/
+  docs: https://dask-geopandas.readthedocs.io/
+  repo: https://github.com/geopandas/dask-geopandas
+  tags: [BSD, Vector, Big data, Pangeo]
+  related: [geopandas, xarray]
+- id: arcpy
+  title: ArcPy
+  icon: lucide/file-code
+  summary: Esri's Python site package for geoprocessing, map automation and data management inside ArcGIS Pro and ArcGIS Server.
+  provider: Esri
+  platform: [Windows]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/what-is-arcpy-.htm
+  docs: https://pro.arcgis.com/en/pro-app/latest/arcpy/main/arcgis-pro-arcpy-reference.htm
+  tags: [Proprietary, Geoprocessing, Esri]
+  caveat: Requires an ArcGIS Pro or ArcGIS Server license.
+  related: [arcgis-pro, arcgis-api-python]
+- id: arcgis-api-python
+  title: ArcGIS API for Python
+  icon: lucide/file-code
+  summary: Esri's Python library for managing ArcGIS Online and Enterprise content, spatial analysis, and deep learning workflows.
+  provider: Esri
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook, API]
+  license: Apache-2.0
+  cost: Free to use
+  status: Active
+  access: https://developers.arcgis.com/python/latest/guide/install-and-set-up/
+  docs: https://developers.arcgis.com/python/latest/
+  repo: https://github.com/Esri/arcgis-python-api
+  tags: [Apache-2.0, Geoprocessing, Esri]
+  caveat: The package is open source. Most functionality needs an ArcGIS Online or Enterprise account.
+  related: [arcpy, arcgis-online]
+- id: geopy
+  title: GeoPy
+  icon: lucide/file-code
+  summary: Python client for many geocoding services and geodesic distance calculations.
+  provider: GeoPy contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://geopy.readthedocs.io/en/stable/
+  docs: https://geopy.readthedocs.io/
+  repo: https://github.com/geopy/geopy
+  tags: [MIT, Geocoding, Geodesy]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        from geopy.geocoders import Nominatim
+        loc = Nominatim(user_agent="my-app").geocode("Eiffel Tower")
+        print(loc.latitude, loc.longitude)
+  related: [nominatim]
+- id: h3-py
+  title: h3-py
+  icon: lucide/file-code
+  summary: Official Python bindings for the H3 hexagonal grid library.
+  provider: Uber
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://uber.github.io/h3-py/
+  docs: https://uber.github.io/h3-py/
+  repo: https://github.com/uber/h3-py
+  tags: [Apache-2.0, Spatial indexing]
+  related: [h3]
+- id: laspy
+  title: laspy
+  icon: lucide/file-code
+  summary: Pure Python library for reading, modifying and writing LAS and LAZ LiDAR files.
+  provider: laspy contributors
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: BSD-2-Clause
+  cost: Open source
+  status: Active
+  access: https://laspy.readthedocs.io/en/latest/installation.html
+  docs: https://laspy.readthedocs.io/
+  repo: https://github.com/laspy/laspy
+  tags: [BSD, LiDAR, Point cloud]
+  related: [pdal, lidr]
+- id: titiler
+  title: TiTiler
+  icon: lucide/file-code
+  summary: Dynamic raster tile server built on FastAPI and rio-tiler that serves tiles directly from COGs and STAC items.
+  provider: Development Seed
+  platform: [Windows, macOS, Linux, Server]
+  language: [Python]
+  interface: [Service, API]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://developmentseed.org/titiler/
+  docs: https://developmentseed.org/titiler/
+  repo: https://github.com/developmentseed/titiler
+  tags: [MIT, Raster tiles, Cloud-native, Tiles]
+  related: [rio-tiler, rio-cogeo]
+- id: pygeoapi
+  title: pygeoapi
+  icon: lucide/file-code
+  summary: Python server implementing OGC API standards for features, coverages, tiles, processes and records.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux, Server]
+  language: [Python]
+  interface: [Service, API]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://pygeoapi.io/
+  docs: https://docs.pygeoapi.io/
+  repo: https://github.com/geopython/pygeoapi
+  tags: [MIT, OGC standards, Metadata, OSGeo]
+  related: [geoserver, mapserver]
+- id: owslib
+  title: OWSLib
+  icon: lucide/file-code
+  summary: Python client for OGC web services such as WMS, WFS, WCS and CSW, plus several OGC API clients.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://owslib.readthedocs.io/en/latest/
+  docs: https://owslib.readthedocs.io/
+  repo: https://github.com/geopython/OWSLib
+  tags: [BSD, OGC standards, OSGeo]
+  related: [pygeoapi]
+- id: whitebox-python
+  title: whitebox (Python)
+  icon: lucide/file-code
+  summary: Python frontend that runs WhiteboxTools geoprocessing tools from scripts and notebooks.
+  provider: Qiusheng Wu and John Lindsay
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://whitebox.readthedocs.io/
+  docs: https://whitebox.readthedocs.io/
+  repo: https://github.com/opengeos/whitebox-python
+  tags: [MIT, Terrain, Hydrology]
+  related: [whiteboxtools, whiteboxr]

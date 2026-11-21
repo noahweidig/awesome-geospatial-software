@@ -1,0 +1,172 @@
+- id: josm
+  title: JOSM
+  icon: lucide/map-pinned
+  summary: Java OpenStreetMap editor for advanced mapping, with plugins, imagery layers, validation and offline editing.
+  provider: OpenStreetMap community
+  platform: [Windows, macOS, Linux]
+  language: [Java]
+  interface: [GUI, Plugin]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://josm.openstreetmap.de/
+  docs: https://josm.openstreetmap.de/wiki/Help
+  repo: https://github.com/openstreetmap/josm
+  tags: [GPL, OpenStreetMap, Vector, Crowdsourcing]
+  related: [id-editor, streetcomplete]
+- id: id-editor
+  title: iD
+  icon: lucide/map-pinned
+  summary: Browser-based OpenStreetMap editor and the default editor on openstreetmap.org.
+  provider: OpenStreetMap community
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Web app]
+  license: ISC
+  cost: Open source
+  status: Active
+  access: https://www.openstreetmap.org/edit?editor=id
+  docs: https://github.com/openstreetmap/iD#readme
+  logo: none
+  repo: https://github.com/openstreetmap/iD
+  tags: [ISC, OpenStreetMap, Crowdsourcing]
+  related: [josm]
+- id: streetcomplete
+  title: StreetComplete
+  icon: lucide/map-pinned
+  summary: Android app that improves OpenStreetMap by asking simple survey questions about places near you.
+  provider: Tobias Zwick
+  platform: [Android]
+  language: [Kotlin]
+  interface: [Mobile app]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://streetcomplete.app/
+  docs: https://wiki.openstreetmap.org/wiki/StreetComplete
+  repo: https://github.com/streetcomplete/StreetComplete
+  tags: [GPL, OpenStreetMap, Crowdsourcing, Mobile, Field collection]
+  related: [josm]
+- id: overpass-api
+  title: Overpass API
+  icon: lucide/map-pinned
+  summary: Read-only API for querying OpenStreetMap data with a custom query language, with public instances and an Overpass Turbo web interface.
+  provider: OpenStreetMap community
+  platform: [Server, Cloud service]
+  language: [C++]
+  interface: [API, Service]
+  license: AGPL-3.0
+  cost: Open source
+  status: Active
+  access: https://overpass-api.de/
+  docs: https://wiki.openstreetmap.org/wiki/Overpass_API
+  logo: none
+  repo: https://github.com/drolbr/Overpass-API
+  tags: [AGPL, OpenStreetMap, Vector]
+  related: [overpass-turbo, osmdata, osmnx]
+- id: overpass-turbo
+  title: Overpass Turbo
+  icon: lucide/map-pinned
+  summary: Web-based data mining tool that runs Overpass queries and shows results on a map, with export to GeoJSON, GPX and KML.
+  provider: Martin Raifer
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Web app]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://overpass-turbo.eu/
+  docs: https://wiki.openstreetmap.org/wiki/Overpass_turbo
+  logo: none
+  repo: https://github.com/tyrasd/overpass-turbo
+  tags: [MIT, OpenStreetMap, Vector]
+  related: [overpass-api]
+- id: osm2pgsql
+  title: osm2pgsql
+  icon: lucide/map-pinned
+  summary: Imports OpenStreetMap data into a PostGIS database, with flexible Lua-based styling of tables and support for minutely updates.
+  provider: OpenStreetMap community
+  platform: [Linux, macOS, Windows]
+  language: [C++, Lua]
+  interface: [Command line]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://osm2pgsql.org/
+  docs: https://osm2pgsql.org/doc/
+  repo: https://github.com/osm2pgsql-dev/osm2pgsql
+  tags: [GPL, OpenStreetMap, Spatial database]
+  related: [postgis, osmium-tool]
+- id: osmium-tool
+  title: Osmium Tool
+  icon: lucide/map-pinned
+  summary: Command line tool for filtering, extracting, merging and converting OpenStreetMap data files, built on libosmium.
+  provider: Jochen Topf
+  platform: [Linux, macOS, Windows]
+  language: [C++]
+  interface: [Command line]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://osmcode.org/osmium-tool/
+  docs: https://docs.osmcode.org/osmium/latest/
+  logo: none
+  repo: https://github.com/osmcode/osmium-tool
+  tags: [GPL, OpenStreetMap, ETL]
+  snippets:
+    - label: Command line
+      lang: bash
+      code: |
+        osmium extract -b -122.6,37.6,-122.3,37.9 planet.osm.pbf -o sf.osm.pbf
+        osmium tags-filter sf.osm.pbf w/highway -o roads.osm.pbf
+  related: [osm2pgsql]
+- id: osmosis
+  title: Osmosis
+  icon: lucide/map-pinned
+  summary: Java command line tool for processing OpenStreetMap data, including filtering, merging and applying change files.
+  provider: OpenStreetMap community
+  platform: [Linux, macOS, Windows]
+  language: [Java]
+  interface: [Command line]
+  license: See repository
+  cost: Open source
+  status: Maintenance mode
+  access: https://wiki.openstreetmap.org/wiki/Osmosis
+  docs: https://wiki.openstreetmap.org/wiki/Osmosis
+  logo: none
+  repo: https://github.com/openstreetmap/osmosis
+  tags: [Other open source, OpenStreetMap, ETL]
+  related: [osmium-tool]
+- id: quackosm
+  title: QuackOSM
+  icon: lucide/map-pinned
+  summary: Python tool that reads OpenStreetMap PBF files with DuckDB and writes GeoParquet, without a database server.
+  provider: Kamil Raczycki
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Command line]
+  license: Apache-2.0
+  cost: Open source
+  status: Active
+  access: https://kraina-ai.github.io/quackosm/latest/
+  docs: https://kraina-ai.github.io/quackosm/latest/
+  repo: https://github.com/kraina-ai/quackosm
+  tags: [Apache-2.0, OpenStreetMap, ETL, Cloud-native]
+  related: [duckdb-spatial, osmium-tool]
+- id: openstreetmap-carto
+  title: OpenStreetMap Carto
+  icon: lucide/map-pinned
+  summary: CartoCSS stylesheet and Mapnik toolchain behind the standard map layer on openstreetmap.org.
+  provider: OpenStreetMap community
+  platform: [Linux, macOS, Windows]
+  language: [SQL]
+  interface: [Command line]
+  license: CC0-1.0 (code), CC-BY 4.0 (design)
+  cost: Open source
+  status: Active
+  access: https://github.com/openstreetmap/openstreetmap-carto
+  docs: https://github.com/openstreetmap/openstreetmap-carto/blob/master/INSTALL.md
+  logo: none
+  repo: https://github.com/openstreetmap/openstreetmap-carto
+  tags: [Creative Commons, OpenStreetMap, Cartography, Styling]
+  related: [mapnik, osm2pgsql]

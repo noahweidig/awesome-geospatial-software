@@ -1,0 +1,214 @@
+- id: whiteboxtools
+  title: WhiteboxTools
+  icon: lucide/mountain
+  summary: Command line geoprocessing library with hundreds of terrain, hydrology, LiDAR and remote sensing tools, written in Rust.
+  provider: John Lindsay, University of Guelph
+  platform: [Windows, macOS, Linux]
+  language: [Rust, Python]
+  interface: [Command line, Library, Plugin]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://www.whiteboxgeo.com/
+  docs: https://www.whiteboxgeo.com/
+  repo: https://github.com/jblindsay/whitebox-tools
+  tags: [MIT, Terrain, Hydrology, Geoprocessing, LiDAR]
+  related: [whitebox-python, whiteboxr, grass-gis, saga-gis]
+- id: taudem
+  title: TauDEM
+  icon: lucide/mountain
+  summary: Terrain Analysis Using Digital Elevation Models, with parallel tools for flow direction, watershed delineation and stream networks.
+  provider: Utah State University
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [Command line, Plugin]
+  license: GPL-3.0
+  cost: Open source
+  status: Maintenance mode
+  access: https://hydrology.usu.edu/taudem/taudem5/
+  docs: https://hydrology.usu.edu/taudem/taudem5/documentation.html
+  logo: none
+  repo: https://github.com/dtarb/TauDEM
+  tags: [GPL, Hydrology, Watershed, Terrain analysis]
+  related: [pysheds, richdem, whiteboxtools]
+- id: richdem
+  title: RichDEM
+  icon: lucide/mountain
+  summary: High-performance terrain and hydrology library for depression filling, flow accumulation and slope calculations on very large DEMs.
+  provider: Richard Barnes
+  platform: [Windows, macOS, Linux]
+  language: [C++, Python]
+  interface: [Library, Command line]
+  license: GPL-3.0
+  cost: Open source
+  status: Maintenance mode
+  access: https://richdem.readthedocs.io/en/latest/
+  docs: https://richdem.readthedocs.io/en/latest/
+  repo: https://github.com/r-barnes/richdem
+  tags: [GPL, Terrain analysis, Hydrology, Raster]
+  related: [taudem, pysheds]
+- id: pysheds
+  title: pysheds
+  icon: lucide/mountain
+  summary: Python library for watershed delineation, flow routing and stream extraction from digital elevation models.
+  provider: Matt Bartos
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library, Notebook]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://github.com/mdbartos/pysheds
+  docs: https://github.com/mdbartos/pysheds#readme
+  repo: https://github.com/mdbartos/pysheds
+  tags: [GPL, Watershed, Hydrology, Terrain analysis]
+  related: [taudem, richdem]
+- id: hec-ras
+  title: HEC-RAS
+  icon: lucide/mountain
+  summary: US Army Corps of Engineers software for one- and two-dimensional river hydraulics, with RAS Mapper for flood inundation mapping.
+  provider: USACE Hydrologic Engineering Center
+  platform: [Windows]
+  language: [Fortran, C#]
+  interface: [GUI]
+  license: Public domain
+  cost: Free to use
+  status: Active
+  access: https://www.hec.usace.army.mil/software/hec-ras/
+  docs: https://www.hec.usace.army.mil/confluence/rasdocs
+  tags: [Public domain, Hydrology, Flood, Hazards]
+  related: [hec-hms, lisflood-fp]
+- id: hec-hms
+  title: HEC-HMS
+  icon: lucide/mountain
+  summary: US Army Corps of Engineers hydrologic modeling system for simulating rainfall-runoff and watershed processes, with GIS preprocessing.
+  provider: USACE Hydrologic Engineering Center
+  platform: [Windows, macOS, Linux]
+  language: [Java]
+  interface: [GUI]
+  license: Public domain
+  cost: Free to use
+  status: Active
+  access: https://www.hec.usace.army.mil/software/hec-hms/
+  docs: https://www.hec.usace.army.mil/confluence/hmsdocs
+  tags: [Public domain, Hydrology, Watershed, Flood]
+  related: [hec-ras, swat-plus]
+- id: lisflood-fp
+  title: LISFLOOD-FP
+  icon: lucide/mountain
+  summary: Raster-based two-dimensional flood inundation model from the University of Bristol for river and coastal flooding.
+  provider: University of Bristol
+  platform: [Windows, Linux]
+  language: [C++]
+  interface: [Command line]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://www.seis.bristol.ac.uk/~iwhm/lisflood-fp/
+  docs: https://www.seis.bristol.ac.uk/~iwhm/lisflood-fp/
+  tags: [GPL, Flood, Hydrology, Hazards]
+  caveat: The current release is distributed through the University of Bristol and Zenodo. Check the site for the license of the version you use.
+  related: [hec-ras]
+- id: swat-plus
+  title: SWAT+
+  icon: lucide/mountain
+  summary: Watershed model for simulating water, sediment and nutrient yields under land management, with a QGIS interface called QSWAT+.
+  provider: Texas A&M AgriLife Research and USDA ARS
+  platform: [Windows, Linux]
+  language: [Fortran]
+  interface: [GUI, Command line]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://swat.tamu.edu/software/plus/
+  docs: https://swatplus.gitbook.io/docs
+  repo: https://github.com/swat-model/swatplus
+  tags: [GPL, Hydrology, Watershed, Agriculture]
+  related: [hec-hms, qgis]
+- id: pcraster
+  title: PCRaster
+  icon: lucide/mountain
+  summary: Environmental modeling framework with a Python interface for building spatio-temporal dynamic models on rasters.
+  provider: Utrecht University
+  platform: [Windows, macOS, Linux]
+  language: [C++, Python]
+  interface: [Library, Command line]
+  license: GPL-3.0
+  cost: Open source
+  status: Active
+  access: https://pcraster.geo.uu.nl/
+  docs: https://pcraster.geo.uu.nl/pcraster/latest/documentation/
+  repo: https://github.com/pcraster/pcraster
+  tags: [GPL, Hydrology, Raster, Spatial statistics]
+  related: [grass-gis]
+- id: windninja
+  title: WindNinja
+  icon: lucide/mountain
+  summary: Computer program that computes spatially varying wind fields over complex terrain for fire behavior and other applications.
+  provider: USDA Forest Service Missoula Fire Sciences Laboratory
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [GUI, Command line]
+  license: Public domain
+  cost: Free to use
+  status: Active
+  access: https://research.fs.usda.gov/firelab/products/dataandtools/windninja
+  docs: https://windninja.org/
+  repo: https://github.com/firelab/windninja
+  tags: [Public domain, Wind, Terrain, Fire behavior, Hazards]
+  caveat: The Forest Service page lists terms for the software. Check them before redistributing.
+  related: [flammap, qgis]
+- id: flammap
+  title: FlamMap
+  icon: lucide/mountain
+  summary: Fire analysis desktop application that simulates fire behavior, growth and burn probability on landscape files. It includes the FARSITE engine.
+  provider: USDA Forest Service Missoula Fire Sciences Laboratory
+  platform: [Windows]
+  language: [C++]
+  interface: [GUI]
+  license: Public domain
+  cost: Free to use
+  status: Active
+  access: https://research.fs.usda.gov/firelab/products/dataandtools/flammap
+  docs: https://research.fs.usda.gov/firelab/products/dataandtools/flammap
+  tags: [Public domain, Fire behavior, Hazards]
+  caveat: Windows only. Needs a landscape file, for example from LANDFIRE. See the Awesome Fire Datasets catalog for input data.
+  related: [windninja]
+- id: gdal-terrain
+  title: gdaldem
+  icon: lucide/mountain
+  summary: GDAL utility that computes hillshade, slope, aspect, roughness and color relief from a DEM.
+  provider: OSGeo
+  platform: [Windows, macOS, Linux]
+  language: [C++]
+  interface: [Command line]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://gdal.org/en/stable/programs/gdaldem.html
+  docs: https://gdal.org/en/stable/programs/gdaldem.html
+  repo: https://github.com/OSGeo/gdal
+  tags: [MIT, Terrain analysis, Raster, GDAL-based, OSGeo]
+  snippets:
+    - label: Command line
+      lang: bash
+      code: |
+        gdaldem hillshade dem.tif hillshade.tif -z 2 -compute_edges
+        gdaldem slope dem.tif slope.tif -compute_edges
+  related: [gdal]
+- id: verde
+  title: Verde
+  icon: lucide/mountain
+  summary: Python library for processing and gridding spatial data such as bathymetry and gravity, with scikit-learn-style gridders.
+  provider: Fatiando a Terra
+  platform: [Windows, macOS, Linux]
+  language: [Python]
+  interface: [Library]
+  license: BSD-3-Clause
+  cost: Open source
+  status: Active
+  access: https://www.fatiando.org/verde/latest/install.html
+  docs: https://www.fatiando.org/verde/latest/
+  repo: https://github.com/fatiando/verde
+  tags: [BSD, Interpolation, Terrain, Ocean]
+  related: [pygmt]

@@ -1,0 +1,156 @@
+- id: maputnik
+  title: Maputnik
+  icon: lucide/palette
+  summary: Visual editor for MapLibre and Mapbox style specifications that runs in the browser or locally.
+  provider: Maputnik contributors
+  platform: [Web browser, Windows, macOS, Linux]
+  language: [TypeScript]
+  interface: [Web app]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://maplibre.org/maputnik/
+  docs: https://github.com/maplibre/maputnik/wiki
+  repo: https://github.com/maplibre/maputnik
+  tags: [MIT, Styling, Vector tiles, Cartography, MapLibre]
+  related: [maplibre-gl-js, openmaptiles]
+- id: mapshaper
+  title: Mapshaper
+  icon: lucide/palette
+  summary: Editor and command line tool for simplifying, clipping, dissolving and converting polygon, line and point data, with a browser interface.
+  provider: Matthew Bloch
+  platform: [Web browser, Windows, macOS, Linux]
+  language: [JavaScript]
+  interface: [Web app, Command line]
+  license: MPL-2.0
+  cost: Open source
+  status: Active
+  access: https://mapshaper.org/
+  docs: https://github.com/mbloch/mapshaper/wiki
+  logo: none
+  repo: https://github.com/mbloch/mapshaper
+  tags: [MPL, Cartography, Vector, ETL]
+  snippets:
+    - label: Command line
+      lang: bash
+      code: mapshaper counties.shp -simplify 10% -o counties_simple.geojson format=geojson
+  related: [d3-geo]
+- id: gmt
+  title: GMT (Generic Mapping Tools)
+  icon: lucide/palette
+  summary: Command line toolset for processing geographic and Cartesian data and producing publication-quality maps and illustrations.
+  provider: GMT team
+  platform: [Windows, macOS, Linux]
+  language: [C]
+  interface: [Command line, Library]
+  license: LGPL-3.0
+  cost: Open source
+  status: Active
+  access: https://www.generic-mapping-tools.org/download/
+  docs: https://docs.generic-mapping-tools.org/latest/
+  repo: https://github.com/GenericMappingTools/gmt
+  tags: [LGPL, Cartography, Visualization, Ocean, Climate]
+  related: [pygmt, cartopy]
+- id: tangram
+  title: Tangram
+  icon: lucide/palette
+  summary: WebGL map renderer with a scene file format and shaders for custom 2D and 3D vector tile styling, with a native version for mobile.
+  provider: Tangram contributors
+  platform: [Web browser, Android, iOS]
+  language: [JavaScript, C++]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Maintenance mode
+  access: https://github.com/tangrams/tangram
+  docs: https://tangrams.readthedocs.io/en/latest/
+  repo: https://github.com/tangrams/tangram
+  tags: [MIT, Cartography, Vector tiles, Styling]
+  related: [maplibre-gl-js]
+- id: qgis-layout
+  title: QGIS Print Layout and Atlas
+  icon: lucide/palette
+  summary: QGIS map composer for building print-ready maps with scale bars, legends, grids and data-driven atlases that generate map series.
+  provider: QGIS.org
+  platform: [Windows, macOS, Linux]
+  language: [C++, Python]
+  interface: [GUI]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://qgis.org/download/
+  docs: https://docs.qgis.org/latest/en/docs/user_manual/print_composer/index.html
+  repo: https://github.com/qgis/QGIS
+  tags: [GPL, Cartography, Print maps, OSGeo]
+  related: [qgis, arcgis-pro]
+- id: datawrapper-maps
+  title: Datawrapper
+  icon: lucide/palette
+  summary: Web tool for building choropleth, symbol and locator maps and charts from tables, with embeds and exports for publishing.
+  provider: Datawrapper
+  platform: [Web browser, Cloud service]
+  language: [JavaScript]
+  interface: [Web app]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://www.datawrapper.de/maps
+  docs: https://www.datawrapper.de/
+  tags: [Proprietary, Cartography, Visualization, Dashboards]
+  related: [felt, carto]
+- id: observable-plot
+  title: Observable Plot (geo marks)
+  icon: lucide/palette
+  summary: JavaScript charting library with geographic marks, projections and a graticule, for quick thematic maps in notebooks and web pages.
+  provider: Observable
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Library, Notebook]
+  license: ISC
+  cost: Open source
+  status: Active
+  access: https://observablehq.com/plot/
+  docs: https://observablehq.com/plot/marks/geo
+  repo: https://github.com/observablehq/plot
+  tags: [ISC, Cartography, Visualization, Projections]
+  related: [d3-geo]
+- id: ggplot2-sf
+  title: ggplot2 with geom_sf
+  icon: lucide/palette
+  summary: ggplot2's geom_sf and coord_sf layers draw sf objects in R using the grammar of graphics, with automatic projection handling.
+  provider: Posit and r-spatial
+  platform: [Windows, macOS, Linux]
+  language: [R]
+  interface: [Library]
+  license: MIT
+  cost: Open source
+  status: Active
+  access: https://ggplot2.tidyverse.org/reference/ggsf.html
+  docs: https://r-spatial.org/r/2018/10/25/ggplot2-sf.html
+  repo: https://github.com/tidyverse/ggplot2
+  tags: [MIT, Cartography, Visualization, r-spatial]
+  snippets:
+    - label: R
+      lang: r
+      code: |
+        library(ggplot2); library(sf)
+        nc <- st_read(system.file("shape/nc.shp", package = "sf"))
+        ggplot(nc) + geom_sf(aes(fill = AREA)) + coord_sf(crs = 5070)
+  related: [sf, ggspatial, tmap]
+- id: openorienteering-mapper
+  title: OpenOrienteering Mapper
+  icon: lucide/palette
+  summary: Software for drawing orienteering maps with symbol sets, templates and GPS and export tools.
+  provider: OpenOrienteering
+  platform: [Windows, macOS, Linux, Android]
+  language: [C++]
+  interface: [GUI]
+  license: GPL-3.0
+  cost: Open source
+  status: Maintenance mode
+  access: https://www.openorienteering.org/apps/mapper/
+  docs: https://www.openorienteering.org/apps/mapper/
+  logo: github:OpenOrienteering
+  repo: https://github.com/OpenOrienteering/mapper
+  tags: [GPL, Cartography, Print maps]
+  related: [qgis]

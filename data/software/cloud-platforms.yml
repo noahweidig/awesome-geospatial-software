@@ -1,0 +1,196 @@
+- id: arcgis-online
+  title: ArcGIS Online
+  icon: lucide/cloud
+  summary: Esri's hosted GIS for creating and sharing maps, apps, dashboards and layers, with analysis tools and the Living Atlas of content.
+  provider: Esri
+  platform: [Cloud service, Web browser]
+  language: [JavaScript, Python]
+  interface: [Web app, API]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.esri.com/en-us/arcgis/products/arcgis-online/overview
+  docs: https://doc.arcgis.com/en/arcgis-online/
+  tags: [Proprietary, Web mapping, Dashboards, Esri]
+  related: [arcgis-enterprise, arcgis-pro, arcgis-api-python]
+- id: carto
+  title: CARTO
+  icon: lucide/cloud
+  summary: Cloud-native location intelligence platform that runs spatial analysis in data warehouses such as BigQuery, Snowflake and Databricks and builds web maps.
+  provider: CARTO
+  platform: [Cloud service, Web browser]
+  language: [SQL, JavaScript]
+  interface: [Web app, API, SDK]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://carto.com/
+  docs: https://docs.carto.com/
+  tags: [Proprietary, Spatial database, Dashboards, Cloud-native, Big data]
+  related: [bigquery-gis, deckgl]
+- id: felt
+  title: Felt
+  icon: lucide/cloud
+  summary: Browser-based collaborative mapping tool for uploading data, styling layers, drawing and sharing maps.
+  provider: Felt
+  platform: [Cloud service, Web browser]
+  language: [JavaScript]
+  interface: [Web app, API]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://felt.com/
+  docs: https://learn.felt.com/
+  tags: [Proprietary, Web mapping, Cartography, Visualization]
+  related: [tippecanoe, carto]
+- id: foursquare-studio
+  title: Foursquare Studio
+  icon: lucide/cloud
+  summary: Hosted map studio built on kepler.gl and deck.gl for visualizing and sharing large geospatial datasets.
+  provider: Foursquare
+  platform: [Cloud service, Web browser]
+  language: [JavaScript]
+  interface: [Web app]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://foursquare.com/products/studio/
+  docs: https://docs.foursquare.com/
+  tags: [Proprietary, Visualization, Dashboards, Big data]
+  related: [kepler-gl, deckgl]
+- id: mapbox
+  title: Mapbox
+  icon: lucide/cloud
+  summary: Hosted maps, tilesets, geocoding, directions and navigation APIs with Mapbox Studio for styling.
+  provider: Mapbox
+  platform: [Cloud service, Web browser, Android, iOS]
+  language: [JavaScript, Kotlin, Swift]
+  interface: [API, SDK, Web app]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://www.mapbox.com/
+  docs: https://docs.mapbox.com/
+  tags: [Proprietary, Web mapping, Geocoding, Routing, Mapbox]
+  related: [mapbox-gl-js, maplibre-gl-js, maptiler-sdk]
+- id: maptiler-cloud
+  title: MapTiler Cloud
+  icon: lucide/cloud
+  summary: Hosted vector and raster maps, geocoding, elevation and tile hosting with a MapLibre-compatible API.
+  provider: MapTiler
+  platform: [Cloud service, Web browser]
+  language: [JavaScript]
+  interface: [API, Web app]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://www.maptiler.com/cloud/
+  docs: https://docs.maptiler.com/cloud/
+  tags: [Proprietary, Tiles, Vector tiles, Geocoding]
+  related: [maptiler-sdk, mapbox]
+- id: stadia-maps
+  title: Stadia Maps
+  icon: lucide/cloud
+  summary: Hosted map tiles, geocoding and routing APIs built on open source engines such as Valhalla and Pelias.
+  provider: Stadia Maps
+  platform: [Cloud service]
+  language: [JavaScript]
+  interface: [API]
+  license: Proprietary
+  cost: Freemium
+  status: Active
+  access: https://stadiamaps.com/
+  docs: https://docs.stadiamaps.com/
+  tags: [Proprietary, Tiles, Geocoding, Routing]
+  related: [valhalla, pelias]
+- id: aws-location-service
+  title: Amazon Location Service
+  icon: lucide/cloud
+  summary: AWS service for maps, places, geocoding, routing and device tracking using data from partners such as Esri, HERE and Grab.
+  provider: Amazon Web Services
+  platform: [Cloud service]
+  language: [JavaScript, Python]
+  interface: [API, SDK]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://aws.amazon.com/location/
+  docs: https://docs.aws.amazon.com/location/
+  tags: [Proprietary, Geocoding, Routing, Web mapping, Amazon]
+  related: [azure-maps, google-maps-platform]
+- id: azure-maps
+  title: Azure Maps
+  icon: lucide/cloud
+  summary: Microsoft Azure map rendering, search, routing, weather and spatial operations APIs with web and mobile SDKs.
+  provider: Microsoft
+  platform: [Cloud service, Web browser]
+  language: [JavaScript, C#]
+  interface: [API, SDK]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://azure.microsoft.com/en-us/products/azure-maps
+  docs: https://learn.microsoft.com/en-us/azure/azure-maps/
+  tags: [Proprietary, Web mapping, Geocoding, Routing, Microsoft]
+  related: [aws-location-service, google-maps-platform]
+- id: planet-platform
+  title: Planet Platform
+  icon: lucide/cloud
+  summary: Commercial satellite imagery and analytics platform with daily PlanetScope and SkySat imagery, APIs and a Python client.
+  provider: Planet Labs
+  platform: [Cloud service, Web browser]
+  language: [Python]
+  interface: [API, Web app]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.planet.com/products/
+  docs: https://developers.planet.com/docs/
+  tags: [Proprietary, Satellite imagery, Earth observation]
+  related: [sentinel-hub, up42]
+- id: up42
+  title: UP42
+  icon: lucide/cloud
+  summary: Marketplace and developer platform for geospatial data and processing workflows, including satellite imagery and analytics.
+  provider: UP42
+  platform: [Cloud service]
+  language: [Python]
+  interface: [API, Web app]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://up42.com/
+  docs: https://docs.up42.com/
+  tags: [Proprietary, Satellite imagery, Earth observation, Workflow]
+  related: [planet-platform]
+- id: nasa-worldview
+  title: NASA Worldview
+  icon: lucide/cloud
+  summary: Interactive web viewer for NASA satellite imagery layers with time animation, comparison and data download links.
+  provider: NASA EOSDIS
+  platform: [Web browser]
+  language: [JavaScript]
+  interface: [Web app]
+  license: NASA Open Source Agreement 1.3
+  cost: Free to use
+  status: Active
+  access: https://worldview.earthdata.nasa.gov/
+  docs: https://wiki.earthdata.nasa.gov/display/GIBS
+  repo: https://github.com/nasa-gibs/worldview
+  tags: [Other open source, Satellite imagery, Visualization, NASA]
+  related: [earthaccess, appeears]
+- id: mapillary
+  title: Mapillary
+  icon: lucide/cloud
+  summary: Platform for street-level imagery collected by contributors, with APIs and an SDK, and map features derived from the photos.
+  provider: Meta
+  platform: [Cloud service, Web browser, Android, iOS]
+  language: [JavaScript]
+  interface: [Web app, API]
+  license: Proprietary
+  cost: Free to use
+  status: Active
+  access: https://www.mapillary.com/
+  docs: https://www.mapillary.com/developer/api-documentation
+  tags: [Proprietary, Crowdsourcing, OpenStreetMap, Meta]
+  related: [josm]

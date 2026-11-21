@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block extrahead %}
+  <link rel="icon" type="image/x-icon" href="{{ 'assets/images/favicon.ico' | url }}" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/images/favicon-32x32.png' | url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/images/favicon-16x16.png' | url }}">
+  <link rel="apple-touch-icon" href="{{ 'assets/images/apple-touch-icon.png' | url }}">
+  <link rel="manifest" href="{{ 'assets/images/site.webmanifest' | url }}">
+  <meta name="theme-color" content="#00897b">
+{% endblock %}
+{% block announce %}
+  <a href="{{ 'about/changelog/' | url }}">New: 365 geospatial tools in 20 categories, from ArcGIS Pro to terra. See the changelog.</a>
+{% endblock %}

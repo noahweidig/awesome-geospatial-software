@@ -1,0 +1,339 @@
+- id: arcgis-pro
+  title: ArcGIS Pro
+  icon: lucide/monitor
+  summary: Esri's flagship 64-bit desktop GIS for mapping, editing, geoprocessing, 3D, imagery and spatial analysis, with Python scripting through ArcPy.
+  provider: Esri
+  platform: [Windows]
+  language: [Python, C#]
+  interface: [GUI, SDK, Notebook]
+  license: Proprietary (subscription or perpetual by license level)
+  cost: Paid
+  status: Active
+  access: https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview
+  docs: https://pro.arcgis.com/en/pro-app/latest/get-started/get-started.htm
+  tags: [Proprietary, Vector, Raster, Cartography, Geoprocessing, 3D, Esri]
+  caveat: Runs on Windows only. Extensions such as Spatial Analyst, 3D Analyst and Image Analyst are licensed separately.
+  related: [arcmap, arcgis-online, arcpy, arcgis-api-python, qgis]
+- id: arcmap
+  title: ArcMap (ArcGIS Desktop)
+  icon: lucide/monitor
+  summary: Esri's previous desktop GIS, replaced by ArcGIS Pro. Many older tutorials, models and scripts still target it.
+  provider: Esri
+  platform: [Windows]
+  language: [Python]
+  interface: [GUI]
+  license: Proprietary
+  cost: Paid
+  status: Retired
+  access: https://www.esri.com/en-us/arcgis/products/arcgis-desktop/overview
+  docs: https://desktop.arcgis.com/en/arcmap/
+  tags: [Proprietary, Vector, Raster, Cartography, Esri]
+  caveat: ArcMap runs on 32-bit Python 2.7. Esri directs users to migrate to ArcGIS Pro. Check Esri's product life cycle page for the current support phase.
+  related: [arcgis-pro]
+- id: qgis
+  title: QGIS
+  icon: lucide/monitor
+  summary: Free, open source desktop GIS for viewing, editing, analyzing and publishing spatial data, extensible with Python plugins and the Processing framework.
+  provider: QGIS.org
+  platform: [Windows, macOS, Linux]
+  language: [C++, Python]
+  interface: [GUI, Command line, Plugin]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://qgis.org/download/
+  docs: https://docs.qgis.org/
+  repo: https://github.com/qgis/QGIS
+  tags: [GPL, Vector, Raster, Cartography, Geoprocessing, 3D, OSGeo]
+  snippets:
+    - label: PyQGIS
+      lang: python
+      code: |
+        from qgis.core import QgsVectorLayer, QgsProject
+        layer = QgsVectorLayer("roads.gpkg|layername=roads", "roads", "ogr")
+        QgsProject.instance().addMapLayer(layer)
+        print(layer.featureCount())
+  related: [grass-gis, saga-gis, arcgis-pro, qgis-server, qfield]
+- id: grass-gis
+  title: GRASS GIS
+  icon: lucide/monitor
+  summary: Open source GIS for raster, vector, imagery and time-series analysis with hundreds of modules, usable from a GUI, the command line, Python or notebooks.
+  provider: GRASS Development Team
+  platform: [Windows, macOS, Linux]
+  language: [C, Python]
+  interface: [GUI, Command line, Library, Notebook]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://grass.osgeo.org/download/
+  docs: https://grass.osgeo.org/learn/
+  repo: https://github.com/OSGeo/grass
+  tags: [GPL, Raster, Vector, Terrain, Hydrology, Time series, OSGeo]
+  snippets:
+    - label: Python
+      lang: python
+      code: |
+        import grass.script as gs
+        gs.run_command("g.region", raster="elevation")
+        gs.run_command("r.slope.aspect", elevation="elevation", slope="slope")
+  related: [qgis, saga-gis, whiteboxtools]
+- id: saga-gis
+  title: SAGA GIS
+  icon: lucide/monitor
+  summary: Open source GIS with a large library of terrain, hydrology, geostatistics and image analysis tools, scriptable from Python and R.
+  provider: SAGA User Group Association
+  platform: [Windows, macOS, Linux]
+  language: [C++, Python]
+  interface: [GUI, Command line, Library]
+  license: GPL-2.0-or-later (tools), LGPL-2.1-or-later (API)
+  cost: Open source
+  status: Active
+  access: https://saga-gis.sourceforge.io/en/index.html
+  docs: https://saga-gis.sourceforge.io/saga_tool_doc/index.html
+  logo: https://upload.wikimedia.org/wikipedia/commons/8/8a/SAGA_GIS_logo.png
+  repo: https://github.com/saga-gis/saga-gis
+  tags: [GPL, Terrain, Hydrology, Raster, Vector, Spatial statistics]
+  related: [qgis, grass-gis, rsagacmd]
+- id: gvsig-desktop
+  title: gvSIG Desktop
+  icon: lucide/monitor
+  summary: Open source desktop GIS written in Java, aimed at public administrations and education, with a plugin architecture.
+  provider: gvSIG Association
+  platform: [Windows, macOS, Linux]
+  language: [Java, Python]
+  interface: [GUI, Plugin]
+  license: GPL-2.0-or-later
+  cost: Open source
+  status: Active
+  access: https://www.gvsig.com/en/products/gvsig-desktop
+  docs: https://www.gvsig.com/en/products/gvsig-desktop/documentation
+  tags: [GPL, Vector, Raster, Cartography, OSGeo]
+  related: [qgis, openjump]
+- id: openjump
+  title: OpenJUMP
+  icon: lucide/monitor
+  summary: Java-based open source desktop GIS for viewing, editing and processing vector data, extensible with plugins and scripts.
+  provider: OpenJUMP developers
+  platform: [Windows, macOS, Linux]
+  language: [Java]
+  interface: [GUI, Plugin]
+  license: GPL-2.0
+  cost: Open source
+  status: Active
+  access: https://www.openjump.org/
+  docs: https://www.openjump.org/
+  repo: https://github.com/openjump-gis/openjump
+  tags: [GPL, Vector, Geoprocessing]
+  related: [qgis, gvsig-desktop, jts]
+- id: global-mapper
+  title: Global Mapper
+  icon: lucide/monitor
+  summary: Commercial desktop GIS known for broad format support and terrain, LiDAR and 3D analysis tools, with a Pro edition for point clouds and advanced analysis.
+  provider: Blue Marble Geographics
+  platform: [Windows]
+  language: [Python]
+  interface: [GUI, Command line]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.bluemarblegeo.com/global-mapper/
+  docs: https://www.bluemarblegeo.com/knowledgebase/
+  tags: [Proprietary, Raster, Vector, LiDAR, Terrain, Blue Marble]
+  related: [qgis, arcgis-pro]
+- id: mapinfo-pro
+  title: MapInfo Pro
+  icon: lucide/monitor
+  summary: Desktop GIS for location analysis and mapping, with scripting in MapBasic and Python.
+  provider: Precisely
+  platform: [Windows]
+  language: [Python, Vendor-specific]
+  interface: [GUI]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.precisely.com/product/precisely-mapinfo/mapinfo-pro
+  docs: https://support.precisely.com/
+  tags: [Proprietary, Vector, Cartography, Precisely]
+  related: [arcgis-pro, qgis]
+- id: manifold
+  title: Manifold
+  icon: lucide/monitor
+  summary: Windows GIS and spatial SQL environment that runs queries and raster processing on multicore CPUs and GPUs. A free Viewer opens its project files.
+  provider: Manifold Software
+  platform: [Windows]
+  language: [SQL]
+  interface: [GUI]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://manifold.net/
+  docs: https://manifold.net/doc/mfd9/index.htm
+  tags: [Proprietary, Vector, Raster, Spatial database]
+  related: [qgis, postgis]
+- id: tatukgis
+  title: TatukGIS
+  icon: lucide/monitor
+  summary: Commercial desktop GIS plus developer kernels for building GIS applications on .NET, Delphi and other platforms.
+  provider: TatukGIS
+  platform: [Windows]
+  language: [Delphi, C#]
+  interface: [GUI, SDK]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.tatukgis.com/
+  docs: https://docs.tatukgis.com/
+  tags: [Proprietary, Vector, Raster, Cartography]
+  related: [qgis]
+- id: cadcorp-sis
+  title: Cadcorp SIS Desktop
+  icon: lucide/monitor
+  summary: Windows desktop GIS built around OGC standards and spatial databases, from the UK vendor Cadcorp.
+  provider: Cadcorp
+  platform: [Windows]
+  language: [Vendor-specific]
+  interface: [GUI]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.cadcorp.com/products/cadcorp-sis-desktop/
+  docs: https://www.cadcorp.com/support/
+  tags: [Proprietary, Vector, OGC standards]
+  related: [arcgis-pro, qgis]
+- id: maptitude
+  title: Maptitude
+  icon: lucide/monitor
+  summary: Business-oriented mapping software with built-in US demographic data, territory design and redistricting tools.
+  provider: Caliper Corporation
+  platform: [Windows]
+  language: [Vendor-specific]
+  interface: [GUI]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.caliper.com/maptovu.htm
+  docs: https://www.caliper.com/maptovu.htm
+  tags: [Proprietary, Vector, Cartography, Demography]
+  related: [arcgis-pro, qgis]
+- id: terrset
+  title: TerrSet (IDRISI)
+  icon: lucide/monitor
+  summary: Raster-oriented geospatial monitoring and modeling system that grew out of IDRISI, with Land Change Modeler and Earth Trends Modeler.
+  provider: Clark Labs, Clark University
+  platform: [Windows]
+  language: [Vendor-specific]
+  interface: [GUI]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://clarklabs.org/terrset/
+  docs: https://clarklabs.org/terrset/
+  tags: [Proprietary, Raster, Land change, Image classification]
+  related: [qgis, grass-gis]
+- id: autocad-map-3d
+  title: AutoCAD Map 3D toolset
+  icon: lucide/monitor
+  summary: GIS and mapping toolset included with AutoCAD for working with spatial data inside CAD drawings.
+  provider: Autodesk
+  platform: [Windows]
+  language: [C#]
+  interface: [GUI, SDK]
+  license: Proprietary
+  cost: Paid
+  status: Active
+  access: https://www.autodesk.com/products/autocad/included-toolsets/autocad-map-3d
+  docs: https://help.autodesk.com/view/MAP/2025/ENU/
+  tags: [Proprietary, Vector, Surveying, Utilities, Autodesk]
+  related: [arcgis-pro, qgis]
+- id: diva-gis
+  title: DIVA-GIS
+  icon: lucide/monitor
+  summary: Free, lightweight desktop GIS for mapping and analyzing biodiversity and climate data, widely used in teaching.
+  provider: DIVA-GIS
+  platform: [Windows]
+  language: [Java]
+  interface: [GUI]
+  license: Free to use (see site)
+  cost: Free to use
+  status: Legacy
+  access: https://www.diva-gis.org/
+  docs: https://www.diva-gis.org/documentation
+  tags: [Proprietary, Vector, Raster, Ecology, Species distribution, Education]
+  caveat: The site lists version 7.5 from 2012. Prefer QGIS or R for new work.
+  related: [qgis, geoda]
+- id: google-earth-pro
+  title: Google Earth Pro
+  icon: lucide/globe
+  summary: Free desktop globe for viewing imagery, importing KML and GIS files, measuring, and exporting high-resolution images and movies.
+  provider: Google
+  platform: [Windows, macOS, Linux]
+  language: [Vendor-specific]
+  interface: [GUI]
+  license: Proprietary
+  cost: Free to use
+  status: Active
+  access: https://www.google.com/earth/about/versions/
+  docs: https://support.google.com/earth/
+  tags: [Proprietary, Globe, Satellite imagery, Visualization, Google]
+  related: [arcgis-earth, google-earth-engine]
+- id: arcgis-earth
+  title: ArcGIS Earth
+  icon: lucide/globe
+  summary: Free 3D globe from Esri for viewing and sharing maps, KML, shapefiles and ArcGIS services.
+  provider: Esri
+  platform: [Windows, macOS, Android, iOS]
+  language: [Vendor-specific]
+  interface: [GUI, Mobile app]
+  license: Proprietary
+  cost: Free to use
+  status: Active
+  access: https://www.esri.com/en-us/arcgis/products/arcgis-earth/overview
+  docs: https://doc.arcgis.com/en/arcgis-earth/
+  tags: [Proprietary, Globe, 3D, Visualization, Esri]
+  related: [google-earth-pro, arcgis-pro]
+- id: marble
+  title: Marble
+  icon: lucide/globe
+  summary: KDE virtual globe and world atlas for desktop and mobile, with OpenStreetMap maps, routing and a Qt library for embedding.
+  provider: KDE
+  platform: [Windows, macOS, Linux, Android]
+  language: [C++]
+  interface: [GUI, Library]
+  license: LGPL-2.1-or-later
+  cost: Open source
+  status: Active
+  access: https://marble.kde.org/
+  docs: https://marble.kde.org/documentation.php
+  repo: https://github.com/KDE/marble
+  tags: [LGPL, Globe, OpenStreetMap, Education, OSGeo]
+  related: [google-earth-pro, qgis]
+- id: osgeo4w
+  title: OSGeo4W
+  icon: lucide/package
+  summary: Windows installer and package repository for QGIS, GDAL, GRASS GIS and other open source geospatial tools and their dependencies.
+  provider: OSGeo
+  platform: [Windows]
+  language: [C++, Python]
+  interface: [GUI, Command line]
+  license: Various open source (per package)
+  cost: Open source
+  status: Active
+  access: https://trac.osgeo.org/osgeo4w/
+  docs: https://trac.osgeo.org/osgeo4w/wiki
+  tags: [Other open source, Geoprocessing, OSGeo]
+  related: [qgis, gdal, grass-gis]
+- id: osgeolive
+  title: OSGeoLive
+  icon: lucide/package
+  summary: Bootable DVD, USB and virtual machine image preloaded with dozens of open source geospatial applications, sample data and quick starts.
+  provider: OSGeo
+  platform: [Linux]
+  language: [Python, C++]
+  interface: [GUI]
+  license: Various open source (per package)
+  cost: Open source
+  status: Active
+  access: https://live.osgeo.org/
+  docs: https://live.osgeo.org/en/index.html
+  tags: [Other open source, Education, OSGeo]
+  related: [qgis, osgeo4w]

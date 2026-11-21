@@ -1,0 +1,20 @@
+- {slug: desktop-gis, title: Desktop GIS & map viewers, icon: lucide/monitor, summary: 'Full desktop applications for editing, analyzing and mapping spatial data, from ArcGIS Pro to QGIS.'}
+- {slug: core-libraries, title: Core libraries & engines, icon: lucide/library, summary: 'Low-level C, C++ and Java libraries for formats, projections and geometry that most other tools build on.'}
+- {slug: python, title: Python libraries, icon: lucide/file-code, summary: 'Vector, raster, array, mapping and cloud-data packages for the Python geospatial stack.'}
+- {slug: r, title: R packages, icon: lucide/sigma, summary: 'Spatial classes, raster and vector analysis, statistics and mapping packages for R.'}
+- {slug: other-languages, title: Other languages, icon: lucide/braces, summary: 'Geospatial libraries for Julia, Rust, Go, .NET, Java and other ecosystems.'}
+- {slug: web-mapping, title: Web mapping libraries & SDKs, icon: lucide/globe, summary: 'JavaScript and native SDKs for interactive maps, globes and browser-side geoprocessing.'}
+- {slug: servers-tiles, title: 'Map servers, tiles & APIs', icon: lucide/server, summary: 'Servers and tools that publish OGC services, vector tiles, raster tiles and feature APIs.'}
+- {slug: databases, title: Spatial databases & big data, icon: lucide/database, summary: 'Spatial SQL databases, stores and distributed engines for large vector and raster workloads.'}
+- {slug: remote-sensing, title: Remote sensing & image analysis, icon: lucide/satellite, summary: 'Satellite and aerial image processing, SAR, classification and analysis-ready data tools.'}
+- {slug: lidar-3d, title: 'LiDAR, photogrammetry & 3D', icon: lucide/box, summary: 'Point cloud processing, drone photogrammetry, city models and 3D globes.'}
+- {slug: cloud-platforms, title: Cloud platforms & location APIs, icon: lucide/cloud, summary: 'Hosted analysis platforms, data catalogs and commercial map, search and routing APIs.'}
+- {slug: geocoding-routing, title: 'Geocoding, routing & networks', icon: lucide/route, summary: 'Address search, directions, isochrones, transit planning and network analysis engines.'}
+- {slug: terrain-hydrology, title: 'Terrain, hydrology & hazards', icon: lucide/mountain, summary: 'DEM analysis, watershed delineation, flood modeling and wind and fire behavior tools.'}
+- {slug: spatial-analysis, title: Spatial statistics & ecology, icon: lucide/chart-scatter, summary: 'Spatial autocorrelation, regression, geostatistics, habitat and landscape models.'}
+- {slug: geoai, title: GeoAI & machine learning, icon: lucide/brain-circuit, summary: 'Deep learning and machine learning frameworks for imagery, point clouds and geospatial prediction.'}
+- {slug: field-mobile, title: Field collection & mobile, icon: lucide/smartphone, summary: 'Mobile apps and survey tools for collecting, editing and viewing spatial data in the field.'}
+- {slug: osm, title: OpenStreetMap tools, icon: lucide/map-pinned, summary: 'Editors, extract tools, importers and query services for OpenStreetMap data.'}
+- {slug: cartography, title: Cartography & visualization, icon: lucide/palette, summary: 'Map design, styling, rendering and large-scale geospatial visualization tools.'}
+- {slug: etl-catalogs, title: 'Data conversion, ETL & catalogs', icon: lucide/arrow-left-right, summary: 'Format conversion, spatial ETL, metadata catalogs and spatial data infrastructure.'}
+- {slug: climate-ocean, title: 'Climate, ocean & atmosphere', icon: lucide/cloud-sun, summary: 'Tools for gridded Earth-system data such as NetCDF and GRIB, from plotting to model post-processing.'}
