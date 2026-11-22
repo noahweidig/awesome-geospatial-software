@@ -1,4 +1,5 @@
 ---
+title: Awesome Geospatial Software
 icon: lucide/globe
 hide:
   - navigation
@@ -9,7 +10,7 @@ hide:
 <div class="hero" markdown>
 <div class="hero-text" markdown>
 
-# Awesome Geospatial Software
+# Every tool for <span class="hl">spatial work</span>, in one catalog
 
 A curated catalog of software for mapping, spatial analysis and Earth observation. Each entry lists developer, platforms, languages, license, cost and a direct link to get it.
 
